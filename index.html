@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulaziz | Backend & Web Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikonkalari -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-400">Abdulaziz<span class="text-white">.dev</span></a>
+            <ul class="hidden md:flex space-x-8 font-medium text-slate-300">
+                <li><a href="#about" class="hover:text-indigo-400 transition">Men haqimda</a></li>
+                <li><a href="#skills" class="hover:text-indigo-400 transition">Ko'nikmalar</a></li>
+                <li><a href="#projects" class="hover:text-indigo-400 transition">Loyihalar</a></li>
+                <li><a href="#contact" class="hover:text-indigo-400 transition">Aloqa</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex items-center pt-20 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full text-sm font-semibold">
+                    Python & Web Developer
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
+                    Salom, men <span class="text-indigo-400">Abdulaziz</span>
+                </h1>
+                <p class="text-slate-400 mt-4 text-lg leading-relaxed">
+                    Python, Django va zamonaviy web texnologiyalari orqali xavfsiz, tezkor va qulay backend hamda web ilovalar yarataman.
+                </p>
+                <div class="mt-8 flex gap-4">
+                    <a href="#projects" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition shadow-lg shadow-indigo-600/30">
+                        Loyihalarni ko'rish
+                    </a>
+                    <a href="#contact" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg border border-slate-700 transition">
+                        Bog'lanish
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 p-1 shadow-2xl">
+                    <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center overflow-hidden">
+                        <i class="fa-solid fa-code text-7xl text-indigo-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Men Haqimda</h2>
+            <div class="max-w-3xl mx-auto text-slate-300 text-center leading-relaxed text-lg">
+                Men backend va web dasturlash yo'nalishida tajriba oshirib kelayotgan dasturchiman. Ma'lumotlar bazasi arxitekturasi, REST API interfeyslari hamda Django framework'i orqali to'liq ishlaydigan web tizimlarni ishlab chiqishga ixtisoslashganman.
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Texnologiyalar & Ko'nikmalar</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+                <div class="p-6 bg-cardBg rounded-xl border border-slate-800 text-center hover:border-indigo-500 transition">
+                    <i class="fa-brands fa-python text-4xl text-yellow-400 mb-3"></i>
+                    <h3 class="font-semibold">Python</h3>
+                </div>
+                <div class="p-6 bg-cardBg rounded-xl border border-slate-800 text-center hover:border-indigo-500 transition">
+                    <i class="fa-solid fa-layer-group text-4xl text-green-500 mb-3"></i>
+                    <h3 class="font-semibold">Django</h3>
+                </div>
+                <div class="p-6 bg-cardBg rounded-xl border border-slate-800 text-center hover:border-indigo-500 transition">
+                    <i class="fa-solid fa-database text-4xl text-blue-400 mb-3"></i>
+                    <h3 class="font-semibold">SQL</h3>
+                </div>
+                <div class="p-6 bg-cardBg rounded-xl border border-slate-800 text-center hover:border-indigo-500 transition">
+                    <i class="fa-brands fa-git-alt text-4xl text-orange-500 mb-3"></i>
+                    <h3 class="font-semibold">Git</h3>
+                </div>
+                <div class="p-6 bg-cardBg rounded-xl border border-slate-800 text-center hover:border-indigo-500 transition">
+                    <i class="fa-brands fa-html5 text-4xl text-orange-600 mb-3"></i>
+                    <h3 class="font-semibold">HTML / CSS</h3>
+                </div>
+                <div class="p-6 bg-cardBg rounded-xl border border-slate-800 text-center hover:border-indigo-500 transition">
+                    <i class="fa-brands fa-js text-4xl text-yellow-300 mb-3"></i>
+                    <h3 class="font-semibold">JavaScript</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Mening Loyihalarim</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Bookify Project Card -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-slate-800 hover:border-indigo-500/50 transition flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Bookify</h3>
+                            <span class="text-xs font-semibold px-2 py-1 bg-green-500/10 text-green-400 border border-green-500/20 rounded">Live</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6">
+                            Kitoblarni raqamlashtirish, qidiruv va filtrlash hamda administrator paneli bilan ta'minlangan Django web ilovasi.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Django</span>
+                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Python</span>
+                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">SQLite</span>
+                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Render</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://bookify-pstb.onrender.com" target="_blank" class="block w-full text-center py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium text-sm transition">
+                            Saytni ko'rish <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-slate-900/50">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Men Bilan Bog'laning</h2>
+            <p class="text-slate-400 mb-8">Loyihalar, hamkorlik yoki takliflar uchun aloqaga chiqishingiz mumkin.</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://github.com" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://t.me" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+                <a href="mailto:abdulaziz@example.com" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6 border-t border-slate-800 text-center text-slate-500 text-sm">
+        © 2026 Abdulaziz. Barcha huquqlar himoyalangan.
+    </footer>
+
+</body>
+</html>
