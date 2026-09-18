@@ -3,284 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulaziz | Senior Backend & Full-Stack Developer</title>
+    <title>Abdulaziz | Senior Backend & Full-Stack Engineer</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
                     colors: {
                         brand: {
                             50: '#eef2ff',
+                            400: '#818cf8',
                             500: '#6366f1',
                             600: '#4f46e5',
                             700: '#4338ca',
+                            900: '#312e81',
                         },
-                        darkBg: '#090d16',
-                        cardBg: '#111827',
-                        borderBg: '#1f2937'
+                        accent: {
+                            cyan: '#06b6d4',
+                            purple: '#a855f7',
+                            emerald: '#10b981',
+                        },
+                        darkBg: '#05070f',
+                        cardBg: 'rgba(15, 23, 42, 0.65)',
+                        borderBg: 'rgba(255, 255, 255, 0.08)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
                     }
                 }
             }
         }
     </script>
+
     <style>
-        .glass-header {
-            background: rgba(9, 13, 22, 0.75);
-            backdrop-filter: blur(16px);
+        body {
+            background-color: #05070f;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
         }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel-hover:hover {
+            background: rgba(20, 30, 55, 0.8);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
+        }
+
         .gradient-text {
-            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gradient-border {
-            border: 1px solid transparent;
-            background: linear-gradient(#111827, #111827) padding-box,
-                        linear-gradient(135deg, #6366f1, #a855f7) border-box;
+
+        .gradient-border-glow {
+            position: relative;
+        }
+        .gradient-border-glow::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #6366f1, #a855f7, #06b6d4);
+            border-radius: 1.75rem;
+            z-index: -1;
+            opacity: 0.5;
+            blur: 10px;
+            transition: opacity 0.3s ease;
+        }
+        .gradient-border-glow:hover::before {
+            opacity: 1;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05070f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
         }
     </style>
 </head>
-<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white relative">
 
-    <!-- NAVBAR -->
-    <header class="fixed top-0 w-full z-50 glass-header border-b border-borderBg transition-all duration-300">
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black tracking-wider text-white">
-                ABDULAZIZ<span class="text-brand-500">.DEV</span>
+            <a href="#" class="text-2xl font-black tracking-wider text-white flex items-center gap-2 group">
+                <span class="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center text-white text-lg font-mono font-bold group-hover:rotate-12 transition-transform">&lt;/&gt;</span>
+                ABDULAZIZ<span class="text-brand-400">.DEV</span>
             </a>
             
-            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-300">
-                <a href="#about" class="hover:text-brand-500 transition-colors">Men Haqimda</a>
-                <a href="#skills" class="hover:text-brand-500 transition-colors">Texnologiyalar</a>
-                <a href="#experience" class="hover:text-brand-500 transition-colors">Tajriba</a>
-                <a href="#projects" class="hover:text-brand-500 transition-colors">Loyihalar</a>
-                <a href="#contact" class="hover:text-brand-500 transition-colors">Aloqa</a>
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-300 text-sm">
+                <a href="#about" class="hover:text-brand-400 transition-colors">Men Haqimda</a>
+                <a href="#skills" class="hover:text-brand-400 transition-colors">Texnologiyalar</a>
+                <a href="#experience" class="hover:text-brand-400 transition-colors">Tajriba</a>
+                <a href="#projects" class="hover:text-brand-400 transition-colors">Loyihalar</a>
+                <a href="#contact" class="hover:text-brand-400 transition-colors">Aloqa</a>
             </nav>
 
-            <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-semibold shadow-lg shadow-brand-600/25 transition-all">
-                <i class="fa-regular fa-paper-plane"></i> Muloqot Qilish
-            </a>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="px-6 py-2.5 bg-gradient-to-r from-brand-600 to-purple-600 hover:from-brand-500 hover:to-purple-500 text-white rounded-xl font-semibold shadow-lg shadow-brand-600/20 transition-all hover:scale-105 active:scale-95 text-sm flex items-center gap-2">
+                    <i class="fa-regular fa-paper-plane"></i> Muloqot Qilish
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-white/10 px-6 py-6 space-y-4">
+            <a href="#about" class="block text-slate-300 hover:text-brand-400 font-medium">Men Haqimda</a>
+            <a href="#skills" class="block text-slate-300 hover:text-brand-400 font-medium">Texnologiyalar</a>
+            <a href="#experience" class="block text-slate-300 hover:text-brand-400 font-medium">Tajriba</a>
+            <a href="#projects" class="block text-slate-300 hover:text-brand-400 font-medium">Loyihalar</a>
+            <a href="#contact" class="block text-slate-300 hover:text-brand-400 font-medium">Aloqa</a>
+            <a href="#contact" class="block w-full text-center py-3 bg-brand-600 text-white rounded-xl font-semibold">Muloqot Qilish</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden">
-        <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/2 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+    <section class="min-h-screen pt-36 pb-20 flex items-center relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7" data-aos="fade-right">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-500/10 border border-brand-500/20 rounded-full text-brand-500 text-sm font-semibold mb-6">
-                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Yangi Loyihalar Uchun Ochiqman
+            
+            <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-semibold mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Yangi Loyihalar & Hamkorlik Uchun Ochiqman
                 </div>
-                <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black leading-tight tracking-tight">
-                    Murakkab Tizimlar va <span class="gradient-text">Backend Ilovalar</span> Yaratuvchisi
+
+                <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold leading-tight tracking-tight text-white">
+                    Yuqori Yuklamali <span class="gradient-text">Backend System</span> va API Arxitektori
                 </h1>
-                <p class="text-slate-400 mt-6 text-lg sm:text-xl leading-relaxed max-w-2xl">
-                    Python va Django bo'yicha mutaxassis. Yuqori yuklamali (High-Load) tizimlar, ma'lumotlar bazasi arxitekturasi va xavfsiz RESTful API interfeyslarini ishlab chiqaman.
+
+                <p class="text-slate-400 mt-6 text-lg sm:text-xl leading-relaxed max-w-2xl font-light">
+                    Python va Django ekotizimida murakkab va havfsiz biznes logikalarni quraman. Ma'lumotlar bazasi optimalligi hamda mikroservislar arxitekturasi bo'yicha mutaxassis.
                 </p>
-                <div class="mt-10 flex flex-wrap gap-4">
-                    <a href="#projects" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-xl shadow-brand-600/30 transition-all flex items-center gap-3">
-                        Portfolioni Ko'rish <i class="fa-solid fa-arrow-down text-sm"></i>
+
+                <div class="mt-10 flex flex-wrap gap-4 items-center">
+                    <a href="#projects" class="px-8 py-4 bg-gradient-to-r from-brand-600 via-purple-600 to-accent-cyan hover:opacity-90 text-white font-bold rounded-2xl shadow-xl shadow-brand-600/25 transition-all flex items-center gap-3 group">
+                        Portfolioni Ko'rish 
+                        <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
                     </a>
-                    <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="px-8 py-4 bg-cardBg hover:bg-slate-800 border border-borderBg text-white font-bold rounded-xl transition-all flex items-center gap-3">
+                    <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="px-8 py-4 glass-panel hover:bg-slate-800/80 border border-white/10 text-white font-bold rounded-2xl transition-all flex items-center gap-3">
                         <i class="fa-brands fa-github text-xl"></i> GitHub Profil
                     </a>
                 </div>
-                
-                <div class="mt-12 pt-8 border-t border-borderBg grid grid-cols-3 gap-6">
+
+                <!-- Live Metrics -->
+                <div class="mt-14 pt-8 border-t border-white/10 grid grid-cols-3 gap-6">
                     <div>
-                        <h4 class="text-3xl font-black text-white">10+</h4>
-                        <p class="text-slate-400 text-sm">Muvaffaqiyatli Loyiha</p>
+                        <h4 class="text-3xl sm:text-4xl font-extrabold text-white font-mono" id="counter1">15+</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Muvaffaqiyatli Loyihalar</p>
                     </div>
                     <div>
-                        <h4 class="text-3xl font-black text-white">99.9%</h4>
-                        <p class="text-slate-400 text-sm">Server Uptime</p>
+                        <h4 class="text-3xl sm:text-4xl font-extrabold text-white font-mono">99.9%</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Uptime Barqarorligi</p>
                     </div>
                     <div>
-                        <h4 class="text-3xl font-black text-white">100%</h4>
-                        <p class="text-slate-400 text-sm">Xavfsizlik Standardi</p>
+                        <h4 class="text-3xl sm:text-4xl font-extrabold text-white font-mono">&lt;100ms</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">O'rtacha API Latency</p>
                     </div>
                 </div>
             </div>
 
-            <div class="lg:col-span-5 flex justify-center" data-aos="fade-left">
-                <div class="relative w-full max-w-md">
-                    <div class="gradient-border rounded-3xl p-6 shadow-2xl relative z-10">
-                        <div class="flex items-center justify-between mb-4 border-b border-borderBg pb-3">
+            <!-- Terminal Visualizer -->
+            <div class="lg:col-span-5 flex justify-center animate-float" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-full max-w-lg">
+                    <div class="gradient-border-glow glass-panel rounded-3xl p-6 shadow-2xl relative z-10 font-mono">
+                        <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
                             <div class="flex gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
                             </div>
-                            <span class="text-xs text-slate-500 font-mono">server.py — Django Engine</span>
+                            <span class="text-xs text-slate-400">core_engine.py</span>
                         </div>
-                        <pre class="text-xs sm:text-sm font-mono text-indigo-300 overflow-x-auto"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">BackendDeveloper</span>:
+                        <pre class="text-xs sm:text-sm text-slate-300 leading-relaxed overflow-x-auto"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">BackendArchitect</span>:
     <span class="text-purple-400">def</span> <span class="text-blue-400">__init__</span>(self):
-        self.name = <span class="text-green-300">"Abdulaziz"</span>
-        self.stack = [<span class="text-green-300">"Python"</span>, <span class="text-green-300">"Django"</span>, <span class="text-green-300">"SQL"</span>]
-        self.architecture = <span class="text-green-300">"Microservices"</span>
+        self.developer = <span class="text-emerald-400">"Abdulaziz"</span>
+        self.stack = [<span class="text-emerald-400">"Python"</span>, <span class="text-emerald-400">"Django"</span>, <span class="text-emerald-400">"SQL"</span>]
+        self.status = <span class="text-emerald-400">"Ready for Production"</span>
 
-    <span class="text-purple-400">def</span> <span class="text-blue-400">build_solution</span>(self, goal):
+    <span class="text-purple-400">def</span> <span class="text-blue-400">deploy_system</span>(self, scale):
         <span class="text-purple-400">return</span> {
-            <span class="text-green-300">"status"</span>: <span class="text-green-300">"Deploy Ready"</span>,
-            <span class="text-green-300">"speed"</span>: <span class="text-green-300">"High Performance"</span>
-        }</code></pre>
+            <span class="text-emerald-400">"database"</span>: <span class="text-emerald-400">"Optimized"</span>,
+            <span class="text-emerald-400">"security"</span>: <span class="text-emerald-400">"Enterprise Grade"</span>,
+            <span class="text-emerald-400">"performance"</span>: <span class="text-emerald-400">f"{scale}x Speed Boost"</span>
+        }
+
+<span class="text-slate-500"># System initialized successfully</span>
+app = BackendArchitect()
+print(app.deploy_system(10))</code></pre>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-24 bg-slate-900/40 border-y border-borderBg">
+    <section id="about" class="py-28 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-brand-500 font-semibold tracking-wider text-sm uppercase mb-2">Muhandislik Yondashuvi</h2>
-                <p class="text-3xl sm:text-4xl font-bold">Har bir kod qatorida aniqlik va xavfsizlik</p>
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Muhandislik Tamoyillari</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Xavfsiz, Ishonchli va Tezkor Backend</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-cardBg p-8 rounded-2xl border border-borderBg hover:border-brand-500/50 transition-all" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 text-2xl mb-6">
-                        <i class="fa-solid fa-server"></i>
+                <div class="glass-panel glass-panel-hover p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-500/10 border border-brand-500/20 rounded-2xl flex items-center justify-center text-brand-400 text-2xl mb-6">
+                        <i class="fa-solid fa-cubes"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Backend Arxitektura</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Django framework'i yordamida tezkor, xavfsiz va kengaytiriladigan ma'lumotlar bazasi hamda API tuzilmalarini barpo etaman.
+                    <h3 class="text-xl font-bold text-white mb-3">Backend Arxitektura</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">
+                        Django va REST Framework imkoniyatlaridan foydalanib, to'liq modulli, oson kengaytiriladigan va yuqori yuklamaga chidamli backend infratuzilmasini loyihalashtiraman.
                     </p>
                 </div>
 
-                <div class="bg-cardBg p-8 rounded-2xl border border-borderBg hover:border-brand-500/50 transition-all" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 text-2xl mb-6">
+                <div class="glass-panel glass-panel-hover p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center text-purple-400 text-2xl mb-6">
                         <i class="fa-solid fa-database"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Database Optimizatsiyasi</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Relatsion bazalar (PostgreSQL, SQLite) bilan samarali ishlash, mantiqiy so'rovlarni optimallashtirish va tezkor javoblar.
+                    <h3 class="text-xl font-bold text-white mb-3">Database Optimizatsiyasi</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">
+                        PostgreSQL va SQLite ma'lumotlar bazalarida murakkab SQL so'rovlarini optimallashtirish, indeksatsiya qilish hamda tezkor javob (Query execution) ta'minlash.
                     </p>
                 </div>
 
-                <div class="bg-cardBg p-8 rounded-2xl border border-borderBg hover:border-brand-500/50 transition-all" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center text-green-400 text-2xl mb-6">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                <div class="glass-panel glass-panel-hover p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-accent-cyan/10 border border-accent-cyan/20 rounded-2xl flex items-center justify-center text-accent-cyan text-2xl mb-6">
+                        <i class="fa-solid fa-rocket"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">CI/CD & Deployment</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Loyihalarni bulutli platformalarga (Render, Netlify, DigitalOcean) avtomatlashtirilgan tarzda joylashtirish va boshqarish.
+                    <h3 class="text-xl font-bold text-white mb-3">DevOps & Cloud Deploy</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">
+                        Loyihalarni bulutli serverlarga (Render, Netlify, DigitalOcean) avtomatlashtirilgan CI/CD quvurlari va xavfsizlik standartlari asosida uzluksiz joylashtirish.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="py-24">
+    <!-- SKILLS & STACK SECTION -->
+    <section id="skills" class="py-28 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-brand-500 font-semibold tracking-wider text-sm uppercase mb-2">Stack & Vositalar</h2>
-                <p class="text-3xl sm:text-4xl font-bold">Men qo'llaydigan zamonaviy texnologiyalar</p>
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Texnologik Stack</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Men Ishlatadigan Zamonaviy Qurollar</p>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6" data-aos="fade-up">
-                <div class="bg-cardBg p-6 rounded-2xl border border-borderBg text-center hover:scale-105 hover:border-brand-500 transition-all">
-                    <i class="fa-brands fa-python text-5xl text-yellow-400 mb-4"></i>
-                    <h4 class="font-bold">Python</h4>
-                    <span class="text-xs text-slate-500">Core & Advanced</span>
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
+                    <i class="fa-brands fa-python text-5xl text-yellow-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-white">Python</h4>
+                    <span class="text-xs text-slate-400">Core / Advanced</span>
                 </div>
-                <div class="bg-cardBg p-6 rounded-2xl border border-borderBg text-center hover:scale-105 hover:border-brand-500 transition-all">
-                    <i class="fa-solid fa-layer-group text-5xl text-green-500 mb-4"></i>
-                    <h4 class="font-bold">Django</h4>
-                    <span class="text-xs text-slate-500">ORM / Admin</span>
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
+                    <i class="fa-solid fa-layer-group text-5xl text-emerald-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-white">Django</h4>
+                    <span class="text-xs text-slate-400">ORM / REST API</span>
                 </div>
-                <div class="bg-cardBg p-6 rounded-2xl border border-borderBg text-center hover:scale-105 hover:border-brand-500 transition-all">
-                    <i class="fa-solid fa-database text-5xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold">SQL / Database</h4>
-                    <span class="text-xs text-slate-500">Queries & Schema</span>
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
+                    <i class="fa-solid fa-database text-5xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-white">SQL Database</h4>
+                    <span class="text-xs text-slate-400">PostgreSQL / SQLite</span>
                 </div>
-                <div class="bg-cardBg p-6 rounded-2xl border border-borderBg text-center hover:scale-105 hover:border-brand-500 transition-all">
-                    <i class="fa-brands fa-git-alt text-5xl text-orange-500 mb-4"></i>
-                    <h4 class="font-bold">Git & GitHub</h4>
-                    <span class="text-xs text-slate-500">Version Control</span>
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
+                    <i class="fa-brands fa-git-alt text-5xl text-orange-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-white">Git & GitHub</h4>
+                    <span class="text-xs text-slate-400">Version Control</span>
                 </div>
-                <div class="bg-cardBg p-6 rounded-2xl border border-borderBg text-center hover:scale-105 hover:border-brand-500 transition-all">
-                    <i class="fa-brands fa-html5 text-5xl text-orange-600 mb-4"></i>
-                    <h4 class="font-bold">HTML5 / CSS3</h4>
-                    <span class="text-xs text-slate-500">Tailwind CSS</span>
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
+                    <i class="fa-brands fa-html5 text-5xl text-orange-600 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-white">HTML5 / CSS3</h4>
+                    <span class="text-xs text-slate-400">Tailwind CSS</span>
                 </div>
-                <div class="bg-cardBg p-6 rounded-2xl border border-borderBg text-center hover:scale-105 hover:border-brand-500 transition-all">
-                    <i class="fa-brands fa-js text-5xl text-yellow-300 mb-4"></i>
-                    <h4 class="font-bold">JavaScript</h4>
-                    <span class="text-xs text-slate-500">DOM & ES6+</span>
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
+                    <i class="fa-brands fa-js text-5xl text-yellow-300 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-white">JavaScript</h4>
+                    <span class="text-xs text-slate-400">DOM & ES6+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE & TIMELINE SECTION -->
+    <section id="experience" class="py-28 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Tajriba va Rivojlanish</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Mening Kasbiy Yo'lim</p>
+            </div>
+
+            <div class="relative border-l-2 border-brand-500/30 ml-4 md:ml-32 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8" data-aos="fade-up">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 bg-brand-500 rounded-full ring-4 ring-darkBg"></span>
+                    <span class="hidden md:block absolute -left-32 top-1 text-xs text-slate-400 font-mono">2023 - Hozirgi vaqt</span>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <span class="md:hidden text-xs text-brand-400 font-mono block mb-2">2023 - Hozirgi vaqt</span>
+                        <h3 class="text-xl font-bold text-white">Lead Backend Developer</h3>
+                        <p class="text-sm text-brand-400 mb-3">Freelance & Independent Projects</p>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">
+                            Murakkab web ilovalar, kutubxona va ta'lim tizimlari uchun arxitektura va backend infratuzilmasini yaratish. SQL so'rovlarini optimallashtirish va bulutli platformalarga deploy qilish.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 bg-purple-500 rounded-full ring-4 ring-darkBg"></span>
+                    <span class="hidden md:block absolute -left-32 top-1 text-xs text-slate-400 font-mono">2022 - 2023</span>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <span class="md:hidden text-xs text-purple-400 font-mono block mb-2">2022 - 2023</span>
+                        <h3 class="text-xl font-bold text-white">Python & Django Software Engineer</h3>
+                        <p class="text-sm text-purple-400 mb-3">Web Development Projects</p>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">
+                            RESTful API integratsiyalari, foydalanuvchilar autentifikatsiyasi va ma'lumotlar bazasi modellarini yaratish bilan shug'ullanganman.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="py-24 bg-slate-900/40 border-t border-borderBg">
+    <section id="projects" class="py-28 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-brand-500 font-semibold tracking-wider text-sm uppercase mb-2">Portfolio</h2>
-                <p class="text-3xl sm:text-4xl font-bold">Tanlangan Web & Backend Loyihalar</p>
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Portfolio</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Tanlangan Asosiy Loyihalar</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Project 1: Bookify -->
-                <div class="bg-cardBg rounded-3xl border border-borderBg overflow-hidden hover:border-brand-500/50 transition-all flex flex-col justify-between" data-aos="fade-up">
+                <div class="glass-panel glass-panel-hover rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
-                            <span class="px-3 py-1 bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-semibold rounded-full flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Live On Render
+                            <span class="px-3.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold rounded-full flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live On Render
                             </span>
-                            <span class="text-xs text-slate-500 font-mono">Full-Stack Project</span>
+                            <span class="text-xs text-slate-400 font-mono">Full-Stack System</span>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Bookify — Onlayn Kutubxona Tizimi</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Kitoblarni boshqarish, dinamik qidiruv va turli kategoriyalar bo'yicha filtrlash imkonini beruvchi raqamlashtirilgan platforma. Maxsus administrator paneli bilan ta'minlangan.
+                        <h3 class="text-2xl font-bold mb-3 text-white">Bookify — Raqamli Kutubxona Platformasi</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+                            Kitoblarni boshqarish, dinamic qidiruv va kategoriyalar bo'yicha filterlash imkonini beruvchi mukammal raqamlashgan platforma. Ma'lumotlarni saqlash va ma'muriy boshqaruv paneli bilan ta'minlangan.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-medium rounded-lg">Python</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-medium rounded-lg">Django</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-medium rounded-lg">SQLite</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-medium rounded-lg">Render Deploy</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Python</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Django</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">SQLite</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Render Cloud</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-0 flex gap-4">
-                        <a href="https://bookify-pstb.onrender.com" target="_blank" class="flex-1 py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-center font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                    <div class="px-8 pb-8 pt-0">
+                        <a href="https://bookify-pstb.onrender.com" target="_blank" class="w-full py-3.5 bg-gradient-to-r from-brand-600 to-purple-600 hover:from-brand-500 hover:to-purple-500 text-white rounded-xl text-center font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-600/20">
                             Demo Ochish <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Project 2: Course Catalog System -->
-                <div class="bg-cardBg rounded-3xl border border-borderBg overflow-hidden hover:border-brand-500/50 transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                <!-- Project 2: EduCourse -->
+                <div class="glass-panel glass-panel-hover rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
-                            <span class="px-3 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-semibold rounded-full">
+                            <span class="px-3.5 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-semibold rounded-full">
                                 Web Application
                             </span>
-                            <span class="text-xs text-slate-500 font-mono">Backend System</span>
+                            <span class="text-xs text-slate-400 font-mono">Backend System</span>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">EduCourse — Ta'lim Katalogi</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Ta'lim kurslarini tartiblash va interaktiv ro'yxatga olish uchun mo'ljallangan tizim. Modellar va ma'lumotlar bazasi so'rovlari yuqori optimallikda tuzilgan.
+                        <h3 class="text-2xl font-bold mb-3 text-white">EduCourse — Ta'lim Katalogi Tizimi</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+                            Ta'lim kurslarini tartiblash va interaktiv ro'yxatga olish uchun mo'ljallangan backend tizim. Modellar va ma'lumotlar bazasi so'rovlari yuqori optimallikda tuzilgan.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-medium rounded-lg">Django ORM</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-medium rounded-lg">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-medium rounded-lg">REST API</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Django ORM</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">REST API</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-0 flex gap-4">
-                        <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="flex-1 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-center font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                    <div class="px-8 pb-8 pt-0">
+                        <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="w-full py-3.5 glass-panel hover:bg-slate-800 text-white rounded-xl text-center font-semibold text-sm transition-all flex items-center justify-center gap-2 border border-white/10">
                             <i class="fa-brands fa-github text-base"></i> Kodini Ko'rish
                         </a>
                     </div>
@@ -290,81 +434,101 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24">
+    <section id="contact" class="py-28 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
                 <div class="lg:col-span-5" data-aos="fade-right">
-                    <h2 class="text-brand-500 font-semibold tracking-wider text-sm uppercase mb-2">Aloqa</h2>
-                    <p class="text-4xl font-black mb-6">Loyihangizni birga amalga oshiramiz!</p>
-                    <p class="text-slate-400 leading-relaxed mb-8">
-                        Backend hamkorlik, maslahat yoki vakansiyalar bo'yicha bog'lanishingiz mumkin. Tez orada javob beraman.
+                    <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Bog'lanish</h2>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-white mb-6">Loyihangizni Birgalikda Yaratamiz!</p>
+                    <p class="text-slate-400 leading-relaxed mb-8 font-light">
+                        Backend hamkorlik, arxitektura maslahatlari va loyihalar bo'yicha bog'lanishingiz mumkin.
                     </p>
 
                     <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-cardBg border border-borderBg rounded-xl flex items-center justify-center text-brand-500">
-                                <i class="fa-solid fa-envelope text-xl"></i>
+                        <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 glass-panel rounded-2xl flex items-center justify-center text-brand-400 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div>
-                                <span class="text-xs text-slate-500 block">Email</span>
-                                <a href="mailto:abdulaziz@example.com" class="font-semibold hover:text-brand-500 transition">abdulaziz@example.com</a>
+                                <span class="text-xs text-slate-500 block">Email Manzil</span>
+                                <a href="mailto:abdulaziz@example.com" class="font-semibold text-white hover:text-brand-400 transition">abdulaziz@example.com</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-cardBg border border-borderBg rounded-xl flex items-center justify-center text-brand-500">
-                                <i class="fa-brands fa-telegram text-xl"></i>
+                        <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 glass-panel rounded-2xl flex items-center justify-center text-accent-cyan text-xl">
+                                <i class="fa-brands fa-telegram"></i>
                             </div>
                             <div>
                                 <span class="text-xs text-slate-500 block">Telegram</span>
-                                <a href="https://t.me" target="_blank" class="font-semibold hover:text-brand-500 transition">@abdulaziz_dev</a>
+                                <a href="https://t.me" target="_blank" class="font-semibold text-white hover:text-accent-cyan transition">@abdulaziz_dev</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7" data-aos="fade-left">
-                    <form class="bg-cardBg p-8 rounded-3xl border border-borderBg space-y-6" onsubmit="event.preventDefault(); alert('Xabaringiz yuborildi!');">
+                    <form id="contact-form" class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6">
                         <div class="grid sm:grid-cols-2 gap-6">
                             <div>
-                                <label class="text-sm font-semibold text-slate-300 mb-2 block">Ismingiz</label>
-                                <input type="text" required placeholder="Ali Valiyev" class="w-full bg-slate-900 border border-borderBg rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition">
+                                <label class="text-xs font-semibold text-slate-300 mb-2 block uppercase tracking-wider">Ismingiz</label>
+                                <input type="text" id="name" required placeholder="Ali Valiyev" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition">
                             </div>
                             <div>
-                                <label class="text-sm font-semibold text-slate-300 mb-2 block">Email / Telegram</label>
-                                <input type="text" required placeholder="@username yoki email" class="w-full bg-slate-900 border border-borderBg rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition">
+                                <label class="text-xs font-semibold text-slate-300 mb-2 block uppercase tracking-wider">Email / Telegram</label>
+                                <input type="text" id="contact-info" required placeholder="@username yoki email" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition">
                             </div>
                         </div>
                         <div>
-                            <label class="text-sm font-semibold text-slate-300 mb-2 block">Xabar</label>
-                            <textarea rows="4" required placeholder="Loyiha haqida batafsil..." class="w-full bg-slate-900 border border-borderBg rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition"></textarea>
+                            <label class="text-xs font-semibold text-slate-300 mb-2 block uppercase tracking-wider">Xabar</label>
+                            <textarea id="message" rows="4" required placeholder="Loyiha haqida batafsil ma'lumot..." class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition"></textarea>
                         </div>
-                        <button type="submit" class="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-lg shadow-brand-600/30 transition-all">
-                            Xabarni Yuborish
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-600 via-purple-600 to-accent-cyan hover:opacity-95 text-white font-bold rounded-xl shadow-xl shadow-brand-600/25 transition-all flex items-center justify-center gap-2">
+                            <span>Xabarni Yuborish</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
                         </button>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-8 border-t border-borderBg text-center text-slate-500 text-sm">
+    <footer class="py-8 border-t border-white/5 text-center text-slate-500 text-sm">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p>© 2026 Abdulaziz. Barcha huquqlar himoyalangan.</p>
-            <div class="flex gap-6 text-xl">
-                <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-github"></i></a>
-                <a href="https://t.me" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-telegram"></i></a>
+            <div class="flex gap-6 text-lg text-slate-400">
+                <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="hover:text-brand-400 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://t.me" target="_blank" class="hover:text-accent-cyan transition"><i class="fa-brands fa-telegram"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- AOS Animation JS -->
+    <!-- JS Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // AOS Animation Init
         AOS.init({
             duration: 800,
-            once: true
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Submit Handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Rahmat! Xabaringiz muvaffaqiyatli yuborildi.');
+            this.reset();
         });
     </script>
 </body>
