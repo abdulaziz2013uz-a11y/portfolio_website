@@ -1,3684 +1,2676 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Abdulaziz — Full Stack Developer</title>
-
-<meta name="description"
-content="Abdulaziz — Developer portfolio. Modern websites, backend systems, APIs, automation and digital products.">
-
-<meta name="keywords"
-content="Abdulaziz, developer, full stack developer, Python, Django, JavaScript, GitHub, web developer">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:"Inter",sans-serif;
-    background:#050507;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button,
-input,
-textarea{
-    font-family:inherit;
-}
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root{
-    --bg:#050507;
-    --bg2:#09090d;
-    --card:rgba(255,255,255,.045);
-    --border:rgba(255,255,255,.09);
-    --text:#fff;
-    --muted:#9696a7;
-
-    --purple:#8b5cf6;
-    --blue:#06b6d4;
-    --pink:#ec4899;
-
-    --gradient:
-        linear-gradient(
-            120deg,
-            #8b5cf6,
-            #06b6d4,
-            #ec4899
-        );
-}
-
-/* =========================================================
-   CURSOR GLOW
-========================================================= */
-
-.cursor-glow{
-    position:fixed;
-    width:450px;
-    height:450px;
-    border-radius:50%;
-    pointer-events:none;
-    z-index:-1;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(139,92,246,.13),
-            transparent 65%
-        );
-
-    transform:translate(-50%,-50%);
-}
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
-
-.background{
-    position:fixed;
-    inset:0;
-    z-index:-3;
-    overflow:hidden;
-}
-
-.grid{
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.025) 1px,
-            transparent 1px
-        );
-
-    background-size:60px 60px;
-
-    mask-image:
-        radial-gradient(
-            ellipse at center,
-            black 20%,
-            transparent 80%
-        );
-}
-
-.orb{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.17;
-}
-
-.orb1{
-    width:500px;
-    height:500px;
-    background:#7c3aed;
-    left:-200px;
-    top:-150px;
-}
-
-.orb2{
-    width:450px;
-    height:450px;
-    background:#0891b2;
-    right:-180px;
-    top:30%;
-}
-
-.orb3{
-    width:400px;
-    height:400px;
-    background:#db2777;
-    left:35%;
-    bottom:-200px;
-}
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:999;
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-    background:rgba(5,5,7,.65);
-
-    backdrop-filter:blur(20px);
-}
-
-.nav{
-    max-width:1200px;
-    height:78px;
-    margin:auto;
-    padding:0 25px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-family:"Space Grotesk";
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:-1px;
-}
-
-.logo span{
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:32px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:#aaaaba;
-    font-size:13px;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:white;
-}
-
-.nav-contact{
-    padding:11px 18px;
-    border-radius:10px;
-
-    background:var(--gradient);
-
-    color:white !important;
-    font-weight:600;
-}
-
-.menu{
-    display:none;
-    background:none;
-    border:none;
-    color:white;
-    font-size:25px;
-    cursor:pointer;
-}
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 25px;
-}
-
-section{
-    padding:120px 0;
-}
-
-.section-head{
-    margin-bottom:55px;
-}
-
-.section-number{
-    color:#9b7cff;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-}
-
-.section-head h2{
-    font-family:"Space Grotesk";
-    font-size:clamp(38px,5vw,65px);
-    line-height:1;
-    letter-spacing:-3px;
-}
-
-.section-head p{
-    color:var(--muted);
-    max-width:650px;
-    margin-top:18px;
-    line-height:1.8;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-
-    padding-top:130px;
-}
-
-.hero-content{
-    max-width:900px;
-}
-
-.available{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-
-    padding:8px 13px;
-
-    border:1px solid var(--border);
-    border-radius:50px;
-
-    background:rgba(255,255,255,.035);
-
-    color:#aaaabb;
-
-    font-size:12px;
-
-    margin-bottom:28px;
-
-    animation:up .8s ease;
-}
-
-.green-dot{
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:#22c55e;
-
-    box-shadow:
-        0 0 12px #22c55e;
-}
-
-.hero h1{
-    font-family:"Space Grotesk";
-
-    font-size:
-        clamp(
-            58px,
-            9vw,
-            115px
-        );
-
-    line-height:.91;
-
-    letter-spacing:-7px;
-
-    animation:up 1s ease;
-}
-
-.gradient{
-    background:var(--gradient);
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-
-    background-size:200% auto;
-
-    animation:gradientMove 5s linear infinite;
-}
-
-.hero-description{
-    max-width:690px;
-
-    color:var(--muted);
-
-    font-size:18px;
-    line-height:1.8;
-
-    margin-top:30px;
-
-    animation:up 1.2s ease;
-}
-
-.typing{
-    color:#ddd;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:14px;
-
-    margin-top:34px;
-
-    animation:up 1.4s ease;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-
-    padding:14px 21px;
-
-    border-radius:11px;
-
-    font-size:13px;
-    font-weight:700;
-
-    border:1px solid var(--border);
-
-    transition:.3s;
-
-    cursor:pointer;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-}
-
-.btn-primary{
-    border:none;
-    background:var(--gradient);
-    background-size:200%;
-}
-
-.btn-secondary{
-    background:rgba(255,255,255,.04);
-}
-
-.scroll{
-    position:absolute;
-
-    bottom:30px;
-    left:25px;
-
-    color:#555565;
-
-    font-size:11px;
-    letter-spacing:2px;
-
-    writing-mode:vertical-rl;
-}
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-}
-
-.stat{
-    padding:32px 25px;
-
-    border-right:1px solid var(--border);
-}
-
-.stat:last-child{
-    border-right:none;
-}
-
-.stat-number{
-    font-family:"Space Grotesk";
-
-    font-size:38px;
-    font-weight:700;
-
-    margin-bottom:5px;
-}
-
-.stat-label{
-    color:#777787;
-    font-size:12px;
-}
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:25px;
-}
-
-.glass{
-    border:1px solid var(--border);
-
-    background:var(--card);
-
-    border-radius:22px;
-
-    padding:34px;
-
-    backdrop-filter:blur(20px);
-
-    transition:.35s;
-}
-
-.glass:hover{
-    border-color:rgba(139,92,246,.35);
-    transform:translateY(-5px);
-}
-
-.about-text{
-    color:#a4a4b3;
-    font-size:16px;
-    line-height:2;
-}
-
-.about-text strong{
-    color:white;
-}
-
-.about-list{
-    display:grid;
-    gap:19px;
-}
-
-.about-row{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-
-    padding-bottom:17px;
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.about-row:last-child{
-    border-bottom:0;
-    padding-bottom:0;
-}
-
-.about-row span:first-child{
-    color:#686878;
-}
-
-.about-row span:last-child{
-    color:#eee;
-    text-align:right;
-}
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:15px;
-}
-
-.skill{
-    padding:27px;
-
-    border:1px solid var(--border);
-    border-radius:18px;
-
-    background:var(--card);
-
-    transition:.35s;
-}
-
-.skill:hover{
-    transform:translateY(-7px) scale(1.01);
-
-    border-color:
-        rgba(139,92,246,.4);
-}
-
-.skill-icon{
-    width:48px;
-    height:48px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:13px;
-
-    background:rgba(139,92,246,.12);
-
-    font-size:22px;
-
-    margin-bottom:20px;
-}
-
-.skill h3{
-    font-size:16px;
-    margin-bottom:9px;
-}
-
-.skill p{
-    color:#858595;
-    font-size:12px;
-    line-height:1.7;
-}
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.project{
-    position:relative;
-    overflow:hidden;
-
-    border:1px solid var(--border);
-    border-radius:23px;
-
-    background:var(--card);
-
-    transition:.4s;
-}
-
-.project:hover{
-    transform:translateY(-9px);
-
-    border-color:
-        rgba(139,92,246,.45);
-}
-
-.project-visual{
-    height:270px;
-
-    position:relative;
-    overflow:hidden;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            rgba(139,92,246,.4),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(6,182,212,.35),
-            transparent 30%
-        ),
-        #0d0d14;
-}
-
-.project-visual::before{
-    content:"";
-
-    position:absolute;
-    width:180px;
-    height:180px;
-
-    border-radius:40px;
-
-    border:1px solid rgba(255,255,255,.1);
-
-    transform:rotate(45deg);
-
-    animation:rotate 15s linear infinite;
-}
-
-.project-icon{
-    position:relative;
-    z-index:2;
-
-    font-size:65px;
-
-    filter:
-        drop-shadow(
-            0 15px 25px
-            rgba(0,0,0,.5)
-        );
-}
-
-.project-body{
-    padding:28px;
-}
-
-.project-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:20px;
-}
-
-.project h3{
-    font-family:"Space Grotesk";
-    font-size:22px;
-}
-
-.project-year{
-    color:#666677;
-    font-size:11px;
-}
-
-.project p{
-    color:#858595;
-    font-size:13px;
-    line-height:1.8;
-
-    margin:13px 0 19px;
-}
-
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-
-    margin-bottom:23px;
-}
-
-.tag{
-    padding:6px 9px;
-
-    border-radius:6px;
-
-    background:rgba(255,255,255,.05);
-
-    color:#aaaaba;
-
-    font-size:10px;
-}
-
-.project-actions{
-    display:flex;
-    gap:9px;
-}
-
-.project-actions a{
-    padding:9px 13px;
-
-    border:1px solid var(--border);
-    border-radius:8px;
-
-    font-size:11px;
-
-    transition:.3s;
-}
-
-.project-actions a:hover{
-    background:white;
-    color:black;
-}
-
-/* =========================================================
-   GITHUB
-========================================================= */
-
-.github-box{
-    position:relative;
-    overflow:hidden;
-
-    padding:55px;
-
-    border-radius:25px;
-
-    border:1px solid var(--border);
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(139,92,246,.17),
-            transparent 50%
-        ),
-        var(--card);
-
-    text-align:center;
-}
-
-.github-box h2{
-    font-family:"Space Grotesk";
-    font-size:43px;
-    letter-spacing:-2px;
-}
-
-.github-box p{
-    color:#858595;
-    margin:13px auto 30px;
-    max-width:600px;
-}
-
-.github-stats{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:30px;
-}
-
-.github-stat{
-    min-width:140px;
-
-    padding:18px;
-
-    border:1px solid var(--border);
-    border-radius:13px;
-
-    background:rgba(255,255,255,.03);
-}
-
-.github-stat strong{
-    display:block;
-
-    font-family:"Space Grotesk";
-    font-size:28px;
-
-    margin-bottom:4px;
-}
-
-.github-stat span{
-    color:#666676;
-    font-size:10px;
-}
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-.timeline{
-    max-width:850px;
-
-    position:relative;
-}
-
-.timeline::before{
-    content:"";
-
-    position:absolute;
-
-    left:6px;
-    top:5px;
-    bottom:5px;
-
-    width:1px;
-
-    background:
-        linear-gradient(
-            #8b5cf6,
-            transparent
-        );
-}
-
-.timeline-item{
-    position:relative;
-
-    padding-left:42px;
-
-    margin-bottom:48px;
-}
-
-.timeline-dot{
-    position:absolute;
-
-    left:0;
-    top:5px;
-
-    width:13px;
-    height:13px;
-
-    border-radius:50%;
-
-    background:#8b5cf6;
-
-    box-shadow:
-        0 0 20px #8b5cf6;
-}
-
-.timeline-date{
-    color:#9b7cff;
-
-    font-size:10px;
-    letter-spacing:2px;
-
-    margin-bottom:9px;
-}
-
-.timeline-item h3{
-    font-family:"Space Grotesk";
-    font-size:21px;
-
-    margin-bottom:9px;
-}
-
-.timeline-item p{
-    color:#858595;
-    font-size:13px;
-    line-height:1.8;
-}
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-grid{
-    display:grid;
-
-    grid-template-columns:
-        .8fr 1.2fr;
-
-    gap:25px;
-}
-
-.contact-left h3{
-    font-family:"Space Grotesk";
-    font-size:38px;
-    letter-spacing:-2px;
-}
-
-.contact-left p{
-    color:#858595;
-    line-height:1.8;
-    margin:15px 0 25px;
-}
-
-.email{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:15px;
-
-    padding:14px;
-
-    border:1px solid var(--border);
-    border-radius:11px;
-
-    margin-bottom:15px;
-
-    background:rgba(255,255,255,.025);
-}
-
-.email span{
-    color:#bbb;
-    font-size:12px;
-
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-.copy{
-    flex-shrink:0;
-
-    border:0;
-    border-radius:7px;
-
-    padding:8px 12px;
-
-    color:white;
-    background:var(--gradient);
-
-    cursor:pointer;
-
-    font-size:11px;
-}
-
-.form{
-    display:grid;
-    gap:13px;
-}
-
-.form input,
-.form textarea{
-    width:100%;
-
-    outline:none;
-
-    color:white;
-
-    background:rgba(255,255,255,.035);
-
-    border:1px solid var(--border);
-
-    border-radius:11px;
-
-    padding:14px;
-
-    font-size:13px;
-}
-
-.form input:focus,
-.form textarea:focus{
-    border-color:#8b5cf6;
-}
-
-.form textarea{
-    min-height:170px;
-    resize:vertical;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    margin-top:80px;
-
-    border-top:1px solid var(--border);
-
-    padding:35px 25px;
-
-    display:flex;
-    justify-content:space-between;
-
-    max-width:1200px;
-
-    margin-left:auto;
-    margin-right:auto;
-
-    color:#555565;
-
-    font-size:11px;
-}
-
-.footer-links{
-    display:flex;
-    gap:18px;
-}
-
-.footer-links a:hover{
-    color:white;
-}
-
-/* =========================================================
-   BACK TOP
-========================================================= */
-
-.back-top{
-    position:fixed;
-
-    right:25px;
-    bottom:25px;
-
-    width:43px;
-    height:43px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:12px;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid var(--border);
-
-    color:white;
-
-    cursor:pointer;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:.3s;
-
-    z-index:500;
-}
-
-.back-top.show{
-    opacity:1;
-    visibility:visible;
-}
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-.toast{
-    position:fixed;
-
-    left:50%;
-    bottom:25px;
-
-    transform:
-        translate(-50%,100px);
-
-    padding:12px 20px;
-
-    border-radius:10px;
-
-    border:1px solid var(--border);
-
-    background:#15151d;
-
-    color:white;
-
-    font-size:12px;
-
-    opacity:0;
-
-    transition:.3s;
-
-    z-index:9999;
-}
-
-.toast.show{
-    transform:translate(-50%,0);
-    opacity:1;
-}
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-.reveal{
-    opacity:0;
-    transform:translateY(45px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
-@keyframes up{
-
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-@keyframes gradientMove{
-
-    0%{
-        background-position:0% center;
-    }
-
-    50%{
-        background-position:100% center;
-    }
-
-    100%{
-        background-position:0% center;
-    }
-
-}
-
-@keyframes rotate{
-
-    from{
-        transform:rotate(45deg);
-    }
-
-    to{
-        transform:rotate(405deg);
-    }
-
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:900px){
-
-    .skills{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .stat:nth-child(2){
-        border-right:none;
-    }
-
-}
-
-@media(max-width:700px){
-
-    .nav-links{
-        position:absolute;
-
-        top:78px;
-        left:0;
-        right:0;
-
-        display:none;
-
-        flex-direction:column;
-
-        padding:25px;
-
-        background:rgba(5,5,7,.97);
-
-        border-bottom:1px solid var(--border);
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    .hero{
-        min-height:90vh;
-    }
-
-    .hero h1{
-        letter-spacing:-4px;
-    }
-
-    .hero-description{
-        font-size:15px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .btn{
-        width:100%;
-    }
-
-    .projects{
-        grid-template-columns:1fr;
-    }
-
-    .github-box{
-        padding:35px 20px;
-    }
-
-    footer{
-        flex-direction:column;
-        gap:18px;
-    }
-
-}
-
-@media(max-width:500px){
-
-    section{
-        padding:90px 0;
-    }
-
-    .container{
-        padding:0 18px;
-    }
-
-    .skills{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .stat{
-        border-right:none;
-        border-bottom:1px solid var(--border);
-    }
-
-    .stat:last-child{
-        border-bottom:none;
-    }
-
-    .project-visual{
-        height:220px;
-    }
-
-    .section-head h2{
-        letter-spacing:-2px;
-    }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abdulaziz — Full Stack Developer</title>
+
+    <meta
+        name="description"
+        content="Abdulaziz — Full Stack Developer portfolio. Websites, APIs, backend systems, automation and digital products."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050507;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+        :root {
+            --bg: #050507;
+            --card: rgba(255, 255, 255, 0.045);
+            --border: rgba(255, 255, 255, 0.09);
+            --muted: #9696a7;
+            --purple: #8b5cf6;
+            --blue: #06b6d4;
+            --pink: #ec4899;
+            --gradient: linear-gradient(
+                120deg,
+                #8b5cf6,
+                #06b6d4,
+                #ec4899
+            );
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+        }
+
+        .grid {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 60px 60px;
+
+            mask-image: radial-gradient(
+                ellipse at center,
+                black 20%,
+                transparent 80%
+            );
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: .18;
+        }
+
+        .orb1 {
+            width: 500px;
+            height: 500px;
+            background: #7c3aed;
+            left: -200px;
+            top: -150px;
+        }
+
+        .orb2 {
+            width: 450px;
+            height: 450px;
+            background: #0891b2;
+            right: -180px;
+            top: 30%;
+        }
+
+        .orb3 {
+            width: 400px;
+            height: 400px;
+            background: #db2777;
+            left: 35%;
+            bottom: -200px;
+        }
+
+        .cursor-glow {
+            position: fixed;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+
+            background: radial-gradient(
+                circle,
+                rgba(139,92,246,.13),
+                transparent 65%
+            );
+
+            transform: translate(-50%, -50%);
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+
+            border-bottom: 1px solid rgba(255,255,255,.06);
+
+            background: rgba(5,5,7,.68);
+            backdrop-filter: blur(20px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            height: 78px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Space Grotesk";
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aaaaba;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-contact {
+            padding: 11px 18px;
+            border-radius: 10px;
+            background: var(--gradient);
+            color: #fff !important;
+            font-weight: 700;
+        }
+
+        .menu {
+            display: none;
+            border: 0;
+            background: none;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-number {
+            color: #9b7cff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .section-head {
+            margin-bottom: 50px;
+        }
+
+        .section-head h2 {
+            font-family: "Space Grotesk";
+            font-size: clamp(40px, 5vw, 65px);
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            max-width: 680px;
+            margin-top: 18px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 130px;
+        }
+
+        .hero-content {
+            max-width: 920px;
+        }
+
+        .available {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 50px;
+
+            background: rgba(255,255,255,.035);
+            color: #aaaabb;
+
+            font-size: 12px;
+            margin-bottom: 28px;
+
+            animation: up .8s ease;
+        }
+
+        .green-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 12px #22c55e;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk";
+            font-size: clamp(58px, 9vw, 115px);
+            line-height: .91;
+            letter-spacing: -7px;
+        }
+
+        .gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+
+            animation: gradientMove 5s linear infinite;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-top: 30px;
+        }
+
+        .typing {
+            color: #ddd;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 34px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 14px 21px;
+
+            border-radius: 11px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            border: 1px solid var(--border);
+
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-primary {
+            border: 0;
+            background: var(--gradient);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.04);
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat {
+            padding: 32px 25px;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: 0;
+        }
+
+        .stat-number {
+            font-family: "Space Grotesk";
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #777787;
+            font-size: 12px;
+        }
+
+        /* =========================
+           GLASS
+        ========================= */
+
+        .glass {
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 22px;
+            padding: 34px;
+            backdrop-filter: blur(20px);
+            transition: .35s;
+        }
+
+        .glass:hover {
+            border-color: rgba(139,92,246,.35);
+            transform: translateY(-5px);
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 25px;
+        }
+
+        .about-text {
+            color: #a4a4b3;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .about-text strong {
+            color: white;
+        }
+
+        .about-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .about-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 17px;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+
+        .about-row:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .about-row span:first-child {
+            color: #686878;
+        }
+
+        .about-row span:last-child {
+            color: #eee;
+            text-align: right;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 27px;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            background: var(--card);
+
+            transition: .35s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+            border-color: rgba(139,92,246,.4);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+            background: rgba(139,92,246,.12);
+
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .skill h3 {
+            font-size: 16px;
+            margin-bottom: 9px;
+        }
+
+        .skill p {
+            color: #858595;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+            border-radius: 23px;
+
+            background: var(--card);
+
+            transition: .4s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139,92,246,.45);
+        }
+
+        .project-top {
+            height: 230px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(139,92,246,.3),
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(6,182,212,.2),
+                    transparent 40%
+                ),
+                #0b0b11;
+        }
+
+        .project-icon {
+            width: 95px;
+            height: 95px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+
+            font-size: 42px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.5);
+        }
+
+        .project-body {
+            padding: 28px;
+        }
+
+        .project-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .project-title h3 {
+            font-family: "Space Grotesk";
+            font-size: 25px;
+        }
+
+        .project-title span {
+            color: #777787;
+            font-size: 12px;
+        }
+
+        .project-description {
+            color: #888898;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-top: 13px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 18px;
+        }
+
+        .tag {
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.07);
+
+            color: #aaaaba;
+            font-size: 10px;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 10px 13px;
+
+            border-radius: 9px;
+
+            background: rgba(255,255,255,.05);
+            border: 1px solid var(--border);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .project-btn:hover {
+            background: rgba(255,255,255,.1);
+            transform: translateY(-2px);
+        }
+
+        .project-btn.primary {
+            background: var(--gradient);
+            border: 0;
+        }
+
+        /* =========================
+           GITHUB
+        ========================= */
+
+        .github-box {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .github-info h3 {
+            font-family: "Space Grotesk";
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .github-info p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .github-stats {
+            display: flex;
+            gap: 35px;
+        }
+
+        .github-stat {
+            text-align: center;
+        }
+
+        .github-stat strong {
+            display: block;
+            font-family: "Space Grotesk";
+            font-size: 28px;
+        }
+
+        .github-stat span {
+            color: #777787;
+            font-size: 11px;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+
+            width: 1px;
+
+            background: linear-gradient(
+                #8b5cf6,
+                transparent
+            );
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 4px;
+            top: 4px;
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+
+            background: #8b5cf6;
+
+            box-shadow: 0 0 20px #8b5cf6;
+        }
+
+        .timeline-date {
+            color: #8b5cf6;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 9px;
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #858595;
+            line-height: 1.7;
+            font-size: 13px;
+            max-width: 700px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 25px;
+        }
+
+        .contact-title {
+            font-family: "Space Grotesk";
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact-text {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .email-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+
+            margin-top: 25px;
+
+            padding: 14px;
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,.04);
+            border: 1px solid var(--border);
+        }
+
+        .email-box span {
+            color: #bbb;
+            font-size: 12px;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            border: 0;
+            padding: 9px 12px;
+            border-radius: 8px;
+
+            background: var(--gradient);
+            color: white;
+
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .form {
+            display: grid;
+            gap: 14px;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+
+            border: 1px solid var(--border);
+            outline: none;
+
+            background: rgba(255,255,255,.04);
+
+            color: white;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            font-size: 13px;
+
+            transition: .3s;
+        }
+
+        .form input:focus,
+        .form textarea:focus {
+            border-color: rgba(139,92,246,.7);
+        }
+
+        .form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-inner p {
+            color: #666676;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #777787;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* =========================
+           TOAST
+        ========================= */
+
+        .toast {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+
+            padding: 13px 18px;
+
+            border-radius: 11px;
+
+            background: #15151d;
+            border: 1px solid var(--border);
+
+            color: white;
+            font-size: 12px;
+
+            transform: translateY(100px);
+            opacity: 0;
+
+            transition: .3s;
+
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* =========================
+           BACK TOP
+        ========================= */
+
+        #backTop {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            border: 1px solid var(--border);
+
+            background: rgba(15,15,20,.85);
+            color: white;
+
+            cursor: pointer;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: .3s;
+
+            z-index: 1500;
+        }
+
+        #backTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================
+           REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: .8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes up {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+
+            100% {
+                background-position: 0% center;
+            }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 20px;
+                right: 20px;
+
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+
+                padding: 20px;
+
+                background: rgba(10,10,14,.96);
+
+                border: 1px solid var(--border);
+                border-radius: 16px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .github-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:650px) {
+
+            section {
+                padding: 90px 0;
+            }
+
+            .container {
+                padding: 0 18px;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+                letter-spacing: -4px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: 0;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .github-stats {
+                justify-content: space-between;
+                gap: 10px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .email-box {
+                align-items: stretch;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =======================================================
-     BACKGROUND
-======================================================= -->
+    <!-- BACKGROUND -->
 
-<div class="background">
-    <div class="grid"></div>
+    <div class="background">
+        <div class="grid"></div>
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
 
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-</div>
-
-<div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
 
-<!-- =======================================================
-     NAVBAR
-======================================================= -->
+    <!-- NAVBAR -->
 
-<header>
+    <header>
+        <nav class="nav">
 
-<nav class="nav">
+            <a href="#home" class="logo">
+                Abdul<span>aziz.</span>
+            </a>
 
-    <a href="#home" class="logo">
-        Abdul<span>aziz.</span>
-    </a>
+            <button class="menu" id="menu">
+                ☰
+            </button>
 
-    <button class="menu" id="menu">
-        ☰
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#github">GitHub</a></li>
+                <li><a href="#contact" class="nav-contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="available">
+                        <span class="green-dot"></span>
+                        Available for new projects
+                    </div>
+
+                    <h1>
+                        Building
+                        <span class="gradient">
+                            digital
+                        </span>
+                        experiences.
+                    </h1>
+
+                    <p class="hero-description">
+                        Hi, I'm Abdulaziz — a developer focused on
+                        building modern
+                        <span class="typing" id="typing"></span>
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#projects"
+                            class="btn btn-primary"
+                        >
+                            View My Projects →
+                        </a>
+
+                        <a
+                            href="https://github.com/abdulaziz2013uz-a11y"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary"
+                        >
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <div class="container">
+
+            <div class="stats reveal">
+
+                <div class="stat">
+                    <div
+                        class="stat-number"
+                        id="repos"
+                        data-target="2"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        GitHub Repositories
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div
+                        class="stat-number"
+                        id="followers"
+                        data-target="0"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        GitHub Followers
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div
+                        class="stat-number"
+                        id="following"
+                        data-target="0"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        Following
+                    </div>
+                </div>
+
+                <div class="stat">
+
+                    <div
+                        class="stat-number"
+                        data-target="100"
+                    >
+                        0%
+                    </div>
+
+                    <div class="stat-label">
+                        Passion for Coding
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div class="section-number">
+                        01 — About
+                    </div>
+
+                    <h2>
+                        About me.
+                    </h2>
+
+                    <p>
+                        Developer focused on creating useful,
+                        modern and reliable digital experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="glass reveal">
+
+                        <p class="about-text">
+
+                            I'm
+                            <strong>Abdulaziz</strong>,
+                            a developer who enjoys creating
+                            modern websites, backend systems,
+                            APIs and digital products.
+
+                            <br><br>
+
+                            I focus on clean interfaces,
+                            responsive design and practical
+                            solutions. I also work with
+                            GitHub and modern web technologies
+                            to turn ideas into working projects.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="glass reveal">
+
+                        <div class="about-list">
+
+                            <div class="about-row">
+                                <span>Name</span>
+                                <span>Abdulaziz</span>
+                            </div>
+
+                            <div class="about-row">
+                                <span>Role</span>
+                                <span>Full Stack Developer</span>
+                            </div>
+
+                            <div class="about-row">
+                                <span>Focus</span>
+                                <span>Web & Backend</span>
+                            </div>
+
+                            <div class="about-row">
+                                <span>Email</span>
+                                <span>
+                                    abdulaziz2013.uz@gmail.com
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div class="section-number">
+                        02 — Skills
+                    </div>
+
+                    <h2>
+                        What I work with.
+                    </h2>
+
+                </div>
+
+
+                <div class="skills">
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            🐍
+                        </div>
+
+                        <h3>
+                            Python
+                        </h3>
+
+                        <p>
+                            Backend development,
+                            automation and application logic.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Django
+                        </h3>
+
+                        <p>
+                            Web applications,
+                            APIs and backend systems.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            🌐
+                        </div>
+
+                        <h3>
+                            HTML / CSS
+                        </h3>
+
+                        <p>
+                            Responsive interfaces,
+                            modern layouts and animations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            JS
+                        </div>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Interactive interfaces,
+                            API integration and frontend logic.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            🗄️
+                        </div>
+
+                        <h3>
+                            Databases
+                        </h3>
+
+                        <p>
+                            Working with structured data
+                            and application storage.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            🐙
+                        </div>
+
+                        <h3>
+                            Git & GitHub
+                        </h3>
+
+                        <p>
+                            Version control, repositories
+                            and project deployment workflows.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            🤖
+                        </div>
+
+                        <h3>
+                            Automation
+                        </h3>
+
+                        <p>
+                            Automating repetitive tasks
+                            and digital workflows.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-icon">
+                            🚀
+                        </div>
+
+                        <h3>
+                            APIs
+                        </h3>
+
+                        <p>
+                            Connecting applications
+                            with external services and data.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div class="section-number">
+                        03 — Projects
+                    </div>
+
+                    <h2>
+                        Selected work.
+                    </h2>
+
+                    <p>
+                        Real projects from my GitHub profile.
+                    </p>
+
+                </div>
+
+
+                <div class="projects">
+
+
+                    <!-- BOOKIFY -->
+
+                    <article class="project reveal">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">
+                                📚
+                            </div>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <div class="project-title">
+
+                                <h3>
+                                    Bookify
+                                </h3>
+
+                                <span>
+                                    #01
+                                </span>
+
+                            </div>
+
+                            <p class="project-description">
+                                A book management project
+                                for organizing books and
+                                presenting a clean interface
+                                for working with a digital library.
+                            </p>
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    HTML
+                                </span>
+
+                                <span class="tag">
+                                    CSS
+                                </span>
+
+                                <span class="tag">
+                                    JavaScript
+                                </span>
+
+                                <span class="tag">
+                                    Book Management
+                                </span>
+
+                            </div>
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="https://bookify-pstb.onrender.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-btn primary"
+                                >
+                                    Live Demo ↗
+                                </a>
+
+                                <a
+                                    href="https://github.com/abdulaziz2013uz-a11y/Bookify"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-btn"
+                                >
+                                    GitHub ↗
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PORTFOLIO -->
+
+                    <article class="project reveal">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">
+                                💻
+                            </div>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <div class="project-title">
+
+                                <h3>
+                                    Portfolio Website
+                                </h3>
+
+                                <span>
+                                    #02
+                                </span>
+
+                            </div>
+
+                            <p class="project-description">
+                                A modern responsive developer
+                                portfolio with animated sections,
+                                GitHub integration, project showcase
+                                and contact functionality.
+                            </p>
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    HTML
+                                </span>
+
+                                <span class="tag">
+                                    CSS
+                                </span>
+
+                                <span class="tag">
+                                    JavaScript
+                                </span>
+
+                                <span class="tag">
+                                    Responsive UI
+                                </span>
+
+                            </div>
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="#home"
+                                    class="project-btn primary"
+                                >
+                                    View Website →
+                                </a>
+
+                                <a
+                                    href="https://github.com/abdulaziz2013uz-a11y/portfolio_website"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-btn"
+                                >
+                                    GitHub ↗
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- GITHUB -->
+
+                    <article class="project reveal">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">
+                                🐙
+                            </div>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <div class="project-title">
+
+                                <h3>
+                                    GitHub Profile
+                                </h3>
+
+                                <span>
+                                    #03
+                                </span>
+
+                            </div>
+
+                            <p class="project-description">
+                                My public GitHub profile where
+                                I publish projects, experiments
+                                and development work.
+                            </p>
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    Git
+                                </span>
+
+                                <span class="tag">
+                                    GitHub
+                                </span>
+
+                                <span class="tag">
+                                    Open Source
+                                </span>
+
+                            </div>
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="https://github.com/abdulaziz2013uz-a11y"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-btn primary"
+                                >
+                                    Open GitHub ↗
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GITHUB -->
+
+        <section id="github">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div class="section-number">
+                        04 — GitHub
+                    </div>
+
+                    <h2>
+                        My GitHub.
+                    </h2>
+
+                </div>
+
+
+                <div class="glass github-box reveal">
+
+                    <div class="github-info">
+
+                        <h3>
+                            @abdulaziz2013uz-a11y
+                        </h3>
+
+                        <p>
+                            Follow my development journey,
+                            repositories and future projects
+                            on GitHub.
+                        </p>
+
+                        <br>
+
+                        <a
+                            id="githubLink"
+                            href="https://github.com/abdulaziz2013uz-a11y"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-primary"
+                        >
+                            Open GitHub →
+                        </a>
+
+                    </div>
+
+
+                    <div class="github-stats">
+
+                        <div class="github-stat">
+
+                            <strong id="githubRepos">
+                                0
+                            </strong>
+
+                            <span>
+                                Repositories
+                            </span>
+
+                        </div>
+
+
+                        <div class="github-stat">
+
+                            <strong id="githubFollowers">
+                                0
+                            </strong>
+
+                            <span>
+                                Followers
+                            </span>
+
+                        </div>
+
+
+                        <div class="github-stat">
+
+                            <strong id="githubFollowing">
+                                0
+                            </strong>
+
+                            <span>
+                                Following
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div class="section-number">
+                        05 — Journey
+                    </div>
+
+                    <h2>
+                        My journey.
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            DEVELOPMENT
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Learning and building modern
+                            websites using HTML, CSS,
+                            JavaScript and backend technologies.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            BACKEND
+                        </div>
+
+                        <h3>
+                            Python & Django
+                        </h3>
+
+                        <p>
+                            Working with Python, Django,
+                            APIs, databases and backend
+                            application architecture.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            PROJECTS
+                        </div>
+
+                        <h3>
+                            Building Real Projects
+                        </h3>
+
+                        <p>
+                            Creating projects such as
+                            Bookify and personal portfolio
+                            applications and publishing them
+                            through GitHub.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div class="section-number">
+                        06 — Contact
+                    </div>
+
+                    <h2>
+                        Let's work together.
+                    </h2>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div class="glass reveal">
+
+                        <h3 class="contact-title">
+                            Have a project?
+                        </h3>
+
+                        <p class="contact-text">
+                            If you have an idea, project or
+                            collaboration opportunity,
+                            feel free to contact me.
+                        </p>
+
+
+                        <div class="email-box">
+
+                            <span>
+                                abdulaziz2013.uz@gmail.com
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyEmail()"
+                            >
+                                Copy
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="glass reveal">
+
+                        <form
+                            class="form"
+                            id="contactForm"
+                        >
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Your name"
+                                required
+                            >
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Your email"
+                                required
+                            >
+
+                            <textarea
+                                id="message"
+                                placeholder="Tell me about your project..."
+                                required
+                            ></textarea>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Send Message →
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <p>
+                    © <span id="year"></span>
+                    Abdulaziz. All rights reserved.
+                </p>
+
+                <div class="footer-links">
+
+                    <a
+                        href="https://github.com/abdulaziz2013uz-a11y"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                    </a>
+
+                    <a href="#home">
+                        Home
+                    </a>
+
+                    <a href="#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        Email copied!
+    </div>
+
+
+    <!-- BACK TO TOP -->
+
+    <button
+        id="backTop"
+        aria-label="Back to top"
+    >
+        ↑
     </button>
 
-    <ul class="nav-links" id="navLinks">
 
-        <li>
-            <a href="#home">Home</a>
-        </li>
+    <script>
 
-        <li>
-            <a href="#about">About</a>
-        </li>
+        /* =========================
+           GITHUB USERNAME
+        ========================= */
 
-        <li>
-            <a href="#skills">Skills</a>
-        </li>
+        const GITHUB_USERNAME =
+            "abdulaziz2013uz-a11y";
 
-        <li>
-            <a href="#projects">Projects</a>
-        </li>
 
-        <li>
-            <a href="#experience">Journey</a>
-        </li>
+        /* =========================
+           MOBILE MENU
+        ========================= */
 
-        <li>
-            <a href="#contact" class="nav-contact">
-                Contact
-            </a>
-        </li>
+        const menu =
+            document.getElementById("menu");
 
-    </ul>
+        const navLinks =
+            document.getElementById("navLinks");
 
-</nav>
 
-</header>
+        menu.addEventListener("click", () => {
 
+            navLinks.classList.toggle("active");
 
-<!-- =======================================================
-     HERO
-======================================================= -->
+        });
 
-<main id="home">
 
-<section class="hero">
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
 
-<div class="container">
+                link.addEventListener("click", () => {
 
-<div class="hero-content">
+                    navLinks.classList.remove("active");
 
-<div class="available">
+                });
 
-<span class="green-dot"></span>
+            });
 
-Available for new projects
 
-</div>
+        /* =========================
+           TYPING ANIMATION
+        ========================= */
 
+        const typing =
+            document.getElementById("typing");
 
-<h1>
+        const words = [
+            "websites.",
+            "APIs.",
+            "backend systems.",
+            "automation.",
+            "digital products."
+        ];
 
-I build
-<br>
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
 
-<span class="gradient">
-digital experiences.
-</span>
 
-</h1>
+        function type() {
 
+            const word =
+                words[wordIndex];
 
-<p class="hero-description">
 
-I'm Abdulaziz — a developer focused on
+            if (!deleting) {
 
-<span class="typing" id="typing"></span>
+                typing.textContent =
+                    word.substring(
+                        0,
+                        charIndex + 1
+                    );
 
-<br>
+                charIndex++;
 
-I turn ideas into modern, fast and useful digital products.
 
-</p>
+                if (
+                    charIndex ===
+                    word.length
+                ) {
 
+                    deleting = true;
 
-<div class="hero-buttons">
+                    setTimeout(
+                        type,
+                        1500
+                    );
 
-<a
-href="#projects"
-class="btn btn-primary"
->
-View Projects
-<span>↗</span>
-</a>
+                    return;
+                }
 
+            } else {
 
-<a
-href="#contact"
-class="btn btn-secondary"
->
-Let's Talk
-</a>
+                typing.textContent =
+                    word.substring(
+                        0,
+                        charIndex - 1
+                    );
 
-</div>
+                charIndex--;
 
-</div>
 
-</div>
+                if (charIndex === 0) {
 
-</section>
+                    deleting = false;
 
-</main>
+                    wordIndex =
+                        (wordIndex + 1)
+                        % words.length;
 
-
-<!-- =======================================================
-     STATS
-======================================================= -->
-
-<div class="container">
-
-<div class="stats reveal">
-
-<div class="stat">
-
-<div
-class="stat-number"
-data-target="10"
->
-0+
-</div>
-
-<div class="stat-label">
-Projects & Experiments
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div
-class="stat-number"
-data-target="5"
->
-0+
-</div>
-
-<div class="stat-label">
-Technologies
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div
-class="stat-number"
-data-target="100"
->
-0%
-</div>
-
-<div class="stat-label">
-Learning & Growth
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div
-class="stat-number"
-data-target="24"
->
-0/7
-</div>
-
-<div class="stat-label">
-Building Mindset
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     ABOUT
-======================================================= -->
-
-<section id="about">
-
-<div class="container reveal">
-
-<div class="section-head">
-
-<div class="section-number">
-01 — ABOUT
-</div>
-
-<h2>
-A little about me.
-</h2>
-
-<p>
-I enjoy building things that combine technology,
-design and useful functionality.
-</p>
-
-</div>
-
-
-<div class="about-grid">
-
-
-<div class="glass">
-
-<p class="about-text">
-
-Hi, I'm <strong>Abdulaziz</strong>.
-
-I'm a developer interested in building modern
-websites, backend systems, APIs and automation.
-
-<br><br>
-
-I like taking an idea from a simple concept
-and turning it into a working digital product.
-
-<br><br>
-
-My focus is always on
-<strong>clean code, good design,
-performance and continuous learning.</strong>
-
-</p>
-
-</div>
-
-
-<div class="glass">
-
-<div class="about-list">
-
-<div class="about-row">
-
-<span>Name</span>
-
-<span>Abdulaziz</span>
-
-</div>
-
-
-<div class="about-row">
-
-<span>Role</span>
-
-<span>Developer</span>
-
-</div>
-
-
-<div class="about-row">
-
-<span>Focus</span>
-
-<span>Web / Backend</span>
-
-</div>
-
-
-<div class="about-row">
-
-<span>Email</span>
-
-<span>
-abdulaziz2013.uz@gmail.com
-</span>
-
-</div>
-
-
-<div class="about-row">
-
-<span>Status</span>
-
-<span>
-Open to opportunities
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
-     SKILLS
-======================================================= -->
-
-<section id="skills">
-
-<div class="container reveal">
-
-<div class="section-head">
-
-<div class="section-number">
-02 — SKILLS
-</div>
-
-<h2>
-Tools I use.
-</h2>
-
-<p>
-Technologies and areas I use while building projects.
-</p>
-
-</div>
-
-
-<div class="skills">
-
-
-<div class="skill">
-
-<div class="skill-icon">
-⚡
-</div>
-
-<h3>
-JavaScript
-</h3>
-
-<p>
-Interactive interfaces, browser applications
-and modern web experiences.
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🐍
-</div>
-
-<h3>
-Python
-</h3>
-
-<p>
-Backend development, automation,
-scripts and application logic.
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🌐
-</div>
-
-<h3>
-HTML & CSS
-</h3>
-
-<p>
-Responsive layouts, animations,
-modern UI and accessibility.
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-⚙️
-</div>
-
-<h3>
-Django
-</h3>
-
-<p>
-Web applications, backend architecture,
-models and APIs.
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🔌
-</div>
-
-<h3>
-REST APIs
-</h3>
-
-<p>
-Connecting applications and creating
-reliable data services.
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🐙
-</div>
-
-<h3>
-GitHub
-</h3>
-
-<p>
-Version control, repositories and
-development workflow.
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🤖
-</div>
-
-<h3>
-Automation
-</h3>
-
-<p>
-Automating repetitive tasks and
-connecting digital services.
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🎨
-</div>
-
-<h3>
-UI / UX
-</h3>
-
-<p>
-Clean interfaces, visual hierarchy
-and user-friendly experiences.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
-     PROJECTS
-======================================================= -->
-
-<section id="projects">
-
-<div class="container reveal">
-
-<div class="section-head">
-
-<div class="section-number">
-03 — PROJECTS
-</div>
-
-<h2>
-Things I've built.
-</h2>
-
-<p>
-A selection of projects, experiments and digital products.
-</p>
-
-</div>
-
-
-<div class="projects">
-
-
-<!-- PROJECT 1 -->
-
-<article class="project">
-
-<div class="project-visual">
-
-<div class="project-icon">
-🍜
-</div>
-
-</div>
-
-<div class="project-body">
-
-<div class="project-top">
-
-<h3>
-CookMaster
-</h3>
-
-<span class="project-year">
-2026
-</span>
-
-</div>
-
-
-<p>
-
-A modern recipe platform for discovering
-different meals and learning how to prepare them.
-
-</p>
-
-
-<div class="tags">
-
-<span class="tag">
-HTML
-</span>
-
-<span class="tag">
-CSS
-</span>
-
-<span class="tag">
-JavaScript
-</span>
-
-<span class="tag">
-UI/UX
-</span>
-
-</div>
-
-
-<div class="project-actions">
-
-<a href="#">
-Live Demo ↗
-</a>
-
-<a href="#">
-GitHub ↗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PROJECT 2 -->
-
-<article class="project">
-
-<div class="project-visual">
-
-<div class="project-icon">
-🤖
-</div>
-
-</div>
-
-<div class="project-body">
-
-<div class="project-top">
-
-<h3>
-Automation System
-</h3>
-
-<span class="project-year">
-2026
-</span>
-
-</div>
-
-
-<p>
-
-An automation project designed to simplify
-repetitive tasks and connect different services.
-
-</p>
-
-
-<div class="tags">
-
-<span class="tag">
-Python
-</span>
-
-<span class="tag">
-API
-</span>
-
-<span class="tag">
-Automation
-</span>
-
-</div>
-
-
-<div class="project-actions">
-
-<a href="#">
-View Project ↗
-</a>
-
-<a href="#">
-GitHub ↗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PROJECT 3 -->
-
-<article class="project">
-
-<div class="project-visual">
-
-<div class="project-icon">
-🌐
-</div>
-
-</div>
-
-<div class="project-body">
-
-<div class="project-top">
-
-<h3>
-Modern Web App
-</h3>
-
-<span class="project-year">
-2026
-</span>
-
-</div>
-
-
-<p>
-
-Responsive web application with modern
-animations, clean components and a polished UI.
-
-</p>
-
-
-<div class="tags">
-
-<span class="tag">
-JavaScript
-</span>
-
-<span class="tag">
-HTML
-</span>
-
-<span class="tag">
-CSS
-</span>
-
-</div>
-
-
-<div class="project-actions">
-
-<a href="#">
-Live Demo ↗
-</a>
-
-<a href="#">
-GitHub ↗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PROJECT 4 -->
-
-<article class="project">
-
-<div class="project-visual">
-
-<div class="project-icon">
-⚡
-</div>
-
-</div>
-
-<div class="project-body">
-
-<div class="project-top">
-
-<h3>
-Django API
-</h3>
-
-<span class="project-year">
-2026
-</span>
-
-</div>
-
-
-<p>
-
-Backend application focused on APIs,
-database models and scalable architecture.
-
-</p>
-
-
-<div class="tags">
-
-<span class="tag">
-Python
-</span>
-
-<span class="tag">
-Django
-</span>
-
-<span class="tag">
-REST
-</span>
-
-<span class="tag">
-Database
-</span>
-
-</div>
-
-
-<div class="project-actions">
-
-<a href="#">
-View Project ↗
-</a>
-
-<a href="#">
-GitHub ↗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
-     GITHUB
-======================================================= -->
-
-<section>
-
-<div class="container reveal">
-
-<div class="github-box">
-
-<h2>
-Open source & GitHub.
-</h2>
-
-<p>
-My GitHub profile automatically displays
-my public repositories and account statistics.
-</p>
-
-
-<div class="github-stats">
-
-
-<div class="github-stat">
-
-<strong id="repos">
-—
-</strong>
-
-<span>
-Repositories
-</span>
-
-</div>
-
-
-<div class="github-stat">
-
-<strong id="followers">
-—
-</strong>
-
-<span>
-Followers
-</span>
-
-</div>
-
-
-<div class="github-stat">
-
-<strong id="following">
-—
-</strong>
-
-<span>
-Following
-</span>
-
-</div>
-
-
-</div>
-
-
-<a
-href="#"
-id="githubLink"
-target="_blank"
-class="btn btn-primary"
->
-Open GitHub ↗
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
-     EXPERIENCE
-======================================================= -->
-
-<section id="experience">
-
-<div class="container reveal">
-
-<div class="section-head">
-
-<div class="section-number">
-04 — JOURNEY
-</div>
-
-<h2>
-My development journey.
-</h2>
-
-<p>
-Learning, experimenting and turning ideas into projects.
-</p>
-
-</div>
-
-
-<div class="timeline">
-
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-date">
-01 — START
-</div>
-
-<h3>
-Started Programming
-</h3>
-
-<p>
-Started learning programming fundamentals
-and discovering how software works.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-date">
-02 — WEB
-</div>
-
-<h3>
-Web Development
-</h3>
-
-<p>
-Started creating websites and learning
-HTML, CSS and JavaScript.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-date">
-03 — BACKEND
-</div>
-
-<h3>
-Backend & APIs
-</h3>
-
-<p>
-Moved into Python, Django, databases,
-APIs and server-side development.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-date">
-04 — NOW
-</div>
-
-<h3>
-Building Real Projects
-</h3>
-
-<p>
-Currently building projects, learning
-new technologies and improving development skills.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
-     CONTACT
-======================================================= -->
-
-<section id="contact">
-
-<div class="container reveal">
-
-<div class="section-head">
-
-<div class="section-number">
-05 — CONTACT
-</div>
-
-<h2>
-Let's build something.
-</h2>
-
-<p>
-Have an idea? Let's turn it into something real.
-</p>
-
-</div>
-
-
-<div class="contact-grid">
-
-
-<div class="glass contact-left">
-
-<h3>
-Let's talk.
-</h3>
-
-<p>
-
-I'm open to interesting projects,
-collaborations and new opportunities.
-
-</p>
-
-
-<div class="email">
-
-<span>
-abdulaziz2013.uz@gmail.com
-</span>
-
-<button
-class="copy"
-onclick="copyEmail()"
->
-Copy
-</button>
-
-</div>
-
-
-<a
-href="mailto:abdulaziz2013.uz@gmail.com"
-class="btn btn-primary"
->
-Send Email →
-</a>
-
-</div>
-
-
-<div class="glass">
-
-<form
-class="form"
-id="contactForm"
->
-
-<input
-type="text"
-id="name"
-placeholder="Your name"
-required
->
-
-<input
-type="email"
-id="email"
-placeholder="Your email"
-required
->
-
-<textarea
-id="message"
-placeholder="Tell me about your project..."
-required
-></textarea>
-
-
-<button
-type="submit"
-class="btn btn-primary"
->
-Send Message →
-</button>
-
-</form>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-<div>
-© <span id="year"></span>
-Abdulaziz. All rights reserved.
-</div>
-
-
-<div class="footer-links">
-
-<a
-href="#home"
->
-Home
-</a>
-
-<a
-href="#projects"
->
-Projects
-</a>
-
-<a
-href="mailto:abdulaziz2013.uz@gmail.com"
->
-Email
-</a>
-
-<a
-href="#contact"
->
-Contact
-</a>
-
-</div>
-
-</footer>
-
-
-<!-- BACK TO TOP -->
-
-<button
-class="back-top"
-id="backTop"
->
-↑
-</button>
-
-
-<!-- TOAST -->
-
-<div
-class="toast"
-id="toast"
->
-Copied!
-</div>
-
-
-<script>
-
-/* =========================================================
-   GITHUB USERNAME
-========================================================= */
-
-/*
-   SHU YERGA GITHUB USERNAMEINGNI YOZ.
-
-   Masalan:
-
-   const GITHUB_USERNAME = "abdulaziz";
-
-*/
-
-const GITHUB_USERNAME =
-"YOUR_GITHUB_USERNAME";
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menu =
-document.getElementById("menu");
-
-const navLinks =
-document.getElementById("navLinks");
-
-menu.addEventListener(
-"click",
-() => {
-
-    navLinks.classList.toggle(
-        "active"
-    );
-
-});
-
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-    link.addEventListener(
-        "click",
-        () => {
-
-            navLinks.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   TYPING ANIMATION
-========================================================= */
-
-const typing =
-document.getElementById("typing");
-
-const words = [
-    "websites.",
-    "APIs.",
-    "backend systems.",
-    "automation.",
-    "digital products."
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-
-function type(){
-
-    const word =
-        words[wordIndex];
-
-    if(!deleting){
-
-        typing.textContent =
-            word.substring(
-                0,
-                charIndex + 1
-            );
-
-        charIndex++;
-
-        if(
-            charIndex ===
-            word.length
-        ){
-
-            deleting = true;
-
-            setTimeout(
-                type,
-                1500
-            );
-
-            return;
-
-        }
-
-    }else{
-
-        typing.textContent =
-            word.substring(
-                0,
-                charIndex - 1
-            );
-
-        charIndex--;
-
-        if(
-            charIndex === 0
-        ){
-
-            deleting = false;
-
-            wordIndex =
-                (wordIndex + 1)
-                % words.length;
-
-        }
-
-    }
-
-    setTimeout(
-        type,
-        deleting ? 45 : 80
-    );
-
-}
-
-type();
-
-
-/* =========================================================
-   MOUSE GLOW
-========================================================= */
-
-const cursorGlow =
-document.getElementById(
-    "cursorGlow"
-);
-
-document.addEventListener(
-"mousemove",
-(e) => {
-
-    cursorGlow.style.left =
-        e.clientX + "px";
-
-    cursorGlow.style.top =
-        e.clientY + "px";
-
-});
-
-
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-const observer =
-new IntersectionObserver(
-(entries) => {
-
-    entries.forEach(
-        entry => {
-
-            if(
-                entry.isIntersecting
-            ){
-
-                entry
-                .target
-                .classList
-                .add("active");
+                }
 
             }
 
+
+            setTimeout(
+                type,
+                deleting ? 45 : 80
+            );
+
         }
-    );
-
-},
-{
-    threshold:.12
-});
 
 
-document
-.querySelectorAll(".reveal")
-.forEach(
-    element => {
+        type();
 
-        observer.observe(
-            element
+
+        /* =========================
+           CURSOR GLOW
+        ========================= */
+
+        const cursorGlow =
+            document.getElementById(
+                "cursorGlow"
+            );
+
+
+        document.addEventListener(
+            "mousemove",
+            event => {
+
+                cursorGlow.style.left =
+                    event.clientX + "px";
+
+                cursorGlow.style.top =
+                    event.clientY + "px";
+
+            }
         );
 
-    }
-);
 
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
 
-/* =========================================================
-   COUNTER
-========================================================= */
+        const observer =
+            new IntersectionObserver(
+                entries => {
 
-const counters =
-document.querySelectorAll(
-    ".stat-number"
-);
+                    entries.forEach(entry => {
 
-let counterStarted = false;
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-
-function startCounters(){
-
-    if(counterStarted)
-        return;
-
-    counterStarted = true;
-
-    counters.forEach(
-        counter => {
-
-            const target =
-                Number(
-                    counter
-                    .dataset
-                    .target
-                );
-
-            let current = 0;
-
-            const increment =
-                Math.max(
-                    1,
-                    Math.ceil(
-                        target / 40
-                    )
-                );
-
-            const interval =
-                setInterval(
-                    () => {
-
-                        current +=
-                            increment;
-
-                        if(
-                            current >=
-                            target
-                        ){
-
-                            current =
-                                target;
-
-                            clearInterval(
-                                interval
+                            entry.target.classList.add(
+                                "active"
                             );
 
                         }
 
-                        const original =
-                            counter.textContent;
+                    });
 
-                        if(
-                            original
-                            .includes("%")
-                        ){
+                },
+                {
+                    threshold: .12
+                }
+            );
 
-                            counter.textContent =
-                                current + "%";
 
-                        }else if(
-                            original
-                            .includes("/7")
-                        ){
+        document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
 
-                            counter.textContent =
-                                current + "/7";
+                observer.observe(element);
 
-                        }else{
+            });
 
-                            counter.textContent =
-                                current + "+";
 
-                        }
+        /* =========================
+           GITHUB API
+        ========================= */
 
-                    },
-                    35
+        async function loadGitHub() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        `https://api.github.com/users/${GITHUB_USERNAME}`
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "GitHub profile not found"
+                    );
+
+                }
+
+
+                const user =
+                    await response.json();
+
+
+                /* Stats */
+
+                document.getElementById(
+                    "repos"
+                ).textContent =
+                    user.public_repos;
+
+
+                document.getElementById(
+                    "followers"
+                ).textContent =
+                    user.followers;
+
+
+                document.getElementById(
+                    "following"
+                ).textContent =
+                    user.following;
+
+
+                /* GitHub section */
+
+                document.getElementById(
+                    "githubRepos"
+                ).textContent =
+                    user.public_repos;
+
+
+                document.getElementById(
+                    "githubFollowers"
+                ).textContent =
+                    user.followers;
+
+
+                document.getElementById(
+                    "githubFollowing"
+                ).textContent =
+                    user.following;
+
+
+                /* Profile link */
+
+                document.getElementById(
+                    "githubLink"
+                ).href =
+                    user.html_url;
+
+
+            } catch (error) {
+
+                console.error(
+                    "GitHub API Error:",
+                    error
                 );
 
-        }
-    );
-
-}
-
-
-const statsObserver =
-new IntersectionObserver(
-entries => {
-
-    if(
-        entries[0].isIntersecting
-    ){
-
-        startCounters();
-
-    }
-
-},
-{
-    threshold:.4
-});
-
-
-statsObserver.observe(
-document.querySelector(
-    ".stats"
-));
-
-
-/* =========================================================
-   GITHUB API
-========================================================= */
-
-async function loadGitHub(){
-
-    if(
-        GITHUB_USERNAME ===
-        "YOUR_GITHUB_USERNAME"
-    ){
-
-        console.log(
-            "Add your GitHub username."
-        );
-
-        return;
-
-    }
-
-
-    try{
-
-        const response =
-            await fetch(
-                `https://api.github.com/users/${GITHUB_USERNAME}`
-            );
-
-
-        if(!response.ok){
-
-            throw new Error(
-                "GitHub user not found"
-            );
+            }
 
         }
 
 
-        const user =
-            await response.json();
+        loadGitHub();
 
 
-        document.getElementById(
-            "repos"
-        ).textContent =
-            user.public_repos;
+        /* =========================
+           COPY EMAIL
+        ========================= */
+
+        function copyEmail() {
+
+            const email =
+                "abdulaziz2013.uz@gmail.com";
 
 
-        document.getElementById(
-            "followers"
-        ).textContent =
-            user.followers;
+            navigator.clipboard
+                .writeText(email)
+                .then(() => {
+
+                    showToast(
+                        "Email copied!"
+                    );
+
+                })
+                .catch(() => {
+
+                    showToast(
+                        "Copy failed"
+                    );
+
+                });
+
+        }
 
 
-        document.getElementById(
-            "following"
-        ).textContent =
-            user.following;
+        /* =========================
+           TOAST
+        ========================= */
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById(
+                    "toast"
+                );
 
 
-        const profile =
-            `https://github.com/${GITHUB_USERNAME}`;
+            toast.textContent =
+                message;
 
 
-        document.getElementById(
-            "githubLink"
-        ).href =
-            profile;
-
-
-    }catch(error){
-
-        console.error(
-            error
-        );
-
-    }
-
-}
-
-loadGitHub();
-
-
-/* =========================================================
-   COPY EMAIL
-========================================================= */
-
-function copyEmail(){
-
-    const email =
-        "abdulaziz2013.uz@gmail.com";
-
-
-    navigator
-    .clipboard
-    .writeText(email)
-    .then(() => {
-
-        showToast(
-            "Email copied!"
-        );
-
-    });
-
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-function showToast(message){
-
-    const toast =
-        document.getElementById(
-            "toast"
-        );
-
-
-    toast.textContent =
-        message;
-
-
-    toast.classList.add(
-        "show"
-    );
-
-
-    setTimeout(
-        () => {
-
-            toast.classList.remove(
+            toast.classList.add(
                 "show"
             );
 
-        },
-        2200
-    );
 
-}
+            setTimeout(() => {
 
+                toast.classList.remove(
+                    "show"
+                );
 
-/* =========================================================
-   CONTACT FORM
-========================================================= */
-
-document
-.getElementById("contactForm")
-.addEventListener(
-"submit",
-function(e){
-
-    e.preventDefault();
-
-
-    const name =
-        document.getElementById(
-            "name"
-        ).value;
-
-
-    const email =
-        document.getElementById(
-            "email"
-        ).value;
-
-
-    const message =
-        document.getElementById(
-            "message"
-        ).value;
-
-
-    const subject =
-        encodeURIComponent(
-            "Portfolio Contact — " +
-            name
-        );
-
-
-    const body =
-        encodeURIComponent(
-            "Name: " +
-            name +
-
-            "\nEmail: " +
-            email +
-
-            "\n\nMessage:\n" +
-            message
-        );
-
-
-    window.location.href =
-        `mailto:abdulaziz2013.uz@gmail.com?subject=${subject}&body=${body}`;
-
-});
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const backTop =
-document.getElementById(
-    "backTop"
-);
-
-
-window.addEventListener(
-"scroll",
-() => {
-
-    if(
-        window.scrollY > 500
-    ){
-
-        backTop.classList.add(
-            "show"
-        );
-
-    }else{
-
-        backTop.classList.remove(
-            "show"
-        );
-
-    }
-
-});
-
-
-backTop.addEventListener(
-"click",
-() => {
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-
-/* =========================================================
-   YEAR
-========================================================= */
-
-document.getElementById(
-    "year"
-).textContent =
-    new Date()
-    .getFullYear();
-
-
-/* =========================================================
-   PROJECT CARD TILT
-========================================================= */
-
-document
-.querySelectorAll(".project")
-.forEach(card => {
-
-    card.addEventListener(
-        "mousemove",
-        e => {
-
-            const rect =
-                card.getBoundingClientRect();
-
-            const x =
-                e.clientX -
-                rect.left;
-
-            const y =
-                e.clientY -
-                rect.top;
-
-            const rotateX =
-                ((y / rect.height)
-                - .5) * -4;
-
-            const rotateY =
-                ((x / rect.width)
-                - .5) * 4;
-
-
-            card.style.transform =
-                `perspective(900px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-7px)`;
+            }, 2200);
 
         }
-    );
 
 
-    card.addEventListener(
-        "mouseleave",
-        () => {
+        /* =========================
+           CONTACT FORM
+        ========================= */
 
-            card.style.transform =
-                "";
+        document
+            .getElementById("contactForm")
+            .addEventListener(
+                "submit",
+                function(event) {
 
-        }
-    );
+                    event.preventDefault();
 
-});
 
-</script>
+                    const name =
+                        document.getElementById(
+                            "name"
+                        ).value;
 
-=======
-<html lang="uz" class="dark scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulaziz | Senior Backend & Full-Stack Engineer</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            400: '#818cf8',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            900: '#312e81',
-                        },
-                        accent: {
-                            cyan: '#06b6d4',
-                            purple: '#a855f7',
-                            emerald: '#10b981',
-                        },
-                        darkBg: '#05070f',
-                        cardBg: 'rgba(15, 23, 42, 0.65)',
-                        borderBg: 'rgba(255, 255, 255, 0.08)',
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        }
-                    }
+                    const email =
+                        document.getElementById(
+                            "email"
+                        ).value;
+
+
+                    const message =
+                        document.getElementById(
+                            "message"
+                        ).value;
+
+
+                    const subject =
+                        encodeURIComponent(
+                            "Portfolio Contact — " +
+                            name
+                        );
+
+
+                    const body =
+                        encodeURIComponent(
+                            "Name: " +
+                            name +
+
+                            "\nEmail: " +
+                            email +
+
+                            "\n\nMessage:\n" +
+                            message
+                        );
+
+
+                    window.location.href =
+                        `mailto:abdulaziz2013.uz@gmail.com?subject=${subject}&body=${body}`;
+
                 }
+            );
+
+
+        /* =========================
+           BACK TO TOP
+        ========================= */
+
+        const backTop =
+            document.getElementById(
+                "backTop"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (
+                    window.scrollY > 500
+                ) {
+
+                    backTop.classList.add(
+                        "show"
+                    );
+
+                } else {
+
+                    backTop.classList.remove(
+                        "show"
+                    );
+
+                }
+
             }
-        }
+        );
+
+
+        backTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* =========================
+           YEAR
+        ========================= */
+
+        document.getElementById(
+            "year"
+        ).textContent =
+            new Date().getFullYear();
+
+
+        /* =========================
+           PROJECT 3D EFFECT
+        ========================= */
+
+        document
+            .querySelectorAll(".project")
+            .forEach(card => {
+
+                card.addEventListener(
+                    "mousemove",
+                    event => {
+
+                        const rect =
+                            card.getBoundingClientRect();
+
+
+                        const x =
+                            event.clientX -
+                            rect.left;
+
+
+                        const y =
+                            event.clientY -
+                            rect.top;
+
+
+                        const rotateX =
+                            ((y / rect.height) - .5)
+                            * -4;
+
+
+                        const rotateY =
+                            ((x / rect.width) - .5)
+                            * 4;
+
+
+                        card.style.transform =
+                            `
+                            perspective(900px)
+                            rotateX(${rotateX}deg)
+                            rotateY(${rotateY}deg)
+                            translateY(-8px)
+                            `;
+
+                    }
+                );
+
+
+                card.addEventListener(
+                    "mouseleave",
+                    () => {
+
+                        card.style.transform =
+                            "";
+
+                    }
+                );
+
+            });
+
     </script>
 
-    <style>
-        body {
-            background-color: #05070f;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.05) 0px, transparent 50%);
-            background-attachment: fixed;
-        }
-
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .glass-panel-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glass-panel-hover:hover {
-            background: rgba(20, 30, 55, 0.8);
-            border-color: rgba(99, 102, 241, 0.4);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gradient-border-glow {
-            position: relative;
-        }
-        .gradient-border-glow::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, #6366f1, #a855f7, #06b6d4);
-            border-radius: 1.75rem;
-            z-index: -1;
-            opacity: 0.5;
-            blur: 10px;
-            transition: opacity 0.3s ease;
-        }
-        .gradient-border-glow:hover::before {
-            opacity: 1;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #05070f;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #4f46e5;
-        }
-    </style>
-</head>
-<body class="text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white relative">
-
-    <!-- NAVIGATION BAR -->
-    <header class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black tracking-wider text-white flex items-center gap-2 group">
-                <span class="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center text-white text-lg font-mono font-bold group-hover:rotate-12 transition-transform">&lt;/&gt;</span>
-                ABDULAZIZ<span class="text-brand-400">.DEV</span>
-            </a>
-            
-            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-300 text-sm">
-                <a href="#about" class="hover:text-brand-400 transition-colors">Men Haqimda</a>
-                <a href="#skills" class="hover:text-brand-400 transition-colors">Texnologiyalar</a>
-                <a href="#experience" class="hover:text-brand-400 transition-colors">Tajriba</a>
-                <a href="#projects" class="hover:text-brand-400 transition-colors">Loyihalar</a>
-                <a href="#contact" class="hover:text-brand-400 transition-colors">Aloqa</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-4">
-                <a href="#contact" class="px-6 py-2.5 bg-gradient-to-r from-brand-600 to-purple-600 hover:from-brand-500 hover:to-purple-500 text-white rounded-xl font-semibold shadow-lg shadow-brand-600/20 transition-all hover:scale-105 active:scale-95 text-sm flex items-center gap-2">
-                    <i class="fa-regular fa-paper-plane"></i> Muloqot Qilish
-                </a>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-white/10 px-6 py-6 space-y-4">
-            <a href="#about" class="block text-slate-300 hover:text-brand-400 font-medium">Men Haqimda</a>
-            <a href="#skills" class="block text-slate-300 hover:text-brand-400 font-medium">Texnologiyalar</a>
-            <a href="#experience" class="block text-slate-300 hover:text-brand-400 font-medium">Tajriba</a>
-            <a href="#projects" class="block text-slate-300 hover:text-brand-400 font-medium">Loyihalar</a>
-            <a href="#contact" class="block text-slate-300 hover:text-brand-400 font-medium">Aloqa</a>
-            <a href="#contact" class="block w-full text-center py-3 bg-brand-600 text-white rounded-xl font-semibold">Muloqot Qilish</a>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="min-h-screen pt-36 pb-20 flex items-center relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-semibold mb-6 backdrop-blur-md">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Yangi Loyihalar & Hamkorlik Uchun Ochiqman
-                </div>
-
-                <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold leading-tight tracking-tight text-white">
-                    Yuqori Yuklamali <span class="gradient-text">Backend System</span> va API Arxitektori
-                </h1>
-
-                <p class="text-slate-400 mt-6 text-lg sm:text-xl leading-relaxed max-w-2xl font-light">
-                    Python va Django ekotizimida murakkab va havfsiz biznes logikalarni quraman. Ma'lumotlar bazasi optimalligi hamda mikroservislar arxitekturasi bo'yicha mutaxassis.
-                </p>
-
-                <div class="mt-10 flex flex-wrap gap-4 items-center">
-                    <a href="#projects" class="px-8 py-4 bg-gradient-to-r from-brand-600 via-purple-600 to-accent-cyan hover:opacity-90 text-white font-bold rounded-2xl shadow-xl shadow-brand-600/25 transition-all flex items-center gap-3 group">
-                        Portfolioni Ko'rish 
-                        <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
-                    </a>
-                    <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="px-8 py-4 glass-panel hover:bg-slate-800/80 border border-white/10 text-white font-bold rounded-2xl transition-all flex items-center gap-3">
-                        <i class="fa-brands fa-github text-xl"></i> GitHub Profil
-                    </a>
-                </div>
-
-                <!-- Live Metrics -->
-                <div class="mt-14 pt-8 border-t border-white/10 grid grid-cols-3 gap-6">
-                    <div>
-                        <h4 class="text-3xl sm:text-4xl font-extrabold text-white font-mono" id="counter1">15+</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Muvaffaqiyatli Loyihalar</p>
-                    </div>
-                    <div>
-                        <h4 class="text-3xl sm:text-4xl font-extrabold text-white font-mono">99.9%</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Uptime Barqarorligi</p>
-                    </div>
-                    <div>
-                        <h4 class="text-3xl sm:text-4xl font-extrabold text-white font-mono">&lt;100ms</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">O'rtacha API Latency</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Terminal Visualizer -->
-            <div class="lg:col-span-5 flex justify-center animate-float" data-aos="fade-left" data-aos-duration="1000">
-                <div class="relative w-full max-w-lg">
-                    <div class="gradient-border-glow glass-panel rounded-3xl p-6 shadow-2xl relative z-10 font-mono">
-                        <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
-                            <div class="flex gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
-                            </div>
-                            <span class="text-xs text-slate-400">core_engine.py</span>
-                        </div>
-                        <pre class="text-xs sm:text-sm text-slate-300 leading-relaxed overflow-x-auto"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">BackendArchitect</span>:
-    <span class="text-purple-400">def</span> <span class="text-blue-400">__init__</span>(self):
-        self.developer = <span class="text-emerald-400">"Abdulaziz"</span>
-        self.stack = [<span class="text-emerald-400">"Python"</span>, <span class="text-emerald-400">"Django"</span>, <span class="text-emerald-400">"SQL"</span>]
-        self.status = <span class="text-emerald-400">"Ready for Production"</span>
-
-    <span class="text-purple-400">def</span> <span class="text-blue-400">deploy_system</span>(self, scale):
-        <span class="text-purple-400">return</span> {
-            <span class="text-emerald-400">"database"</span>: <span class="text-emerald-400">"Optimized"</span>,
-            <span class="text-emerald-400">"security"</span>: <span class="text-emerald-400">"Enterprise Grade"</span>,
-            <span class="text-emerald-400">"performance"</span>: <span class="text-emerald-400">f"{scale}x Speed Boost"</span>
-        }
-
-<span class="text-slate-500"># System initialized successfully</span>
-app = BackendArchitect()
-print(app.deploy_system(10))</code></pre>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-28 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Muhandislik Tamoyillari</h2>
-                <p class="text-3xl sm:text-5xl font-extrabold text-white">Xavfsiz, Ishonchli va Tezkor Backend</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-panel glass-panel-hover p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-brand-500/10 border border-brand-500/20 rounded-2xl flex items-center justify-center text-brand-400 text-2xl mb-6">
-                        <i class="fa-solid fa-cubes"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Backend Arxitektura</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">
-                        Django va REST Framework imkoniyatlaridan foydalanib, to'liq modulli, oson kengaytiriladigan va yuqori yuklamaga chidamli backend infratuzilmasini loyihalashtiraman.
-                    </p>
-                </div>
-
-                <div class="glass-panel glass-panel-hover p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center text-purple-400 text-2xl mb-6">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Database Optimizatsiyasi</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">
-                        PostgreSQL va SQLite ma'lumotlar bazalarida murakkab SQL so'rovlarini optimallashtirish, indeksatsiya qilish hamda tezkor javob (Query execution) ta'minlash.
-                    </p>
-                </div>
-
-                <div class="glass-panel glass-panel-hover p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-accent-cyan/10 border border-accent-cyan/20 rounded-2xl flex items-center justify-center text-accent-cyan text-2xl mb-6">
-                        <i class="fa-solid fa-rocket"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">DevOps & Cloud Deploy</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">
-                        Loyihalarni bulutli serverlarga (Render, Netlify, DigitalOcean) avtomatlashtirilgan CI/CD quvurlari va xavfsizlik standartlari asosida uzluksiz joylashtirish.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS & STACK SECTION -->
-    <section id="skills" class="py-28 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Texnologik Stack</h2>
-                <p class="text-3xl sm:text-5xl font-extrabold text-white">Men Ishlatadigan Zamonaviy Qurollar</p>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6" data-aos="fade-up">
-                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
-                    <i class="fa-brands fa-python text-5xl text-yellow-400 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-white">Python</h4>
-                    <span class="text-xs text-slate-400">Core / Advanced</span>
-                </div>
-                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
-                    <i class="fa-solid fa-layer-group text-5xl text-emerald-400 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-white">Django</h4>
-                    <span class="text-xs text-slate-400">ORM / REST API</span>
-                </div>
-                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
-                    <i class="fa-solid fa-database text-5xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-white">SQL Database</h4>
-                    <span class="text-xs text-slate-400">PostgreSQL / SQLite</span>
-                </div>
-                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
-                    <i class="fa-brands fa-git-alt text-5xl text-orange-500 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-white">Git & GitHub</h4>
-                    <span class="text-xs text-slate-400">Version Control</span>
-                </div>
-                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
-                    <i class="fa-brands fa-html5 text-5xl text-orange-600 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-white">HTML5 / CSS3</h4>
-                    <span class="text-xs text-slate-400">Tailwind CSS</span>
-                </div>
-                <div class="glass-panel glass-panel-hover p-6 rounded-2xl text-center group">
-                    <i class="fa-brands fa-js text-5xl text-yellow-300 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-white">JavaScript</h4>
-                    <span class="text-xs text-slate-400">DOM & ES6+</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE & TIMELINE SECTION -->
-    <section id="experience" class="py-28 relative">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Tajriba va Rivojlanish</h2>
-                <p class="text-3xl sm:text-5xl font-extrabold text-white">Mening Kasbiy Yo'lim</p>
-            </div>
-
-            <div class="relative border-l-2 border-brand-500/30 ml-4 md:ml-32 space-y-12">
-                <!-- Timeline Item 1 -->
-                <div class="relative pl-8" data-aos="fade-up">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 bg-brand-500 rounded-full ring-4 ring-darkBg"></span>
-                    <span class="hidden md:block absolute -left-32 top-1 text-xs text-slate-400 font-mono">2023 - Hozirgi vaqt</span>
-                    <div class="glass-panel p-6 rounded-2xl">
-                        <span class="md:hidden text-xs text-brand-400 font-mono block mb-2">2023 - Hozirgi vaqt</span>
-                        <h3 class="text-xl font-bold text-white">Lead Backend Developer</h3>
-                        <p class="text-sm text-brand-400 mb-3">Freelance & Independent Projects</p>
-                        <p class="text-slate-400 text-sm leading-relaxed font-light">
-                            Murakkab web ilovalar, kutubxona va ta'lim tizimlari uchun arxitektura va backend infratuzilmasini yaratish. SQL so'rovlarini optimallashtirish va bulutli platformalarga deploy qilish.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="relative pl-8" data-aos="fade-up" data-aos-delay="100">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 bg-purple-500 rounded-full ring-4 ring-darkBg"></span>
-                    <span class="hidden md:block absolute -left-32 top-1 text-xs text-slate-400 font-mono">2022 - 2023</span>
-                    <div class="glass-panel p-6 rounded-2xl">
-                        <span class="md:hidden text-xs text-purple-400 font-mono block mb-2">2022 - 2023</span>
-                        <h3 class="text-xl font-bold text-white">Python & Django Software Engineer</h3>
-                        <p class="text-sm text-purple-400 mb-3">Web Development Projects</p>
-                        <p class="text-slate-400 text-sm leading-relaxed font-light">
-                            RESTful API integratsiyalari, foydalanuvchilar autentifikatsiyasi va ma'lumotlar bazasi modellarini yaratish bilan shug'ullanganman.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="py-28 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Portfolio</h2>
-                <p class="text-3xl sm:text-5xl font-extrabold text-white">Tanlangan Asosiy Loyihalar</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Project 1: Bookify -->
-                <div class="glass-panel glass-panel-hover rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <span class="px-3.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold rounded-full flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live On Render
-                            </span>
-                            <span class="text-xs text-slate-400 font-mono">Full-Stack System</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Bookify — Raqamli Kutubxona Platformasi</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6 font-light">
-                            Kitoblarni boshqarish, dinamic qidiruv va kategoriyalar bo'yicha filterlash imkonini beruvchi mukammal raqamlashgan platforma. Ma'lumotlarni saqlash va ma'muriy boshqaruv paneli bilan ta'minlangan.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Python</span>
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Django</span>
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">SQLite</span>
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Render Cloud</span>
-                        </div>
-                    </div>
-                    <div class="px-8 pb-8 pt-0">
-                        <a href="https://bookify-pstb.onrender.com" target="_blank" class="w-full py-3.5 bg-gradient-to-r from-brand-600 to-purple-600 hover:from-brand-500 hover:to-purple-500 text-white rounded-xl text-center font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-600/20">
-                            Demo Ochish <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2: EduCourse -->
-                <div class="glass-panel glass-panel-hover rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <span class="px-3.5 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-semibold rounded-full">
-                                Web Application
-                            </span>
-                            <span class="text-xs text-slate-400 font-mono">Backend System</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">EduCourse — Ta'lim Katalogi Tizimi</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6 font-light">
-                            Ta'lim kurslarini tartiblash va interaktiv ro'yxatga olish uchun mo'ljallangan backend tizim. Modellar va ma'lumotlar bazasi so'rovlari yuqori optimallikda tuzilgan.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Django ORM</span>
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-lg">REST API</span>
-                        </div>
-                    </div>
-                    <div class="px-8 pb-8 pt-0">
-                        <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="w-full py-3.5 glass-panel hover:bg-slate-800 text-white rounded-xl text-center font-semibold text-sm transition-all flex items-center justify-center gap-2 border border-white/10">
-                            <i class="fa-brands fa-github text-base"></i> Kodini Ko'rish
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-28 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-5" data-aos="fade-right">
-                    <h2 class="text-brand-400 font-bold tracking-widest text-xs uppercase mb-3">Bog'lanish</h2>
-                    <p class="text-4xl sm:text-5xl font-extrabold text-white mb-6">Loyihangizni Birgalikda Yaratamiz!</p>
-                    <p class="text-slate-400 leading-relaxed mb-8 font-light">
-                        Backend hamkorlik, arxitektura maslahatlari va loyihalar bo'yicha bog'lanishingiz mumkin.
-                    </p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-5">
-                            <div class="w-14 h-14 glass-panel rounded-2xl flex items-center justify-center text-brand-400 text-xl">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-500 block">Email Manzil</span>
-                                <a href="mailto:abdulaziz@example.com" class="font-semibold text-white hover:text-brand-400 transition">abdulaziz@example.com</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-5">
-                            <div class="w-14 h-14 glass-panel rounded-2xl flex items-center justify-center text-accent-cyan text-xl">
-                                <i class="fa-brands fa-telegram"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-500 block">Telegram</span>
-                                <a href="https://t.me" target="_blank" class="font-semibold text-white hover:text-accent-cyan transition">@abdulaziz_dev</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7" data-aos="fade-left">
-                    <form id="contact-form" class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6">
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div>
-                                <label class="text-xs font-semibold text-slate-300 mb-2 block uppercase tracking-wider">Ismingiz</label>
-                                <input type="text" id="name" required placeholder="Ali Valiyev" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition">
-                            </div>
-                            <div>
-                                <label class="text-xs font-semibold text-slate-300 mb-2 block uppercase tracking-wider">Email / Telegram</label>
-                                <input type="text" id="contact-info" required placeholder="@username yoki email" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="text-xs font-semibold text-slate-300 mb-2 block uppercase tracking-wider">Xabar</label>
-                            <textarea id="message" rows="4" required placeholder="Loyiha haqida batafsil ma'lumot..." class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-500 transition"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-600 via-purple-600 to-accent-cyan hover:opacity-95 text-white font-bold rounded-xl shadow-xl shadow-brand-600/25 transition-all flex items-center justify-center gap-2">
-                            <span>Xabarni Yuborish</span>
-                            <i class="fa-solid fa-paper-plane text-xs"></i>
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-8 border-t border-white/5 text-center text-slate-500 text-sm">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>© 2026 Abdulaziz. Barcha huquqlar himoyalangan.</p>
-            <div class="flex gap-6 text-lg text-slate-400">
-                <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" class="hover:text-brand-400 transition"><i class="fa-brands fa-github"></i></a>
-                <a href="https://t.me" target="_blank" class="hover:text-accent-cyan transition"><i class="fa-brands fa-telegram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JS Libraries -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // AOS Animation Init
-        AOS.init({
-            duration: 800,
-            once: true,
-            easing: 'ease-out-cubic'
-        });
-
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Form Submit Handler
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Rahmat! Xabaringiz muvaffaqiyatli yuborildi.');
-            this.reset();
-        });
-    </script>
->>>>>>> 6041a7ef8e94364d36107e7b62556284c44fd74a
 </body>
 </html>
