@@ -1,5716 +1,1567 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uz" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Abdulaziz — Full-Stack dasturchi. Toshkent. Django, Python, JavaScript." />
+<meta name="author" content="Abdulaziz" />
+<meta name="theme-color" content="#070b14" id="metaTheme" />
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b14'/%3E%3Cpath d='M8 23 16 8l8 15' stroke='%2338bdf8' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M12 18h8' stroke='%2338bdf8' stroke-width='2.4'/%3E%3C/svg%3E" />
 
-    <title>
-        Abdulaziz — Full Stack Developer
-    </title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <meta
-        name="description"
-        content="Abdulaziz — Full Stack Developer building modern websites, backend systems and digital products."
-    >
-
-    <meta
-        name="author"
-        content="Abdulaziz"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <meta
-        name="theme-color"
-        content="#07030f"
-    >
-
-    <link
-        rel="canonical"
-        href="https://abdulaziz2013uz-a11y.github.io/portfolio_website/"
-    >
-
-    <!-- Open Graph -->
-    <meta
-        property="og:title"
-        content="Abdulaziz — Full Stack Developer"
-    >
-
-    <meta
-        property="og:description"
-        content="Modern websites, backend systems and digital products."
-    >
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
-    <meta
-        property="og:url"
-        content="https://abdulaziz2013uz-a11y.github.io/portfolio_website/"
-    >
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- GitHub / Person structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Abdulaziz",
-        "jobTitle": "Full Stack Developer",
-        "email": "mailto:abdulaziz2013.uz@gmail.com",
-        "url": "https://abdulaziz2013uz-a11y.github.io/portfolio_website/",
-        "sameAs": [
-            "https://github.com/abdulaziz2013uz-a11y"
-        ]
-    }
-    </script>
+<title>Abdulaziz — Full-Stack Dasturchi</title>
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root {
-
-    --bg:
-        #05020b;
-
-    --bg-secondary:
-        #090412;
-
-    --surface:
-        rgba(255, 255, 255, 0.055);
-
-    --surface-strong:
-        rgba(255, 255, 255, 0.085);
-
-    --border:
-        rgba(255, 255, 255, 0.11);
-
-    --border-purple:
-        rgba(168, 85, 247, 0.35);
-
-    --text:
-        #faf9ff;
-
-    --muted:
-        #a7a1b5;
-
-    --purple:
-        #a855f7;
-
-    --purple-light:
-        #c084fc;
-
-    --purple-dark:
-        #7c3aed;
-
-    --violet:
-        #8b5cf6;
-
-    --pink:
-        #ec4899;
-
-    --cyan:
-        #22d3ee;
-
-    --green:
-        #22c55e;
-
-    --shadow:
-        0 30px 100px rgba(0, 0, 0, 0.55);
-
-    --radius:
-        24px;
-
-    --max:
-        1180px;
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-
-    min-height: 100vh;
-
-    font-family:
-        "Inter",
-        sans-serif;
-
-    color: var(--text);
-
-    background:
-
-        radial-gradient(
-            circle at 10% 5%,
-            rgba(168, 85, 247, 0.26),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 90% 12%,
-            rgba(124, 58, 237, 0.20),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 75% 65%,
-            rgba(34, 211, 238, 0.08),
-            transparent 25%
-        ),
-
-        var(--bg);
-
-    overflow-x: hidden;
-}
-
-body.light {
-
-    --bg:
-        #f7f5ff;
-
-    --bg-secondary:
-        #ffffff;
-
-    --surface:
-        rgba(255, 255, 255, 0.78);
-
-    --surface-strong:
-        rgba(255, 255, 255, 0.95);
-
-    --border:
-        rgba(40, 20, 70, 0.10);
-
-    --text:
-        #15111d;
-
-    --muted:
-        #625c6e;
-
-    background:
-        radial-gradient(
-            circle at 10% 5%,
-            rgba(168, 85, 247, 0.16),
-            transparent 30%
-        ),
-        #f7f5ff;
-}
-
-body,
-button,
-a,
-input,
-textarea {
-    -webkit-tap-highlight-color: transparent;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button,
-input,
-textarea {
-    font-family: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-
-/* =========================================================
-   GLOBAL BACKGROUND
-========================================================= */
-
-.background-grid {
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: -10;
-
-    opacity: 0.42;
-
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        55px 55px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 95%
-        );
-}
-
-body.light .background-grid {
-
-    opacity: 0.22;
-
-    background-image:
-
-        linear-gradient(
-            rgba(80,40,120,0.045) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(80,40,120,0.045) 1px,
-            transparent 1px
-        );
-}
-
-.glow-orb {
-
-    position: fixed;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: -5;
-
-    filter: blur(100px);
-
-    animation:
-        orbFloat 10s ease-in-out infinite;
-}
-
-.glow-purple {
-
-    width: 600px;
-    height: 600px;
-
-    left: -280px;
-    top: -250px;
-
-    background:
-        rgba(168, 85, 247, 0.30);
-}
-
-.glow-purple-two {
-
-    width: 500px;
-    height: 500px;
-
-    right: -220px;
-    top: 250px;
-
-    background:
-        rgba(124, 58, 237, 0.22);
-
-    animation-delay: -3s;
-}
-
-.glow-pink {
-
-    width: 350px;
-    height: 350px;
-
-    left: 42%;
-    top: 55%;
-
-    background:
-        rgba(236, 72, 153, 0.10);
-
-    animation-delay: -6s;
-}
-
-@keyframes orbFloat {
-
-    0%,
-    100% {
-        transform:
-            translate3d(0, 0, 0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate3d(30px, 25px, 0)
-            scale(1.08);
-    }
-}
-
-
-/* =========================================================
-   MOUSE GLOW
-========================================================= */
-
-.mouse-glow {
-
-    position: fixed;
-
-    width: 380px;
-    height: 380px;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: -2;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(168,85,247,0.12),
-            transparent 65%
-        );
-
-    transform:
-        translate(-50%, -50%);
-
-    transition:
-        left .15s ease-out,
-        top .15s ease-out;
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.container {
-
-    width:
-        min(
-            var(--max),
-            92%
-        );
-
-    margin:
-        0 auto;
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.navbar {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-    right: 0;
-
-    z-index: 1000;
-
-    padding: 17px 0;
-
-    background:
-        rgba(5, 2, 11, 0.58);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.055);
-
-    backdrop-filter:
-        blur(24px);
-
-    -webkit-backdrop-filter:
-        blur(24px);
-}
-
-body.light .navbar {
-
-    background:
-        rgba(255,255,255,0.72);
-}
-
-.nav-inner {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-}
-
-.logo {
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        21px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        -0.7px;
-}
-
-.logo span {
-
-    color:
-        var(--purple-light);
-
-    text-shadow:
-        0 0 25px
-        rgba(168,85,247,.8);
-}
-
-.nav-links {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        29px;
-}
-
-.nav-links a {
-
-    color:
-        var(--muted);
-
-    font-size:
-        13px;
-
-    font-weight:
-        600;
-
-    transition:
-        .25s;
-}
-
-.nav-links a:hover {
-
-    color:
-        var(--text);
-
-    text-shadow:
-        0 0 20px
-        rgba(168,85,247,.45);
-}
-
-.nav-actions {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-}
-
-.nav-button {
-
-    width:
-        40px;
-
-    height:
-        40px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    color:
-        var(--text);
-
-    background:
-        var(--surface);
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        12px;
-
-    transition:
-        .25s;
-}
-
-.nav-button:hover {
-
-    transform:
-        translateY(-2px);
-
-    border-color:
-        var(--border-purple);
-
-    box-shadow:
-        0 0 25px
-        rgba(168,85,247,.15);
-}
-
-.mobile-button {
-
-    display:
-        none;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-
-    min-height:
-        100vh;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    padding:
-        145px 0 100px;
-
-    position:
-        relative;
-}
-
-.hero-layout {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1.1fr .9fr;
-
-    align-items:
-        center;
-
-    gap:
-        80px;
-}
-
-.available {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        9px;
-
-    padding:
-        8px 13px;
-
-    border:
-        1px solid
-        var(--border);
-
-    background:
-        var(--surface);
-
-    border-radius:
-        999px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        11px;
-
-    font-weight:
-        600;
-
-    margin-bottom:
-        25px;
-
-    backdrop-filter:
-        blur(15px);
-}
-
-.status {
-
-    width:
-        8px;
-
-    height:
-        8px;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--green);
-
-    box-shadow:
-        0 0 16px
-        rgba(34,197,94,.8);
-
-    animation:
-        statusPulse 2s infinite;
-}
-
-@keyframes statusPulse {
-
-    0%,
-    100% {
-        box-shadow:
-            0 0 8px
-            rgba(34,197,94,.7);
-    }
-
-    50% {
-        box-shadow:
-            0 0 22px
-            rgba(34,197,94,1);
-    }
-}
-
-.hero-title {
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        clamp(50px, 7vw, 88px);
-
-    line-height:
-        .96;
-
-    letter-spacing:
-        -5px;
-
-    margin-bottom:
-        27px;
-}
-
-.gradient-text {
-
-    background:
-
-        linear-gradient(
-            110deg,
-            #ffffff 0%,
-            #d8b4fe 25%,
-            #a855f7 48%,
-            #c084fc 68%,
-            #ffffff 100%
-        );
-
-    background-size:
-        300% auto;
-
-    -webkit-background-clip:
-        text;
-
-    background-clip:
-        text;
-
-    color:
-        transparent;
-
-    animation:
-        gradientMove 5s linear infinite;
-
-    text-shadow:
-        0 0 60px
-        rgba(168,85,247,.12);
-}
-
-body.light .gradient-text {
-
-    background:
-
-        linear-gradient(
-            110deg,
-            #19131f,
-            #7c3aed,
-            #a855f7,
-            #4c1d95
-        );
-
-    -webkit-background-clip:
-        text;
-
-    background-clip:
-        text;
-}
-
-@keyframes gradientMove {
-
-    to {
-        background-position:
-            300% center;
-    }
-}
-
-.hero-description {
-
-    max-width:
-        650px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        17px;
-
-    line-height:
-        1.85;
-
-    margin-bottom:
-        14px;
-}
-
-.hero-description strong {
-
-    color:
-        var(--text);
-}
-
-.role-line {
-
-    color:
-        var(--muted);
-
-    font-size:
-        15px;
-
-    margin-bottom:
-        30px;
-}
-
-.typing {
-
-    color:
-        var(--purple-light);
-
-    font-weight:
-        800;
-
-    text-shadow:
-        0 0 25px
-        rgba(168,85,247,.35);
-}
-
-.hero-buttons {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        12px;
-}
-
-.btn {
-
-    min-height:
-        50px;
-
-    padding:
-        0 20px;
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        8px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        14px;
-
-    background:
-        var(--surface);
-
-    color:
-        var(--text);
-
-    font-size:
-        13px;
-
-    font-weight:
-        700;
-
-    transition:
-        transform .3s,
-        box-shadow .3s,
-        border-color .3s;
-
-    backdrop-filter:
-        blur(15px);
-}
-
-.btn:hover {
-
-    transform:
-        translateY(-4px);
-
-    border-color:
-        var(--border-purple);
-
-    box-shadow:
-        0 16px 45px
-        rgba(0,0,0,.25);
-}
-
-.btn-primary {
-
-    border:
-        0;
-
-    color:
-        white;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #7c3aed,
-            #a855f7 45%,
-            #c084fc
-        );
-
-    box-shadow:
-        0 10px 35px
-        rgba(139,92,246,.25);
-}
-
-.btn-primary:hover {
-
-    box-shadow:
-        0 15px 55px
-        rgba(168,85,247,.40);
-}
-
-
-/* =========================================================
-   HERO CODE CARD
-========================================================= */
-
-.hero-code {
-
-    position:
-        relative;
-
-    padding:
-        1px;
-
-    border-radius:
-        29px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(192,132,252,.75),
-            rgba(124,58,237,.15),
-            rgba(34,211,238,.35)
-        );
-
-    box-shadow:
-        0 40px 100px
-        rgba(0,0,0,.45);
-
-    transform:
-        perspective(1000px)
-        rotateY(-6deg)
-        rotateX(3deg);
-
-    transition:
-        .5s;
-}
-
-.hero-code:hover {
-
-    transform:
-        perspective(1000px)
-        rotateY(0)
-        rotateX(0)
-        translateY(-7px);
-}
-
-.code-window {
-
-    overflow:
-        hidden;
-
-    border-radius:
-        28px;
-
-    background:
-        #09070e;
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-}
-
-.code-top {
-
-    height:
-        50px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-
-    padding:
-        0 18px;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
-}
-
-.window-dot {
-
-    width:
-        10px;
-
-    height:
-        10px;
-
-    border-radius:
-        50%;
-
-    background:
-        #45404e;
-}
-
-.code-content {
-
-    padding:
-        28px;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:
-        13px;
-
-    line-height:
-        2;
-
-    color:
-        #aaa1b7;
-}
-
-.code-purple {
-    color:
-        #c084fc;
-}
-
-.code-cyan {
-    color:
-        #67e8f9;
-}
-
-.code-green {
-    color:
-        #86efac;
-}
-
-.code-pink {
-    color:
-        #f9a8d4;
-}
-
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:
-        15px;
-
-    margin-top:
-        65px;
-}
-
-.stat {
-
-    min-height:
-        135px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        20px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        21px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(168,85,247,.09),
-            rgba(255,255,255,.035)
-        );
-
-    backdrop-filter:
-        blur(20px);
-
-    transition:
-        .35s;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-}
-
-.stat::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        130px;
-
-    height:
-        130px;
-
-    border-radius:
-        50%;
-
-    top:
-        -90px;
-
-    left:
-        50%;
-
-    transform:
-        translateX(-50%);
-
-    background:
-        rgba(168,85,247,.15);
-
-    filter:
-        blur(30px);
-}
-
-.stat:hover {
-
-    transform:
-        translateY(-6px);
-
-    border-color:
-        rgba(168,85,247,.35);
-
-    box-shadow:
-        0 20px 60px
-        rgba(168,85,247,.08);
-}
-
-.stat-number {
-
-    position:
-        relative;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        31px;
-
-    font-weight:
-        700;
-
-    margin-bottom:
-        8px;
-
-    color:
-        var(--text);
-}
-
-.stat-label {
-
-    position:
-        relative;
-
-    color:
-        var(--muted);
-
-    font-size:
-        12px;
-}
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-section {
-
-    padding:
-        115px 0;
-
-    position:
-        relative;
-}
-
-.section-heading {
-
-    margin-bottom:
-        45px;
-}
-
-.eyebrow {
-
-    color:
-        var(--purple-light);
-
-    font-size:
-        11px;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        2.5px;
-
-    text-transform:
-        uppercase;
-
-    margin-bottom:
-        12px;
-
-    text-shadow:
-        0 0 25px
-        rgba(168,85,247,.25);
-}
-
-.section-title {
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        clamp(36px,5vw,58px);
-
-    line-height:
-        1;
-
-    letter-spacing:
-        -2.5px;
-
-    margin-bottom:
-        16px;
-}
-
-.section-description {
-
-    color:
-        var(--muted);
-
-    max-width:
-        680px;
-
-    line-height:
-        1.8;
-
-    font-size:
-        14px;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        .9fr 1.1fr;
-
-    gap:
-        22px;
-}
-
-.glass-card {
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        var(--radius);
-
-    background:
-        var(--surface);
-
-    padding:
-        34px;
-
-    backdrop-filter:
-        blur(22px);
-
-    -webkit-backdrop-filter:
-        blur(22px);
-
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.12);
-}
-
-.glass-card:hover {
-
-    border-color:
-        rgba(168,85,247,.20);
-}
-
-.card-title {
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        26px;
-
-    margin-bottom:
-        17px;
-}
-
-.card-text {
-
-    color:
-        var(--muted);
-
-    line-height:
-        1.85;
-
-    font-size:
-        14px;
-}
-
-.info-list {
-
-    margin-top:
-        26px;
-
-    display:
-        grid;
-
-    gap:
-        0;
-}
-
-.info-row {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    gap:
-        20px;
-
-    padding:
-        14px 0;
-
-    border-bottom:
-        1px solid
-        var(--border);
-
-    font-size:
-        13px;
-}
-
-.info-row span:first-child {
-
-    color:
-        var(--muted);
-}
-
-.info-row span:last-child {
-
-    text-align:
-        right;
-
-    font-weight:
-        700;
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:
-        15px;
-}
-
-.skill {
-
-    padding:
-        27px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        20px;
-
-    background:
-        var(--surface);
-
-    transition:
-        .35s;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-}
-
-.skill::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        100px;
-
-    height:
-        100px;
-
-    right:
-        -50px;
-
-    bottom:
-        -50px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(168,85,247,.12);
-
-    filter:
-        blur(25px);
-}
-
-.skill:hover {
-
-    transform:
-        translateY(-7px);
-
-    border-color:
-        rgba(168,85,247,.32);
-
-    box-shadow:
-        0 20px 55px
-        rgba(168,85,247,.08);
-}
-
-.skill-icon {
-
-    width:
-        48px;
-
-    height:
-        48px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(168,85,247,.18),
-            rgba(124,58,237,.06)
-        );
-
-    border:
-        1px solid
-        rgba(168,85,247,.15);
-
-    font-size:
-        22px;
-
-    margin-bottom:
-        18px;
-}
-
-.skill h3 {
-
-    font-size:
-        16px;
-
-    margin-bottom:
-        8px;
-}
-
-.skill p {
-
-    color:
-        var(--muted);
-
-    font-size:
-        12px;
-
-    line-height:
-        1.7;
-}
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:
-        22px;
-}
-
-.project {
-
-    overflow:
-        hidden;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        26px;
-
-    background:
-        var(--surface);
-
-    transition:
-        transform .35s,
-        border-color .35s,
-        box-shadow .35s;
-
-    transform-style:
-        preserve-3d;
-}
-
-.project:hover {
-
-    border-color:
-        rgba(168,85,247,.35);
-
-    box-shadow:
-        0 30px 90px
-        rgba(0,0,0,.35);
-}
-
-.project-preview {
-
-    height:
-        260px;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.06);
-}
-
-
-/* =========================================================
-   BOOKIFY PREVIEW
-========================================================= */
-
-.bookify {
-
-    padding:
-        20px;
-
-    background:
-
-        radial-gradient(
-            circle at 80% 15%,
-            rgba(168,85,247,.35),
-            transparent 32%
-        ),
-
-        radial-gradient(
-            circle at 20% 80%,
-            rgba(34,211,238,.10),
-            transparent 30%
-        ),
-
-        #09070f;
-}
-
-.fake-site-nav {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    margin-bottom:
-        20px;
-}
-
-.fake-logo {
-
-    font-size:
-        13px;
-
-    font-weight:
-        800;
-
-    color:
-        white;
-}
-
-.fake-nav-lines {
-
-    display:
-        flex;
-
-    gap:
-        7px;
-}
-
-.fake-nav-lines span {
-
-    width:
-        31px;
-
-    height:
-        5px;
-
-    border-radius:
-        99px;
-
-    background:
-        #37313f;
-}
-
-.book-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:
-        10px;
-}
-
-.book-card {
-
-    height:
-        165px;
-
-    padding:
-        9px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    border-radius:
-        12px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #21162f,
-            #0e0b13
-        );
-}
-
-.book-cover {
-
-    height:
-        95px;
-
-    border-radius:
-        8px;
-
-    margin-bottom:
-        9px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8b5cf6,
-            #c084fc
-        );
-
-    box-shadow:
-        0 8px 20px
-        rgba(139,92,246,.2);
-}
-
-.book-card:nth-child(2)
-.book-cover {
-
-    background:
-        linear-gradient(
-            135deg,
-            #ec4899,
-            #8b5cf6
-        );
-}
-
-.book-card:nth-child(3)
-.book-cover {
-
-    background:
-        linear-gradient(
-            135deg,
-            #22d3ee,
-            #6366f1
-        );
-}
-
-.book-line {
-
-    width:
-        70%;
-
-    height:
-        5px;
-
-    border-radius:
-        10px;
-
-    background:
-        #51495a;
-
-    margin-bottom:
-        6px;
-}
-
-.book-line.short {
-
-    width:
-        45%;
-}
-
-
-/* =========================================================
-   PORTFOLIO PREVIEW
-========================================================= */
-
-.portfolio-preview {
-
-    padding:
-        24px;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 10%,
-            rgba(168,85,247,.30),
-            transparent 35%
-        ),
-
-        #08060d;
-}
-
-.mini-browser {
-
-    height:
-        100%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    border-radius:
-        15px;
-
-    overflow:
-        hidden;
-
-    background:
-        rgba(255,255,255,.025);
-}
-
-.browser-top {
-
-    height:
-        32px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        5px;
-
-    padding:
-        0 11px;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.08);
-}
-
-.browser-dot {
-
-    width:
-        7px;
-
-    height:
-        7px;
-
-    border-radius:
-        50%;
-
-    background:
-        #51495a;
-}
-
-.mini-content {
-
-    padding:
-        25px;
-}
-
-.mini-brand {
-
-    font-size:
-        8px;
-
-    font-weight:
-        800;
-
-    color:
-        #c084fc;
-}
-
-.mini-heading {
-
-    width:
-        70%;
-
-    height:
-        18px;
-
-    margin:
-        26px auto 12px;
-
-    border-radius:
-        8px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #8b5cf6,
-            #c084fc
-        );
-
-    box-shadow:
-        0 0 30px
-        rgba(168,85,247,.25);
-}
-
-.mini-description {
-
-    width:
-        80%;
-
-    height:
-        6px;
-
-    border-radius:
-        10px;
-
-    background:
-        #3e3748;
-
-    margin:
-        0 auto 8px;
-}
-
-.mini-description.second {
-
-    width:
-        62%;
-}
-
-.mini-buttons {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        7px;
-
-    margin-top:
-        18px;
-}
-
-.mini-button {
-
-    width:
-        55px;
-
-    height:
-        19px;
-
-    border-radius:
-        6px;
-
-    background:
-        #8b5cf6;
-}
-
-.mini-button.outline {
-
-    background:
-        rgba(255,255,255,.04);
-
-    border:
-        1px solid
-        #544963;
-}
-
-
-/* =========================================================
-   GITHUB PREVIEW
-========================================================= */
-
-.github-preview {
-
-    padding:
-        22px;
-
-    background:
-
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(34,197,94,.13),
-            transparent 30%
-        ),
-
-        #08090b;
-}
-
-.github-window {
-
-    height:
-        100%;
-
-    padding:
-        21px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.09);
-
-    border-radius:
-        16px;
-
-    background:
-        #0d0e11;
-}
-
-.github-profile {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        12px;
-}
-
-.github-avatar {
-
-    width:
-        47px;
-
-    height:
-        47px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8b5cf6,
-            #c084fc
-        );
-
-    font-size:
-        21px;
-}
-
-.github-name {
-
-    font-weight:
-        800;
-
-    font-size:
-        13px;
-}
-
-.github-username {
-
-    color:
-        #6e6875;
-
-    font-size:
-        10px;
-
-    margin-top:
-        3px;
-}
-
-.github-graph {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(14,1fr);
-
-    gap:
-        4px;
-
-    margin-top:
-        27px;
-}
-
-.github-cell {
-
-    height:
-        11px;
-
-    border-radius:
-        2px;
-
-    background:
-        #18251d;
-}
-
-.github-cell.active {
-
-    background:
-        #2f9e55;
-}
-
-.github-cell.hot {
-
-    background:
-        #53d977;
-}
-
-
-/* =========================================================
-   PROJECT BODY
-========================================================= */
-
-.project-body {
-
-    padding:
-        28px;
-}
-
-.project-title {
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        25px;
-
-    margin-bottom:
-        10px;
-}
-
-.project-description {
-
-    color:
-        var(--muted);
-
-    font-size:
-        13px;
-
-    line-height:
-        1.8;
-
-    margin-bottom:
-        19px;
-}
-
-.tags {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        7px;
-
-    margin-bottom:
-        22px;
-}
-
-.tag {
-
-    padding:
-        7px 9px;
-
-    border:
-        1px solid
-        rgba(168,85,247,.15);
-
-    border-radius:
-        8px;
-
-    background:
-        rgba(168,85,247,.07);
-
-    color:
-        #c4b5fd;
-
-    font-size:
-        10px;
-
-    font-weight:
-        700;
-}
-
-.project-buttons {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        9px;
-}
-
-.project-buttons .btn {
-
-    min-height:
-        42px;
-
-    padding:
-        0 14px;
-
-    font-size:
-        11px;
-}
-
-
-/* =========================================================
-   GITHUB SECTION
-========================================================= */
-
-.github-section {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        22px;
-}
-
-.github-main-card {
-
-    padding:
-        35px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(168,85,247,.10),
-            rgba(255,255,255,.035)
-        );
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-}
-
-.github-main-card::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        280px;
-
-    height:
-        280px;
-
-    border-radius:
-        50%;
-
-    right:
-        -140px;
-
-    bottom:
-        -140px;
-
-    background:
-        rgba(168,85,247,.16);
-
-    filter:
-        blur(60px);
-}
-
-.github-heading {
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        28px;
-
-    margin-bottom:
-        12px;
-}
-
-.github-description {
-
-    color:
-        var(--muted);
-
-    line-height:
-        1.8;
-
-    font-size:
-        14px;
-
-    max-width:
-        500px;
-
-    margin-bottom:
-        24px;
-}
-
-.github-profile-link {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-}
-
-.github-stats-card {
-
-    padding:
-        35px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        25px;
-
-    background:
-        var(--surface);
-
-    display:
-        flex;
-
-    align-items:
-        center;
-}
-
-.github-stat-grid {
-
-    width:
-        100%;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:
-        10px;
-}
-
-.github-stat {
-
-    text-align:
-        center;
-
-    padding:
-        20px 8px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        15px;
-
-    background:
-        rgba(255,255,255,.025);
-}
-
-.github-stat strong {
-
-    display:
-        block;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        28px;
-
-    margin-bottom:
-        6px;
-}
-
-.github-stat span {
-
-    color:
-        var(--muted);
-
-    font-size:
-        10px;
-}
-
-
-/* =========================================================
-   TIMELINE
-========================================================= */
-
-.timeline {
-
-    max-width:
-        820px;
-
-    margin:
-        0 auto;
-
-    position:
-        relative;
-}
-
-.timeline::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    left:
-        13px;
-
-    top:
-        0;
-
-    bottom:
-        0;
-
-    width:
-        1px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(168,85,247,.7),
-            rgba(168,85,247,.05)
-        );
-}
-
-.timeline-item {
-
-    position:
-        relative;
-
-    padding-left:
-        52px;
-
-    margin-bottom:
-        28px;
-}
-
-.timeline-dot {
-
-    position:
-        absolute;
-
-    left:
-        6px;
-
-    top:
-        3px;
-
-    width:
-        16px;
-
-    height:
-        16px;
-
-    border-radius:
-        50%;
-
-    background:
-        #a855f7;
-
-    border:
-        3px solid
-        #12091c;
-
-    box-shadow:
-        0 0 25px
-        rgba(168,85,247,.8);
-}
-
-.timeline-card {
-
-    padding:
-        25px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        20px;
-
-    background:
-        var(--surface);
-}
-
-.timeline-date {
-
-    color:
-        var(--purple-light);
-
-    font-size:
-        11px;
-
-    font-weight:
-        800;
-}
-
-.timeline-card h3 {
-
-    margin:
-        8px 0;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        20px;
-}
-
-.timeline-card p {
-
-    color:
-        var(--muted);
-
-    line-height:
-        1.7;
-
-    font-size:
-        13px;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        .8fr 1.2fr;
-
-    gap:
-        22px;
-}
-
-.contact-card,
-.form-card {
-
-    padding:
-        35px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        25px;
-
-    background:
-        var(--surface);
-}
-
-.contact-title {
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        30px;
-
-    margin-bottom:
-        13px;
-}
-
-.contact-text {
-
-    color:
-        var(--muted);
-
-    line-height:
-        1.8;
-
-    font-size:
-        14px;
-
-    margin-bottom:
-        25px;
-}
-
-.email-box {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        10px;
-
-    padding:
-        13px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        13px;
-
-    background:
-        rgba(255,255,255,.025);
-
-    margin-bottom:
-        18px;
-}
-
-.email-text {
-
-    overflow:
-        hidden;
-
-    text-overflow:
-        ellipsis;
-
-    white-space:
-        nowrap;
-
-    color:
-        var(--muted);
-
-    font-size:
-        12px;
-}
-
-.copy-button {
-
-    flex-shrink:
-        0;
-
-    width:
-        38px;
-
-    height:
-        38px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        10px;
-
-    background:
-        var(--surface);
-
-    color:
-        var(--text);
-}
-
-.form {
-
-    display:
-        grid;
-
-    gap:
-        13px;
-}
-
-.input,
-.textarea {
-
-    width:
-        100%;
-
-    padding:
-        15px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        13px;
-
-    outline:
-        none;
-
-    color:
-        var(--text);
-
-    background:
-        rgba(255,255,255,.025);
-
-    font-size:
-        13px;
-
-    transition:
-        .25s;
-}
-
-.input:focus,
-.textarea:focus {
-
-    border-color:
-        rgba(168,85,247,.6);
-
-    box-shadow:
-        0 0 0 4px
-        rgba(168,85,247,.08);
-}
-
-.textarea {
-
-    min-height:
-        145px;
-
-    resize:
-        vertical;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    padding:
-        35px 0;
-
-    border-top:
-        1px solid
-        var(--border);
-}
-
-.footer-inner {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        20px;
-}
-
-.footer-text {
-
-    color:
-        var(--muted);
-
-    font-size:
-        12px;
-}
-
-.socials {
-
-    display:
-        flex;
-
-    gap:
-        8px;
-}
-
-.social {
-
-    width:
-        40px;
-
-    height:
-        40px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        11px;
-
-    background:
-        var(--surface);
-
-    transition:
-        .25s;
-}
-
-.social:hover {
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        rgba(168,85,247,.45);
-
-    box-shadow:
-        0 10px 30px
-        rgba(168,85,247,.12);
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-.toast {
-
-    position:
-        fixed;
-
-    left:
-        50%;
-
-    bottom:
-        25px;
-
-    z-index:
-        3000;
-
-    transform:
-        translate(-50%, 120px);
-
-    opacity:
-        0;
-
-    padding:
-        13px 18px;
-
-    border:
-        1px solid
-        rgba(168,85,247,.3);
-
-    border-radius:
-        12px;
-
-    background:
-        #110a1a;
-
-    color:
-        white;
-
-    font-size:
-        12px;
-
-    box-shadow:
-        0 15px 50px
-        rgba(0,0,0,.35);
-
-    transition:
-        .4s;
-}
-
-.toast.show {
-
-    transform:
-        translate(-50%, 0);
-
-    opacity:
-        1;
-}
-
-
-/* =========================================================
-   BACK TOP
-========================================================= */
-
-.back-top {
-
-    position:
-        fixed;
-
-    right:
-        25px;
-
-    bottom:
-        25px;
-
-    width:
-        45px;
-
-    height:
-        45px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        13px;
-
-    background:
-        var(--surface);
-
-    color:
-        var(--text);
-
-    opacity:
-        0;
-
-    pointer-events:
-        none;
-
-    transition:
-        .3s;
-
-    z-index:
-        500;
-}
-
-.back-top.show {
-
-    opacity:
-        1;
-
-    pointer-events:
-        auto;
-}
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-.reveal {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(30px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.visible {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .hero-layout {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            60px;
-    }
-
-    .hero-code {
-
-        max-width:
-            700px;
-
-        width:
-            100%;
-
-        margin:
-            0 auto;
-    }
-
-    .skills-grid {
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .stats {
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .about-grid,
-    .github-section,
-    .contact-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-}
-
-
-@media (max-width: 760px) {
-
-    .navbar {
-
-        padding:
-            14px 0;
-    }
-
-    .nav-links {
-
-        position:
-            absolute;
-
-        top:
-            70px;
-
-        left:
-            4%;
-
-        right:
-            4%;
-
-        padding:
-            20px;
-
-        display:
-            none;
-
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-
-        gap:
-            18px;
-
-        border:
-            1px solid
-            var(--border);
-
-        border-radius:
-            18px;
-
-        background:
-            rgba(8,4,15,.96);
-
-        backdrop-filter:
-            blur(25px);
-    }
-
-    body.light .nav-links {
-
-        background:
-            rgba(255,255,255,.96);
-    }
-
-    .nav-links.open {
-
-        display:
-            flex;
-    }
-
-    .mobile-button {
-
-        display:
-            grid;
-    }
-
-    .hero {
-
-        padding:
-            125px 0 75px;
-    }
-
-    .hero-title {
-
-        font-size:
-            clamp(47px, 13vw, 70px);
-
-        letter-spacing:
-            -3px;
-    }
-
-    section {
-
-        padding:
-            80px 0;
-    }
-
-    .projects-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .footer-inner {
-
-        flex-direction:
-            column;
-
-        text-align:
-            center;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .container {
-
-        width:
-            90%;
-    }
-
-    .stats {
-
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:
-            9px;
-    }
-
-    .stat {
-
-        min-height:
-            115px;
-    }
-
-    .stat-number {
-
-        font-size:
-            25px;
-    }
-
-    .stat-label {
-
-        font-size:
-            10px;
-    }
-
-    .skills-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .hero-buttons {
-
-        flex-direction:
-            column;
-    }
-
-    .hero-buttons .btn {
-
-        width:
-            100%;
-    }
-
-    .hero-description {
-
-        font-size:
-            14px;
-    }
-
-    .glass-card,
-    .github-main-card,
-    .github-stats-card,
-    .contact-card,
-    .form-card {
-
-        padding:
-            24px;
-    }
-
-    .github-stat-grid {
-
-        gap:
-            6px;
-    }
-
-    .github-stat strong {
-
-        font-size:
-            22px;
-    }
-}
-
+/* ═══════════════════════════════════════════════════════════
+   ABDULAZIZ — PORTFOLIO
+   Dark + Light · UZ + EN
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── DARK (default) ── */
+:root,[data-theme="dark"]{
+  --bg:#070b14; --bg-2:#0b1120; --card:#0d1424; --card-2:#111a2e;
+  --line:#1b2740; --line-2:#243350;
+  --ink:#f1f5f9; --ink-2:#94a3b8; --ink-3:#64748b;
+  --blue:#3b82f6; --cyan:#22d3ee; --sky:#38bdf8;
+  --green:#34d399; --amber:#fbbf24; --rose:#fb7185;
+  --grad:linear-gradient(135deg,#3b82f6,#22d3ee);
+  --on-accent:#04121f;
+  --orb-1:#1d4ed8; --orb-2:#0891b2; --orb-op:.28;
+  --glass:rgba(7,11,20,.78);
+  --shadow:0 24px 60px -24px rgba(56,189,248,.35);
+  --hair:rgba(255,255,255,.055);
+  --soft:rgba(255,255,255,.02);
+}
+
+/* ── LIGHT ── */
+[data-theme="light"]{
+  --bg:#f7f9fc; --bg-2:#eef2f8; --card:#ffffff; --card-2:#f7f9fc;
+  --line:#dde5ef; --line-2:#c3d0e0;
+  --ink:#0d1526; --ink-2:#4a5a70; --ink-3:#7b8aa0;
+  --blue:#2563eb; --cyan:#0891b2; --sky:#0369a1;
+  --green:#059669; --amber:#b45309; --rose:#e11d48;
+  --grad:linear-gradient(135deg,#2563eb,#0891b2);
+  --on-accent:#ffffff;
+  --orb-1:#93c5fd; --orb-2:#67e8f9; --orb-op:.4;
+  --glass:rgba(247,249,252,.82);
+  --shadow:0 24px 60px -26px rgba(37,99,235,.28);
+  --hair:rgba(13,21,38,.07);
+  --soft:rgba(13,21,38,.022);
+}
+
+:root{--shell:1180px;--ease:cubic-bezier(.16,1,.3,1)}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  transition:background .45s var(--ease),color .45s var(--ease)}
+body.locked{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+h1,h2,h3{line-height:1.08;letter-spacing:-.035em;font-weight:800}
+::selection{background:var(--sky);color:var(--on-accent)}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:6px}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.shell{width:min(var(--shell),90%);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--sky);color:var(--on-accent);
+  padding:10px 16px;border-radius:8px;z-index:400;font-weight:600;font-size:14px}
+.skip:focus{left:16px}
+
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;
+  opacity:var(--orb-op);transition:opacity .5s,background .5s}
+.orb-1{width:520px;height:520px;background:var(--orb-1);top:-180px;left:-160px}
+.orb-2{width:420px;height:420px;background:var(--orb-2);top:40%;right:-180px;opacity:calc(var(--orb-op) * .7)}
+
+/* ── HEADER ── */
+.head{position:fixed;inset:0 0 auto 0;z-index:100;transition:all .3s var(--ease);border-bottom:1px solid transparent}
+.head.on{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--line)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.02em;flex:none}
+.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;
+  background:color-mix(in oklab,var(--sky) 12%,transparent);
+  border:1px solid color-mix(in oklab,var(--sky) 32%,transparent);flex:none}
+.brand-mark svg{width:17px;height:17px;color:var(--sky)}
+.brand b{color:var(--sky)}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{position:relative;padding:8px 13px;border-radius:8px;font-size:14px;font-weight:500;
+  color:var(--ink-2);transition:color .2s,background .2s;display:inline-flex;gap:7px}
+.nav a:hover{color:var(--ink);background:var(--soft)}
+.nav a.active{color:var(--ink);background:color-mix(in oklab,var(--sky) 11%,transparent)}
+.nav a i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3)}
+.nav a:hover i,.nav a.active i{color:var(--sky)}
+
+.head-tools{display:flex;align-items:center;gap:8px;flex:none}
+.tbtn{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;
+  border:1px solid var(--line-2);background:none;color:var(--ink-2);cursor:pointer;
+  transition:color .22s,border-color .22s,background .22s}
+.tbtn:hover{color:var(--sky);border-color:var(--sky)}
+.tbtn svg{width:18px;height:18px}
+[data-theme="dark"] .i-sun{display:none}
+[data-theme="light"] .i-moon{display:none}
+
+.lang{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:11px;
+  overflow:hidden;height:40px;flex:none}
+.lang button{width:42px;height:100%;background:none;border:0;color:var(--ink-3);cursor:pointer;
+  font-size:12.5px;font-weight:700;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;
+  transition:all .22s}
+.lang button:hover{color:var(--ink)}
+.lang button.on{background:var(--grad);color:var(--on-accent)}
+
+.cta-top{display:inline-flex;align-items:center;gap:9px;padding:0 18px;height:40px;border-radius:999px;
+  background:var(--grad);color:var(--on-accent);font-weight:700;font-size:14px;white-space:nowrap;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.cta-top:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px color-mix(in oklab,var(--sky) 55%,transparent)}
+.burger{display:none;width:40px;height:40px;border-radius:11px;background:none;
+  border:1px solid var(--line-2);color:var(--ink);cursor:pointer;place-items:center}
+.burger svg{width:20px;height:20px}
+@media(max-width:1080px){.cta-top{display:none}}
+@media(max-width:940px){
+  .nav{display:none}.burger{display:grid}
+  .nav.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:2px;padding:14px;background:var(--glass);
+    backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .nav.open a{padding:13px 14px;font-size:15px}
+}
+
+.pill{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;
+  border:1px solid color-mix(in oklab,var(--sky) 32%,transparent);
+  background:color-mix(in oklab,var(--sky) 8%,transparent);
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--sky)}
+.live-dot{position:relative;display:flex;width:7px;height:7px;flex:none}
+.live-dot::before,.live-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--green)}
+.live-dot::before{animation:ping 1.9s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{75%,100%{transform:scale(2.4);opacity:0}}
+
+/* ── HERO ── */
+.hero{position:relative;z-index:2;padding:150px 0 90px}
+.hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:60px;align-items:center}
+.h1{font-size:clamp(2.6rem,1.2rem+5.2vw,5rem);margin:26px 0 0;letter-spacing:-.045em}
+.h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.h1 .thin{font-weight:300;font-style:italic;color:var(--ink-2)}
+.lede{margin-top:26px;max-width:56ch;font-size:clamp(1rem,.95rem+.35vw,1.18rem);color:var(--ink-2)}
+.lede b{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;
+  padding:0 24px;border-radius:999px;font-size:15px;font-weight:600;border:1px solid var(--line-2);
+  color:var(--ink);cursor:pointer;background:none;
+  transition:transform .25s var(--ease),border-color .25s,color .25s,box-shadow .25s}
+.btn svg{width:17px;height:17px;flex:none}
+.btn:hover{transform:translateY(-2px);border-color:var(--sky);color:var(--sky)}
+.btn-main{background:var(--grad);border-color:transparent;color:var(--on-accent);font-weight:700}
+.btn-main:hover{color:var(--on-accent);box-shadow:0 14px 34px -10px color-mix(in oklab,var(--sky) 60%,transparent)}
+.btn-ghost{border-color:transparent;color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--line-2);color:var(--ink)}
+.info-card{position:relative;border:1px solid var(--line);border-radius:20px;padding:28px;overflow:hidden;
+  background:var(--card)}
+.info-card::before{content:"";position:absolute;top:0;left:30px;right:30px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--sky),transparent)}
+.info-head{display:flex;justify-content:space-between;margin-bottom:20px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.info-head span:last-child{color:var(--sky)}
+.info-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;
+  border-top:1px solid var(--hair)}
+.info-row:first-of-type{border-top:0}
+.info-row dt{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);flex:none}
+.info-row dd{font-size:14px;font-weight:500;text-align:right}
+.info-note{margin-top:20px;padding-top:18px;border-top:1px solid var(--hair);font-size:14px;color:var(--ink-2)}
+@media(max-width:980px){.hero{padding:126px 0 70px}.hero-grid{grid-template-columns:1fr;gap:42px}}
+
+.marq{position:relative;z-index:2;margin-top:70px;padding:16px 0;overflow:hidden;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.marq-track{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:slide 30s linear infinite;
+  font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-3)}
+.marq-track i{font-style:normal;color:var(--sky)}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marq-track{animation:none}}
+
+/* ── SECTIONS ── */
+.sec{position:relative;z-index:2;padding:100px 0}
+.sec-head{margin-bottom:56px}
+.sec-title{font-size:clamp(2rem,1.4rem+2.4vw,3.2rem);margin-top:22px}
+.sec-title .thin{font-weight:300;font-style:italic;color:var(--ink-2)}
+.sec-title .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sec-sub{margin-top:16px;max-width:56ch;color:var(--ink-2)}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media(max-width:900px){.proj-grid{grid-template-columns:1fr}}
+.proj{position:relative;display:flex;flex-direction:column;padding:30px;border-radius:20px;
+  border:1px solid var(--line);background:var(--card);overflow:hidden;
+  transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.proj:hover{transform:translateY(-5px);border-color:color-mix(in oklab,var(--sky) 45%,transparent);box-shadow:var(--shadow)}
+.proj.feat{border-color:color-mix(in oklab,var(--sky) 40%,transparent)}
+.proj-tag{align-self:flex-start;padding:6px 14px;border-radius:999px;
+  border:1px solid color-mix(in oklab,var(--sky) 30%,transparent);
+  background:color-mix(in oklab,var(--sky) 8%,transparent);
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;
+  letter-spacing:.06em;color:var(--sky);margin-bottom:22px}
+.proj h3{font-size:clamp(1.3rem,1.1rem+.7vw,1.65rem);margin-bottom:12px;letter-spacing:-.03em}
+.proj p{color:var(--ink-2);font-size:15px;margin-bottom:20px}
+.proj p b{color:var(--ink);font-weight:600}
+.stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.stack-row span{padding:5px 11px;border-radius:7px;border:1px solid var(--line-2);
+  background:var(--soft);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-2)}
+.proj-btns{display:flex;flex-wrap:wrap;gap:11px;margin-top:auto}
+.btn-sm{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 19px;border-radius:11px;
+  font-size:14px;font-weight:600;border:1px solid var(--line-2);color:var(--ink);cursor:pointer;background:none;
+  transition:transform .22s var(--ease),border-color .22s,color .22s,box-shadow .22s}
+.btn-sm svg{width:15px;height:15px;flex:none}
+.btn-sm:hover{transform:translateY(-2px);border-color:var(--sky);color:var(--sky)}
+.btn-live{background:var(--grad);border-color:transparent;color:var(--on-accent);font-weight:700}
+.btn-live:hover{color:var(--on-accent);box-shadow:0 12px 28px -10px color-mix(in oklab,var(--sky) 60%,transparent)}
+.note{display:flex;align-items:flex-start;gap:9px;margin-top:16px;padding:11px 13px;border-radius:10px;
+  font-size:12.5px;line-height:1.55}
+.note svg{width:15px;height:15px;flex:none;margin-top:2px}
+.note b{font-weight:700}
+.note-warn{border:1px solid color-mix(in oklab,var(--amber) 32%,transparent);
+  background:color-mix(in oklab,var(--amber) 9%,transparent);color:var(--amber)}
+.wip{opacity:.78}
+.wip .proj-tag{border-color:var(--line-2);background:var(--soft);color:var(--ink-2)}
+
+/* ── ABOUT ── */
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:60px}
+@media(max-width:900px){.about{grid-template-columns:1fr;gap:44px}}
+.quote{position:relative;padding-left:24px;border-left:3px solid var(--sky);
+  font-size:clamp(1.15rem,1rem+.7vw,1.5rem);line-height:1.45;font-weight:300;letter-spacing:-.02em;margin-bottom:28px}
+.quote b{font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.about p{color:var(--ink-2);margin-bottom:16px}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:32px}
+@media(max-width:620px){.rules{grid-template-columns:1fr}}
+.rule{padding:17px;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+.rule i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;
+  color:var(--sky);display:block;margin-bottom:9px}
+.rule h4{font-size:14.5px;font-weight:600;margin-bottom:5px}
+.rule p{font-size:12.5px;color:var(--ink-3);margin:0;line-height:1.55}
+.tl{position:relative;padding-left:26px;border-left:1px solid var(--line-2);list-style:none}
+.tl li{position:relative;padding-bottom:32px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-32px;top:5px;width:13px;height:13px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--sky)}
+.tl i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:7px}
+.tl h4{font-size:17px;font-weight:700;margin-bottom:7px}
+.tl p{font-size:14px;color:var(--ink-2);max-width:42ch}
+
+/* ── SKILLS ── */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.skills{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.skills{grid-template-columns:1fr}}
+.skill{padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--card);
+  transition:transform .3s var(--ease),border-color .3s}
+.skill:hover{transform:translateY(-4px);border-color:color-mix(in oklab,var(--sky) 42%,transparent)}
+.skill-ic{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#06121f;margin-bottom:16px}
+.skill h4{font-size:16px;font-weight:700;margin-bottom:7px}
+.skill p{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:52px;border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;background:var(--line)}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--bg-2);padding:26px 16px;text-align:center}
+.stat b{display:block;font-size:clamp(1.7rem,1.4rem+1.2vw,2.4rem);font-weight:800;letter-spacing:-.04em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat span{display:block;margin-top:5px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ── CONTACT ── */
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:46px}
+@media(max-width:880px){.ct-grid{grid-template-columns:1fr}}
+.ct-main{position:relative;display:flex;flex-direction:column;min-height:270px;padding:34px;border-radius:22px;
+  border:1px solid color-mix(in oklab,var(--sky) 36%,transparent);overflow:hidden;background:var(--card);
+  transition:border-color .3s,transform .3s var(--ease),box-shadow .35s}
+.ct-main:hover{transform:translateY(-4px);border-color:var(--sky);box-shadow:var(--shadow)}
+.ct-label{display:flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:22px}
+.ct-label svg{width:16px;height:16px}
+.ct-mail{font-size:clamp(1.25rem,1rem+1.1vw,1.85rem);font-weight:800;letter-spacing:-.035em;line-height:1.2}
+.ct-mail span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ct-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding-top:26px}
+.ct-foot small{font-size:13.5px;color:var(--ink-2)}
+.ct-arrow{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--grad);
+  color:var(--on-accent);flex:none;transition:transform .3s var(--ease)}
+.ct-main:hover .ct-arrow{transform:translate(4px,-4px)}
+.ct-arrow svg{width:20px;height:20px}
+.ct-side{display:flex;flex-direction:column;gap:18px}
+.ct-box{padding:26px;border-radius:22px;border:1px solid var(--line);background:var(--card);
+  transition:border-color .3s,transform .3s var(--ease)}
+a.ct-box:hover{transform:translateY(-4px);border-color:var(--line-2)}
+.ct-box-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.ct-box h4{font-size:17px;font-weight:700;margin-bottom:6px}
+.ct-box p{font-size:13.5px;color:var(--ink-2)}
+.ct-box .arr{color:var(--ink-3);transition:transform .25s var(--ease),color .25s}
+a.ct-box:hover .arr{transform:translate(3px,-3px);color:var(--sky)}
+.on-now{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2);margin-top:3px}
+.on-now em{font-style:normal;font-family:'JetBrains Mono',monospace}
+
+/* ── FOOTER ── */
+.foot{position:relative;z-index:2;border-top:1px solid var(--line);background:var(--bg-2);padding:36px 0}
+.foot-in{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.foot-links a{cursor:pointer}
+.foot-links a:hover{color:var(--sky)}
+.foot-bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-top:26px;padding-top:22px;
+  border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);opacity:.8}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .btn:hover,.proj:hover,.skill:hover,.ct-main:hover,a.ct-box:hover{transform:none}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BOOKIFY DEMO
+   ═══════════════════════════════════════════════════════════ */
+.bk{position:fixed;inset:0;z-index:200;background:var(--bg);overflow-y:auto;display:none}
+.bk.open{display:block}
+.bk-head{position:sticky;top:0;z-index:20;background:var(--glass);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.bk-head-in{display:flex;align-items:center;gap:14px;height:66px;justify-content:space-between}
+.bk-logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em;font-size:18px}
+.bk-logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.bk-logo em{font-style:normal;padding:3px 8px;border-radius:6px;
+  background:color-mix(in oklab,var(--sky) 13%,transparent);
+  border:1px solid color-mix(in oklab,var(--sky) 32%,transparent);
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--sky);text-transform:uppercase}
+.bk-acts{display:flex;align-items:center;gap:10px}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 15px;
+  border-radius:11px;border:1px solid var(--line-2);background:none;color:var(--ink);cursor:pointer;
+  font-size:14px;font-weight:600;transition:border-color .2s,color .2s,background .2s}
+.ibtn:hover{border-color:var(--sky);color:var(--sky)}
+.ibtn svg{width:17px;height:17px;flex:none}
+.ibtn-pri{background:var(--grad);border-color:transparent;color:var(--on-accent);font-weight:700}
+.ibtn-pri:hover{color:var(--on-accent)}
+.cart-badge{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;
+  background:var(--rose);color:#fff;font-size:11px;font-weight:800;font-family:'JetBrains Mono',monospace}
+@media(max-width:680px){.ibtn span.txt{display:none}.ibtn{padding:0 12px}}
+
+.bk-body{padding:30px 0 70px}
+.bk-hero{margin-bottom:26px}
+.bk-hero h1{font-size:clamp(1.7rem,1.3rem+2vw,2.6rem);margin-bottom:10px}
+.bk-hero p{color:var(--ink-2);font-size:15px;max-width:66ch}
+.bk-hero a{color:var(--sky);border-bottom:1px solid color-mix(in oklab,var(--sky) 40%,transparent)}
+.bk-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:22px 0 16px}
+@media(max-width:760px){.bk-tools{grid-template-columns:1fr}}
+.search-wrap{position:relative;display:flex}
+.search-wrap svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--ink-3)}
+.inp{width:100%;height:50px;padding:0 16px;border-radius:12px;border:1px solid var(--line-2);
+  background:var(--card);color:var(--ink);font-size:15px;font-family:inherit;transition:border-color .2s}
+.inp:focus{outline:none;border-color:var(--sky)}
+.inp::placeholder{color:var(--ink-3)}
+.search-wrap .inp{padding-left:45px}
+.sel{height:50px;padding:0 38px 0 15px;border-radius:12px;border:1px solid var(--line-2);background:var(--card);
+  color:var(--ink);font-size:14px;font-family:inherit;cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237b8aa0' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;background-size:16px}
+.sel:focus{outline:none;border-color:var(--sky)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{padding:8px 15px;border-radius:999px;border:1px solid var(--line-2);background:var(--card);
+  color:var(--ink-2);font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--sky);color:var(--ink)}
+.chip.on{background:var(--grad);border-color:transparent;color:var(--on-accent);font-weight:700}
+.bk-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+  margin-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.bk-meta b{color:var(--sky)}
+.books{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:18px}
+.book{display:flex;flex-direction:column;border-radius:16px;border:1px solid var(--line);background:var(--card);
+  overflow:hidden;cursor:pointer;transition:transform .3s var(--ease),border-color .25s,box-shadow .3s;text-align:left}
+.book:hover{transform:translateY(-5px);border-color:color-mix(in oklab,var(--sky) 45%,transparent);box-shadow:var(--shadow)}
+.cover{position:relative;aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:space-between;
+  padding:16px;overflow:hidden}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(4,10,20,.72))}
+.cover-g{position:absolute;inset:0}
+.cover-ttl{position:relative;z-index:2;font-weight:800;font-size:16px;line-height:1.22;letter-spacing:-.02em;
+  color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.45);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cover-bot{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.genre-tag{padding:4px 9px;border-radius:6px;background:rgba(4,10,20,.6);backdrop-filter:blur(6px);
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#e8eef6;text-transform:uppercase}
+.stars{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:700;color:#fbbf24;
+  font-family:'JetBrains Mono',monospace;background:rgba(4,10,20,.6);padding:4px 8px;border-radius:6px}
+.book-info{padding:14px 15px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.book-author{font-size:12.5px;color:var(--ink-3)}
+.book-price{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding-top:8px}
+.book-price b{font-size:16px;font-weight:800;letter-spacing:-.02em}
+.book-price small{font-size:11px;color:var(--ink-3);font-family:'JetBrains Mono',monospace}
+.empty{grid-column:1/-1;text-align:center;padding:70px 20px;border:1px dashed var(--line-2);border-radius:18px}
+.empty h3{font-size:19px;margin-bottom:8px}
+.empty p{color:var(--ink-2);font-size:14px}
+.pager{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:34px}
+.pbtn{min-width:42px;height:42px;padding:0 13px;border-radius:11px;border:1px solid var(--line-2);
+  background:var(--card);color:var(--ink-2);font-size:14px;font-weight:600;cursor:pointer;
+  font-family:'JetBrains Mono',monospace;transition:all .2s}
+.pbtn:hover:not(:disabled){border-color:var(--sky);color:var(--sky)}
+.pbtn.on{background:var(--grad);border-color:transparent;color:var(--on-accent);font-weight:800}
+.pbtn:disabled{opacity:.35;cursor:not-allowed}
+
+.modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(3,6,12,.72);backdrop-filter:blur(6px)}
+[data-theme="light"] .modal-bg{background:rgba(13,21,38,.42)}
+.modal-box{position:relative;width:min(880px,100%);max-height:88vh;overflow-y:auto;border-radius:22px;
+  border:1px solid var(--line-2);background:var(--bg-2);box-shadow:0 40px 90px -30px rgba(0,0,0,.5);
+  animation:pop .35s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.98)}}
+.modal-x{position:absolute;top:16px;right:16px;z-index:5;width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line-2);background:var(--card);color:var(--ink);cursor:pointer;
+  display:grid;place-items:center;transition:border-color .2s,color .2s}
+.modal-x:hover{border-color:var(--rose);color:var(--rose)}
+.modal-x svg{width:17px;height:17px}
+.det{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:28px}
+@media(max-width:700px){.det{grid-template-columns:1fr;padding:22px}}
+.det-cover{aspect-ratio:3/4;border-radius:14px;overflow:hidden;position:relative;display:flex;
+  flex-direction:column;justify-content:space-between;padding:18px}
+.det h2{font-size:clamp(1.4rem,1.2rem+1vw,2rem);margin-bottom:8px}
+.det .by{color:var(--ink-2);font-size:15px;margin-bottom:16px}
+.det-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:18px 0}
+.fact{padding:12px;border-radius:11px;border:1px solid var(--line);background:var(--card)}
+.fact i{font-style:normal;display:block;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.fact b{font-size:15px;font-weight:700}
+.det-desc{color:var(--ink-2);font-size:14.5px;margin-bottom:20px}
+.buy-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px;border-radius:14px;
+  border:1px solid color-mix(in oklab,var(--sky) 30%,transparent);
+  background:color-mix(in oklab,var(--sky) 7%,transparent);margin-bottom:24px}
+.buy-row .price{font-size:22px;font-weight:800;letter-spacing:-.03em;margin-right:auto}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:10px;overflow:hidden}
+.qty button{width:38px;height:42px;background:var(--card);border:0;color:var(--ink);font-size:18px;cursor:pointer;transition:background .2s}
+.qty button:hover{background:var(--card-2);color:var(--sky)}
+.qty span{min-width:44px;text-align:center;font-weight:700;font-family:'JetBrains Mono',monospace}
+.rev-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.rev-head h3{font-size:17px}
+.rev{padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--card);margin-bottom:10px}
+.rev-top{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.rev-av{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--grad);
+  color:var(--on-accent);font-weight:800;font-size:13px;flex:none}
+.rev-nm{font-weight:600;font-size:14px}
+.rev-dt{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3)}
+.rev p{font-size:14px;color:var(--ink-2)}
+.rev .stars{background:none;padding:0;color:#f59e0b}
+.rate-pick{display:inline-flex;gap:4px}
+.rate-pick button{background:none;border:0;cursor:pointer;font-size:22px;line-height:1;color:var(--line-2);
+  transition:transform .15s,color .15s;padding:0 1px}
+.rate-pick button:hover{transform:scale(1.15)}
+.rate-pick button.on{color:#f59e0b}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-height:1.55}
+
+.cart{position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);z-index:320;background:var(--bg-2);
+  border-left:1px solid var(--line-2);transform:translateX(102%);transition:transform .4s var(--ease);
+  display:flex;flex-direction:column;box-shadow:-30px 0 70px -30px rgba(0,0,0,.4)}
+.cart.open{transform:none}
+.cart-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px;border-bottom:1px solid var(--line)}
+.cart-top h3{font-size:19px}
+.cart-list{flex:1;overflow-y:auto;padding:16px 20px}
+.ci{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.ci-cv{aspect-ratio:3/4;border-radius:7px;overflow:hidden}
+.ci-t{font-size:14px;font-weight:600;line-height:1.3;margin-bottom:3px;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ci-p{font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace}
+.ci-x{width:30px;height:30px;border-radius:8px;border:1px solid var(--line-2);background:none;
+  color:var(--ink-3);cursor:pointer;display:grid;place-items:center;transition:all .2s}
+.ci-x:hover{border-color:var(--rose);color:var(--rose)}
+.ci-x svg{width:14px;height:14px}
+.cart-bot{padding:20px;border-top:1px solid var(--line);background:var(--card)}
+.total-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px}
+.total-row span{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.total-row b{font-size:24px;font-weight:800;letter-spacing:-.03em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.w100{width:100%}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,24px);z-index:400;padding:13px 22px;
+  border-radius:12px;background:var(--card);border:1px solid var(--green);color:var(--green);
+  font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:all .35s var(--ease);
+  box-shadow:0 20px 44px -20px rgba(0,0,0,.35);display:flex;align-items:center;gap:9px}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast svg{width:17px;height:17px}
+.ok-box{text-align:center;padding:40px 28px}
+.ok-ic{display:grid;place-items:center;width:70px;height:70px;border-radius:50%;margin:0 auto 20px;
+  background:color-mix(in oklab,var(--green) 14%,transparent);
+  border:1px solid color-mix(in oklab,var(--green) 42%,transparent);color:var(--green)}
+.ok-ic svg{width:34px;height:34px}
+.ok-box h2{font-size:24px;margin-bottom:10px}
+.ok-box p{color:var(--ink-2);font-size:15px;margin-bottom:8px}
+.ok-box p b{color:var(--ink)}
+.ok-code{display:inline-block;margin:14px 0 22px;padding:9px 18px;border-radius:10px;background:var(--card);
+  border:1px solid var(--line-2);font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--sky);font-weight:600}
 </style>
 </head>
-
-
 <body>
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
+<a class="skip" href="#loyihalar" data-i18n="skip">Loyihalarga o'tish</a>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
 
-<div class="background-grid"></div>
+<!-- ══════════ HEADER ══════════ -->
+<header class="head" id="head">
+  <div class="shell head-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 18 12 5l7 13" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M9 14h6" stroke="currentColor" stroke-width="2.1"/></svg></span>
+      Abdulaziz<b>.</b>
+    </a>
 
-<div class="glow-orb glow-purple"></div>
+    <nav class="nav" id="nav">
+      <a href="#loyihalar"><i>01</i> <span data-i18n="nav1">Loyihalar</span></a>
+      <a href="#haqida"><i>02</i> <span data-i18n="nav2">Haqida</span></a>
+      <a href="#texnologiya"><i>03</i> <span data-i18n="nav3">Texnologiya</span></a>
+      <a href="#aloqa"><i>04</i> <span data-i18n="nav4">Aloqa</span></a>
+    </nav>
 
-<div class="glow-orb glow-purple-two"></div>
+    <div class="head-tools">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="uz" class="on">UZ</button>
+        <button data-lang="en">EN</button>
+      </div>
 
-<div class="glow-orb glow-pink"></div>
+      <button class="tbtn" id="themeBtn" aria-label="Theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"/>
+        </svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+          <path d="M20 13.4A8 8 0 1 1 10.6 4a6.6 6.6 0 0 0 9.4 9.4Z"/>
+        </svg>
+      </button>
 
-<div
-    class="mouse-glow"
-    id="mouseGlow"
-></div>
+      <a class="cta-top" href="#aloqa"><span class="live-dot"></span> <span data-i18n="hire">Ishga taklif</span></a>
 
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
-<header class="navbar">
-
-    <div class="container nav-inner">
-
-        <a
-            href="#home"
-            class="logo"
-        >
-            ABDULAZIZ<span>.</span>
-        </a>
-
-
-        <nav
-            class="nav-links"
-            id="navLinks"
-        >
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#skills">
-                Skills
-            </a>
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#journey">
-                Journey
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <div class="nav-actions">
-
-            <button
-                class="nav-button"
-                id="themeButton"
-                aria-label="Toggle theme"
-            >
-                ☼
-            </button>
-
-            <button
-                class="nav-button mobile-button"
-                id="menuButton"
-                aria-label="Open menu"
-            >
-                ☰
-            </button>
-
-        </div>
-
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-
+  </div>
 </header>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<main>
-
-<section
-    class="hero"
-    id="home"
->
-
-    <div class="container">
-
-        <div class="hero-layout">
-
-
-            <!-- HERO TEXT -->
-
-            <div class="reveal">
-
-                <div class="available">
-
-                    <span class="status"></span>
-
-                    Available for opportunities
-
-                </div>
-
-
-                <h1 class="hero-title">
-
-                    Building
-
-                    <span class="gradient-text">
-                        digital
-                    </span>
-
-                    <br>
-
-                    experiences.
-
-                </h1>
-
-
-                <p class="hero-description">
-
-                    Hi, I'm
-                    <strong>Abdulaziz</strong>
-                    — a developer focused on building
-                    modern websites, backend systems
-                    and clean digital experiences.
-
-                </p>
-
-
-                <p class="role-line">
-
-                    I am a
-
-                    <span
-                        class="typing"
-                        id="typing"
-                    ></span>
-
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#projects"
-                        class="btn btn-primary"
-                    >
-                        View My Work →
-                    </a>
-
-
-                    <a
-                        href="https://github.com/abdulaziz2013uz-a11y"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn"
-                    >
-                        GitHub ↗
-                    </a>
-
-
-                    <a
-                        href="#contact"
-                        class="btn"
-                    >
-                        Contact Me
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- CODE WINDOW -->
-
-            <div
-                class="hero-code reveal"
-            >
-
-                <div class="code-window">
-
-                    <div class="code-top">
-
-                        <span class="window-dot"></span>
-                        <span class="window-dot"></span>
-                        <span class="window-dot"></span>
-
-                    </div>
-
-
-                    <div class="code-content">
-
-<span class="code-purple">const</span>
-developer = {<br>
-
-&nbsp;&nbsp;name:
-<span class="code-green">
-"Abdulaziz"
-</span>,<br>
-
-&nbsp;&nbsp;role:
-<span class="code-green">
-"Full Stack Developer"
-</span>,<br>
-
-&nbsp;&nbsp;skills: [<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-<span class="code-green">
-"Python"
-</span>,<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-<span class="code-green">
-"Django"
-</span>,<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-<span class="code-green">
-"JavaScript"
-</span>,<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-<span class="code-green">
-"HTML / CSS"
-</span><br>
-
-&nbsp;&nbsp;],<br>
-
-&nbsp;&nbsp;focus:
-<span class="code-green">
-"Building"
-</span><br>
-
-};<br><br>
-
-<span class="code-purple">
-developer
-</span>.
-<span class="code-cyan">
-build
-</span>();
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             STATS
-        ================================================= -->
-
-        <div class="stats reveal">
-
-
-            <div class="stat">
-
-                <strong
-                    class="stat-number"
-                    id="repos"
-                >
-                    ...
-                </strong>
-
-                <span class="stat-label">
-                    GitHub Repositories
-                </span>
-
-            </div>
-
-
-            <div class="stat">
-
-                <strong
-                    class="stat-number"
-                    id="followers"
-                >
-                    ...
-                </strong>
-
-                <span class="stat-label">
-                    GitHub Followers
-                </span>
-
-            </div>
-
-
-            <div class="stat">
-
-                <strong
-                    class="stat-number"
-                    id="following"
-                >
-                    ...
-                </strong>
-
-                <span class="stat-label">
-                    Following
-                </span>
-
-            </div>
-
-
-            <div class="stat">
-
-                <strong class="stat-number">
-                    ∞
-                </strong>
-
-                <span class="stat-label">
-                    Ideas & Creativity
-                </span>
-
-            </div>
-
-        </div>
-
+<main id="top">
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <span class="pill rv"><span class="live-dot"></span> <span data-i18n="open">Loyihalarga ochiq · 2026</span></span>
+      <h1 class="h1 rv" data-i18n-html="h1">Toza kod,<br><span class="grad">tez yechim</span>,<br><span class="thin">uzoq umr.</span></h1>
+      <p class="lede rv" data-i18n-html="lede">Men <b>Abdulaziz</b> — Toshkentlik full-stack dasturchi. Veb-mahsulotlarni boshidan oxirigacha quraman: serverda Django, brauzerda toza va semantik interfeys, orasida esa ortiqcha yuk yo'q.</p>
+      <div class="actions rv">
+        <a class="btn btn-main" href="https://bookify-pstb.onrender.com/books/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span data-i18n="heroBtn1">Bookify — jonli sayt</span>
+        </a>
+        <a class="btn" href="https://github.com/abdulaziz2013uz-a11y" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.79.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-ghost" href="mailto:abdulaziz2013.uz@gmail.com" data-i18n="heroBtn3">Email yozish</a>
+      </div>
     </div>
 
+    <aside class="info-card rv">
+      <div class="info-head"><span data-i18n="quick">// Qisqacha</span><span>v.2026</span></div>
+      <dl>
+        <div class="info-row"><dt data-i18n="f1k">Yo'nalish</dt><dd data-i18n="f1v">Full-stack dasturchi</dd></div>
+        <div class="info-row"><dt data-i18n="f2k">Asosiy</dt><dd>Python · Django · JS</dd></div>
+        <div class="info-row"><dt data-i18n="f3k">Manzil</dt><dd data-i18n="f3v">Toshkent, UZ (GMT+5)</dd></div>
+        <div class="info-row"><dt data-i18n="f4k">Holat</dt><dd data-i18n="f4v">Ish qidiryapman</dd></div>
+      </dl>
+      <p class="info-note" data-i18n="fnote">Hozir backend arxitekturasi, REST API dizayni va interfeys sifatini real loyihalar orqali chuqurlashtiryapman.</p>
+    </aside>
+  </div>
+  <div class="marq"><div class="marq-track" id="marq"></div></div>
 </section>
 
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section id="about">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">
-                01 — ABOUT
-            </div>
-
-            <h2 class="section-title">
-                Who I am.
-            </h2>
-
-            <p class="section-description">
-                Developer mindset, creative thinking
-                and a passion for technology.
-            </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-
-            <div class="glass-card reveal">
-
-                <h3 class="card-title">
-                    About Me
-                </h3>
-
-                <p class="card-text">
-
-                    I'm Abdulaziz, a passionate developer
-                    who enjoys creating modern websites,
-                    backend systems and useful digital
-                    products.
-
-                </p>
-
-
-                <div class="info-list">
-
-                    <div class="info-row">
-
-                        <span>
-                            Name
-                        </span>
-
-                        <span>
-                            Abdulaziz
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span>
-                            Role
-                        </span>
-
-                        <span>
-                            Full Stack Developer
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span>
-                            Location
-                        </span>
-
-                        <span>
-                            Uzbekistan
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span>
-                            Email
-                        </span>
-
-                        <span>
-                            abdulaziz2013.uz@gmail.com
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="glass-card reveal">
-
-                <h3 class="card-title">
-                    My Approach
-                </h3>
-
-                <p class="card-text">
-
-                    I don't just write code. I try to
-                    understand the problem, design a clean
-                    solution and build something that people
-                    can actually use.
-
-                </p>
-
-                <br>
-
-                <p class="card-text">
-
-                    My current focus is web development,
-                    backend development, Django, JavaScript
-                    and creating polished user experiences.
-
-                </p>
-
-                <br>
-
-                <p class="card-text">
-
-                    I continuously learn new technologies
-                    and improve my skills through practical
-                    projects.
-
-                </p>
-
-            </div>
-
-        </div>
-
+<!-- ══════════ LOYIHALAR ══════════ -->
+<section class="sec" id="loyihalar">
+  <div class="shell">
+    <div class="sec-head rv">
+      <span class="pill" data-i18n="s1tag">01 // Loyihalar</span>
+      <h2 class="sec-title" data-i18n-html="s1title">Haqiqiy kod, <span class="thin">ochiq va amaliy.</span></h2>
+      <p class="sec-sub" data-i18n="s1sub">Har bir loyiha GitHub'da ochiq. Bookify'ni jonli saytda yoki tezkor demoda sinab ko'ring.</p>
     </div>
 
+    <div class="proj-grid">
+
+      <article class="proj feat rv">
+        <span class="proj-tag" data-i18n="p1tag">Django · Kitob do'koni</span>
+        <h3 data-i18n="p1title">Bookify — Onlayn kitob do'koni</h3>
+        <p data-i18n-html="p1desc">Raqamli va bosma kutubxona: kitoblar katalogi, janr filtri, qidiruv, 1–5 yulduzli sharhlar va buyurtma tizimi. Django modellari <b>Book</b>, <b>Review</b>, <b>Order</b> — admin panel orqali boshqariladi, Render'da gunicorn bilan ishga tushirilgan.</p>
+        <div class="stack-row"><span>Python</span><span>Django</span><span>SQLite</span><span>Gunicorn</span><span>Admin</span></div>
+        <div class="proj-btns">
+          <a class="btn-sm btn-live" href="https://bookify-pstb.onrender.com/books/" target="_blank" rel="noopener">
+            <span data-i18n="btnLive">Jonli saytni ochish</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <button class="btn-sm" data-open-bookify>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>
+            <span data-i18n="btnDemo">Tezkor demo</span>
+          </button>
+          <a class="btn-sm" href="https://github.com/abdulaziz2013uz-a11y/Bookify" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.79.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            <span data-i18n="btnCode">Django kodi</span>
+          </a>
+        </div>
+        <div class="note note-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span data-i18n-html="p1note"><b>Jonli sayt</b> Render bepul serverida — uzoq ishlatilmasa uyquga ketadi, birinchi ochilish <b>30–50 soniya</b>. Kutmoqchi bo'lmasangiz, <b>Tezkor demo</b> darhol ochiladi.</span>
+        </div>
+      </article>
+
+      <article class="proj rv">
+        <span class="proj-tag">HTML · CSS · JS</span>
+        <h3 data-i18n="p2title">Portfolio sayti</h3>
+        <p data-i18n="p2desc">Shu sayt. Qo'lda yozilgan HTML va CSS: tipografik grid, bitta asosiy rang, qorong'i va yorug' mavzu, ikki til. Freymvorksiz — sekin internetda ham bir zumda ochiladi.</p>
+        <div class="stack-row"><span>HTML5</span><span>CSS Grid</span><span>Vanilla JS</span><span>i18n</span><span>A11y</span></div>
+        <div class="proj-btns">
+          <a class="btn-sm" href="https://github.com/abdulaziz2013uz-a11y/portfolio_website" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.79.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            <span data-i18n="btnCode2">Kod</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="proj wip rv">
+        <span class="proj-tag" data-i18n="p3tag">Jarayonda</span>
+        <h3 data-i18n="p3title">Bookify REST API</h3>
+        <p data-i18n="p3desc">Django REST Framework asosida JWT autentifikatsiya, rollar bo'yicha ruxsatlar va Swagger hujjatlari. Bookify uchun mobil mijozlarni qo'llab-quvvatlash — keyingi qadam.</p>
+        <div class="stack-row"><span>DRF</span><span>JWT</span><span>PostgreSQL</span><span>Swagger</span></div>
+        <div class="proj-btns"><span class="btn-sm" style="cursor:default;opacity:.6" data-i18n="soon">Tez orada</span></div>
+      </article>
+
+      <article class="proj rv">
+        <span class="proj-tag" data-i18n="p4tag">Doimiy</span>
+        <h3 data-i18n="p4title">Ochiq kod va o'rganish</h3>
+        <p data-i18n="p4desc">Har bir loyiha bitta narsani yaxshi o'rgatishi uchun tanlanadi: ma'lumot modellashtirish, API dizayni, accessibility yoki tezlik. Darsliklar to'plash emas — mahsulot chiqarish.</p>
+        <div class="stack-row"><span>Git</span><span>Code review</span><span>Deploy</span><span>CI</span></div>
+        <div class="proj-btns">
+          <a class="btn-sm" href="https://github.com/abdulaziz2013uz-a11y?tab=repositories" target="_blank" rel="noopener">
+            <span data-i18n="allRepos">Barcha repolar</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
-
-<section id="skills">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">
-                02 — SKILLS
-            </div>
-
-            <h2 class="section-title">
-                My toolkit.
-            </h2>
-
-            <p class="section-description">
-                Technologies and tools I use to build
-                digital products.
-            </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    🐍
-                </div>
-
-                <h3>
-                    Python
-                </h3>
-
-                <p>
-                    Backend development,
-                    automation and application logic.
-                </p>
-
-            </div>
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Django
-                </h3>
-
-                <p>
-                    Powerful web applications,
-                    APIs and backend systems.
-                </p>
-
-            </div>
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    🌐
-                </div>
-
-                <h3>
-                    HTML / CSS
-                </h3>
-
-                <p>
-                    Responsive interfaces and
-                    modern visual experiences.
-                </p>
-
-            </div>
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    ⚙️
-                </div>
-
-                <h3>
-                    JavaScript
-                </h3>
-
-                <p>
-                    Interactive components and
-                    dynamic web experiences.
-                </p>
-
-            </div>
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    🗄️
-                </div>
-
-                <h3>
-                    Databases
-                </h3>
-
-                <p>
-                    Structured application data,
-                    storage and APIs.
-                </p>
-
-            </div>
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    🐙
-                </div>
-
-                <h3>
-                    Git / GitHub
-                </h3>
-
-                <p>
-                    Version control, repositories
-                    and collaboration.
-                </p>
-
-            </div>
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    🎨
-                </div>
-
-                <h3>
-                    UI Design
-                </h3>
-
-                <p>
-                    Clean layouts, visual hierarchy
-                    and user experience.
-                </p>
-
-            </div>
-
-
-            <div class="skill reveal">
-
-                <div class="skill-icon">
-                    🚀
-                </div>
-
-                <h3>
-                    Deployment
-                </h3>
-
-                <p>
-                    Publishing projects and making
-                    them available online.
-                </p>
-
-            </div>
-
-        </div>
-
+<!-- ══════════ HAQIDA ══════════ -->
+<section class="sec" id="haqida" style="border-top:1px solid var(--line)">
+  <div class="shell">
+    <div class="sec-head rv">
+      <span class="pill" data-i18n="s2tag">02 // Yondashuv</span>
+      <h2 class="sec-title" data-i18n-html="s2title">Muammodan boshlayman, <span class="thin">stackdan emas.</span></h2>
     </div>
-
+    <div class="about">
+      <div class="rv">
+        <p class="quote" data-i18n-html="quote">Foydalanuvchiga aslida nima kerakligini tushunish, unga xizmat qilmaydigan hamma narsani olib tashlash va <b>yaxshi ishlaydigan</b> eng kichik yechimni qurish.</p>
+        <p data-i18n="ab1">Bu degani — chiroyli koddan ko'ra o'qiladigan kod, JavaScript'dan oldin semantik HTML, va telefonda ham, klaviaturada ham, sekin internetda ham bir xil ishonchli ishlaydigan interfeys.</p>
+        <p data-i18n="ab2">Men karyeramning boshidaman va buni ataylab shunday olib boryapman: katta va mo'rt narsadan ko'ra, kichik va mustahkam narsani chiqarishni afzal ko'raman.</p>
+        <div class="rules">
+          <div class="rule"><i>01</i><h4 data-i18n="r1t">Semantika birinchi</h4><p data-i18n="r1d">Ma'nosini anglatadigan HTML.</p></div>
+          <div class="rule"><i>02</i><h4 data-i18n="r2t">Kichik yuza</h4><p data-i18n="r2d">Kam abstraksiya — kam xatolik.</p></div>
+          <div class="rule"><i>03</i><h4 data-i18n="r3t">Real foydalanuvchi</h4><p data-i18n="r3d">Telefon va sekin tarmoqda sinov.</p></div>
+        </div>
+      </div>
+      <ol class="tl rv">
+        <li><i data-i18n="t1y">Hozir</i><h4 data-i18n="t1t">Full-stack rivojlanish</h4><p data-i18n="t1d">Django, ma'lumotlar bazasi va API dizayni, qo'lda qurilgan frontend bilan birga.</p></li>
+        <li><i data-i18n="t2y">2025 — 26</i><h4 data-i18n="t2t">Veb asoslari</h4><p data-i18n="t2d">HTML, CSS, JavaScript va Python — faqat kurslar emas, chiqarilgan loyihalar orqali.</p></li>
+        <li><i data-i18n="t3y">Boshlanish</i><h4 data-i18n="t3t">Birinchi qatorlar</h4><p data-i18n="t3d">Dasturiy ta'minot qanday ishlashiga qiziqish, keyin esa qurish odati.</p></li>
+      </ol>
+    </div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section id="projects">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">
-                03 — PROJECTS
-            </div>
-
-            <h2 class="section-title">
-                Things I've built.
-            </h2>
-
-            <p class="section-description">
-                Real projects connected to my GitHub profile.
-            </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-            <!-- BOOKIFY -->
-
-            <article
-                class="project reveal"
-            >
-
-                <div
-                    class="project-preview bookify"
-                >
-
-                    <div class="fake-site-nav">
-
-                        <div class="fake-logo">
-                            📚 Bookify
-                        </div>
-
-                        <div class="fake-nav-lines">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="book-grid">
-
-                        <div class="book-card">
-
-                            <div class="book-cover"></div>
-
-                            <div class="book-line"></div>
-                            <div class="book-line short"></div>
-
-                        </div>
-
-
-                        <div class="book-card">
-
-                            <div class="book-cover"></div>
-
-                            <div class="book-line"></div>
-                            <div class="book-line short"></div>
-
-                        </div>
-
-
-                        <div class="book-card">
-
-                            <div class="book-cover"></div>
-
-                            <div class="book-line"></div>
-                            <div class="book-line short"></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-body">
-
-                    <h3 class="project-title">
-                        Bookify
-                    </h3>
-
-                    <p class="project-description">
-
-                        A modern book management project
-                        for organizing books and presenting
-                        a clean digital library interface.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            HTML
-                        </span>
-
-                        <span class="tag">
-                            CSS
-                        </span>
-
-                        <span class="tag">
-                            JavaScript
-                        </span>
-
-                        <span class="tag">
-                            Book Management
-                        </span>
-
-                    </div>
-
-
-                    <div class="project-buttons">
-
-                        <a
-                            class="btn btn-primary"
-                            href="https://bookify-pstb.onrender.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Live Demo ↗
-                        </a>
-
-                        <a
-                            class="btn"
-                            href="https://github.com/abdulaziz2013uz-a11y/Bookify"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PORTFOLIO -->
-
-            <article
-                class="project reveal"
-            >
-
-                <div
-                    class="project-preview portfolio-preview"
-                >
-
-                    <div class="mini-browser">
-
-                        <div class="browser-top">
-
-                            <span class="browser-dot"></span>
-                            <span class="browser-dot"></span>
-                            <span class="browser-dot"></span>
-
-                        </div>
-
-
-                        <div class="mini-content">
-
-                            <div class="mini-brand">
-                                ABDULAZIZ.DEV
-                            </div>
-
-                            <div class="mini-heading"></div>
-
-                            <div class="mini-description"></div>
-                            <div class="mini-description second"></div>
-
-
-                            <div class="mini-buttons">
-
-                                <span class="mini-button"></span>
-
-                                <span class="mini-button outline"></span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-body">
-
-                    <h3 class="project-title">
-                        Portfolio Website
-                    </h3>
-
-                    <p class="project-description">
-
-                        My personal developer portfolio
-                        featuring projects, skills,
-                        GitHub integration and a premium
-                        responsive interface.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            HTML
-                        </span>
-
-                        <span class="tag">
-                            CSS
-                        </span>
-
-                        <span class="tag">
-                            JavaScript
-                        </span>
-
-                        <span class="tag">
-                            Responsive
-                        </span>
-
-                    </div>
-
-
-                    <div class="project-buttons">
-
-                        <a
-                            class="btn btn-primary"
-                            href="#home"
-                        >
-                            Live Preview
-                        </a>
-
-                        <a
-                            class="btn"
-                            href="https://github.com/abdulaziz2013uz-a11y/portfolio_website"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- GITHUB -->
-
-            <article
-                class="project reveal"
-            >
-
-                <div
-                    class="project-preview github-preview"
-                >
-
-                    <div class="github-window">
-
-                        <div class="github-profile">
-
-                            <div
-                                class="github-avatar"
-                            >
-                                🐙
-                            </div>
-
-                            <div>
-
-                                <div class="github-name">
-                                    Abdulaziz
-                                </div>
-
-                                <div class="github-username">
-                                    @abdulaziz2013uz-a11y
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div
-                            class="github-graph"
-                            id="githubGraph"
-                        >
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-body">
-
-                    <h3 class="project-title">
-                        GitHub Profile
-                    </h3>
-
-                    <p class="project-description">
-
-                        My GitHub profile where I publish
-                        projects, experiment with code and
-                        continue learning.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            Git
-                        </span>
-
-                        <span class="tag">
-                            GitHub
-                        </span>
-
-                        <span class="tag">
-                            Open Source
-                        </span>
-
-                    </div>
-
-
-                    <div class="project-buttons">
-
-                        <a
-                            class="btn btn-primary"
-                            href="https://github.com/abdulaziz2013uz-a11y"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Open GitHub ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- NEXT PROJECT -->
-
-            <article
-                class="project reveal"
-            >
-
-                <div
-                    class="project-preview portfolio-preview"
-                >
-
-                    <div class="mini-browser">
-
-                        <div class="browser-top">
-
-                            <span class="browser-dot"></span>
-                            <span class="browser-dot"></span>
-                            <span class="browser-dot"></span>
-
-                        </div>
-
-
-                        <div class="mini-content">
-
-                            <div class="mini-brand">
-                                NEXT PROJECT
-                            </div>
-
-                            <div class="mini-heading"></div>
-
-                            <div class="mini-description"></div>
-                            <div class="mini-description"></div>
-                            <div class="mini-description second"></div>
-
-                            <div class="mini-buttons">
-
-                                <span class="mini-button"></span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-body">
-
-                    <h3 class="project-title">
-                        More Coming Soon
-                    </h3>
-
-                    <p class="project-description">
-
-                        More projects will be added here
-                        as I continue building and learning.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            In Development
-                        </span>
-
-                        <span class="tag">
-                            Coming Soon
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
+<!-- ══════════ TEXNOLOGIYA ══════════ -->
+<section class="sec" id="texnologiya" style="border-top:1px solid var(--line)">
+  <div class="shell">
+    <div class="sec-head rv">
+      <span class="pill" data-i18n="s3tag">03 // Texnologiya</span>
+      <h2 class="sec-title" data-i18n-html="s3title">Nimadan <span class="thin">foydalanaman.</span></h2>
+      <p class="sec-sub" data-i18n="s3sub">Ishlatadigan vositalarim va ularni nima uchun ishlatishim.</p>
     </div>
-
+    <div class="skills" id="skills"></div>
+    <div class="stats rv">
+      <div class="stat"><b>2+</b><span data-i18n="st1">Yil kod yozaman</span></div>
+      <div class="stat"><b>10+</b><span data-i18n="st2">Chiqarilgan ish</span></div>
+      <div class="stat"><b>100%</b><span data-i18n="st3">Ochiq kod</span></div>
+      <div class="stat"><b>&lt;1</b><span data-i18n="st4">Kun javob vaqti</span></div>
+    </div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     GITHUB
-===================================================== -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">
-                04 — GITHUB
-            </div>
-
-            <h2 class="section-title">
-                Open source activity.
-            </h2>
-
-            <p class="section-description">
-                Live information from my GitHub profile.
-            </p>
-
-        </div>
-
-
-        <div class="github-section">
-
-
-            <div class="github-main-card reveal">
-
-                <h3 class="github-heading">
-                    abdulaziz2013uz-a11y
-                </h3>
-
-                <p class="github-description">
-
-                    Explore my repositories, projects
-                    and development activity directly
-                    on GitHub.
-
-                </p>
-
-
-                <a
-                    class="btn btn-primary github-profile-link"
-                    href="https://github.com/abdulaziz2013uz-a11y"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Open GitHub Profile ↗
-                </a>
-
-            </div>
-
-
-            <div class="github-stats-card reveal">
-
-                <div class="github-stat-grid">
-
-
-                    <div class="github-stat">
-
-                        <strong id="repos2">
-                            ...
-                        </strong>
-
-                        <span>
-                            Repositories
-                        </span>
-
-                    </div>
-
-
-                    <div class="github-stat">
-
-                        <strong id="followers2">
-                            ...
-                        </strong>
-
-                        <span>
-                            Followers
-                        </span>
-
-                    </div>
-
-
-                    <div class="github-stat">
-
-                        <strong id="following2">
-                            ...
-                        </strong>
-
-                        <span>
-                            Following
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+<!-- ══════════ ALOQA ══════════ -->
+<section class="sec" id="aloqa" style="border-top:1px solid var(--line);background:var(--bg-2)">
+  <div class="shell">
+    <div class="sec-head rv">
+      <span class="pill" data-i18n="s4tag">04 // Aloqa</span>
+      <h2 class="sec-title" data-i18n-html="s4title">Keling, <span class="grad">foydali narsa</span> quramiz.</h2>
+      <p class="sec-sub" data-i18n="s4sub">Junior full-stack ish o'rinlari, frilans loyihalar va hamkorlikka ochiqman. Odatda bir kun ichida javob beraman.</p>
     </div>
-
-</section>
-
-
-<!-- =====================================================
-     JOURNEY
-===================================================== -->
-
-<section id="journey">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">
-                05 — JOURNEY
-            </div>
-
-            <h2 class="section-title">
-                My journey.
-            </h2>
-
-            <p class="section-description">
-                A simple timeline of my development journey.
-            </p>
-
+    <div class="ct-grid">
+      <a class="ct-main rv" href="mailto:abdulaziz2013.uz@gmail.com">
+        <span class="ct-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span data-i18n="ctWrite">Xabar yozing</span>
+        </span>
+        <div class="ct-mail">abdulaziz2013.uz<br><span>@gmail.com</span></div>
+        <div class="ct-foot">
+          <small data-i18n="ctReply">Bir kun ichida javob</small>
+          <span class="ct-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </div>
-
-
-        <div class="timeline">
-
-
-            <div class="timeline-item reveal">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-card">
-
-                    <div class="timeline-date">
-                        2026 — PRESENT
-                    </div>
-
-                    <h3>
-                        Full Stack Development
-                    </h3>
-
-                    <p>
-
-                        Building modern web applications
-                        and improving my backend and frontend
-                        development skills.
-
-                    </p>
-
-                </div>
-
+      </a>
+      <div class="ct-side">
+        <a class="ct-box rv" href="https://github.com/abdulaziz2013uz-a11y" target="_blank" rel="noopener">
+          <div class="ct-box-top">
+            <div>
+              <span class="ct-label" style="margin-bottom:12px">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.79.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                GitHub
+              </span>
+              <h4>@abdulaziz2013uz-a11y</h4>
+              <p data-i18n="ctGh">Barcha ochiq ishlarim shu yerda.</p>
             </div>
+            <span class="arr"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+          </div>
+        </a>
 
-
-            <div class="timeline-item reveal">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-card">
-
-                    <div class="timeline-date">
-                        2025 — 2026
-                    </div>
-
-                    <h3>
-                        Web Development
-                    </h3>
-
-                    <p>
-
-                        Learning HTML, CSS, JavaScript,
-                        Python and Django through practical
-                        projects.
-
-                    </p>
-
-                </div>
-
+        <a class="ct-box rv" href="https://t.me/abdulaziz_devl" target="_blank" rel="noopener noreferrer">
+          <div class="ct-box-top">
+            <div>
+              <span class="ct-label" style="margin-bottom:12px">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.82.91l-5-3.69-2.41 2.32c-.27.27-.5.5-1.02.5l.36-5.1 9.28-8.38c.4-.36-.09-.56-.62-.2L5.5 13.72.56 12.17c-1.07-.34-1.09-1.08.22-1.59L20.1 3.05c.9-.33 1.68.2 1.4.45Z"/></svg>
+                Telegram
+              </span>
+              <h4>@abdulaziz_devl</h4>
+              <p data-i18n="ctTgDesc">Kanalimga qo'shiling — yangi loyihalarim shu yerda.</p>
             </div>
+            <span class="arr"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+          </div>
+        </a>
 
-
-            <div class="timeline-item reveal">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-card">
-
-                    <div class="timeline-date">
-                        STARTED
-                    </div>
-
-                    <h3>
-                        My Coding Journey
-                    </h3>
-
-                    <p>
-
-                        Started exploring programming and
-                        gradually turned curiosity into
-                        real projects.
-
-                    </p>
-
-                </div>
-
+        <div class="ct-box rv">
+          <div class="ct-box-top">
+            <div>
+              <span class="ct-label" style="margin-bottom:12px">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span data-i18n="ctLoc">Joylashuv</span>
+              </span>
+              <h4 data-i18n="ctCity">Toshkent, O'zbekiston</h4>
+              <span class="on-now"><em>GMT+5</em><span class="live-dot"></span><span data-i18n="ctOnline">Hozir onlayn</span></span>
             </div>
-
+          </div>
         </div>
-
+      </div>
     </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section id="contact">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">
-                06 — CONTACT
-            </div>
-
-            <h2 class="section-title">
-                Let's build something.
-            </h2>
-
-            <p class="section-description">
-                Have an idea, project or opportunity?
-                Let's talk.
-            </p>
-
-        </div>
-
-
-        <div class="contact-grid">
-
-
-            <div class="contact-card reveal">
-
-                <h3 class="contact-title">
-                    Get in touch.
-                </h3>
-
-                <p class="contact-text">
-
-                    I'm open to interesting projects,
-                    collaborations and opportunities.
-
-                </p>
-
-
-                <div class="email-box">
-
-                    <span class="email-text">
-                        abdulaziz2013.uz@gmail.com
-                    </span>
-
-                    <button
-                        class="copy-button"
-                        id="copyEmail"
-                        aria-label="Copy email"
-                    >
-                        ⧉
-                    </button>
-
-                </div>
-
-
-                <a
-                    href="mailto:abdulaziz2013.uz@gmail.com"
-                    class="btn btn-primary"
-                >
-                    Send Email →
-                </a>
-
-            </div>
-
-
-            <div class="form-card reveal">
-
-                <form
-                    class="form"
-                    id="contactForm"
-                >
-
-                    <input
-                        class="input"
-                        id="name"
-                        type="text"
-                        placeholder="Your name"
-                        autocomplete="name"
-                        required
-                    >
-
-
-                    <input
-                        class="input"
-                        id="email"
-                        type="email"
-                        placeholder="Your email"
-                        autocomplete="email"
-                        required
-                    >
-
-
-                    <input
-                        class="input"
-                        id="subject"
-                        type="text"
-                        placeholder="Subject"
-                        required
-                    >
-
-
-                    <textarea
-                        class="textarea"
-                        id="message"
-                        placeholder="Your message..."
-                        required
-                    ></textarea>
-
-
-                    <button
-                        class="btn btn-primary"
-                        type="submit"
-                    >
-                        Send Message →
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
 </main>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div class="container footer-inner">
-
-        <p class="footer-text">
-
-            ©
-            <span id="year"></span>
-            Abdulaziz.
-            Built with passion & code.
-
-        </p>
-
-
-        <div class="socials">
-
-            <a
-                class="social"
-                href="https://github.com/abdulaziz2013uz-a11y"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-            >
-                🐙
-            </a>
-
-
-            <a
-                class="social"
-                href="mailto:abdulaziz2013.uz@gmail.com"
-                aria-label="Email"
-            >
-                ✉
-            </a>
-
-
-            <a
-                class="social"
-                href="#home"
-                aria-label="Back to top"
-            >
-                ↑
-            </a>
-
-        </div>
-
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-in">
+      <a class="brand" href="#top">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 18 12 5l7 13" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M9 14h6" stroke="currentColor" stroke-width="2.1"/></svg></span>
+        Abdulaziz<b>.</b>
+      </a>
+      <div class="foot-links">
+        <a href="https://bookify-pstb.onrender.com/books/" target="_blank" rel="noopener">Bookify ↗</a>
+        <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="mailto:abdulaziz2013.uz@gmail.com">Email ↗</a>
+        <a href="https://t.me/abdulaziz_devl" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+        <a href="#top" data-i18n="toTop">Yuqoriga ↑</a>
+      </div>
     </div>
-
+    <div class="foot-bar">
+      <span>© <span id="yil">2026</span> Abdulaziz · <span data-i18n="madeIn">Toshkentda qo'lda yozilgan</span></span>
+      <span data-i18n="oneFile">Bitta HTML fayl · Freymvorksiz</span>
+    </div>
+  </div>
 </footer>
 
+<!-- ══════════ BOOKIFY DEMO ══════════ -->
+<div class="bk" id="bk" role="dialog" aria-label="Bookify">
+  <div class="bk-head">
+    <div class="shell bk-head-in">
+      <div class="bk-logo">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--sky)">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+        <span>Bookify</span> <em data-i18n="bkDemo">Demo</em>
+      </div>
+      <div class="bk-acts">
+        <button class="tbtn" id="themeBtn2" aria-label="Theme">
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"/>
+          </svg>
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 13.4A8 8 0 1 1 10.6 4a6.6 6.6 0 0 0 9.4 9.4Z"/></svg>
+        </button>
+        <a class="ibtn ibtn-pri" href="https://bookify-pstb.onrender.com/books/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          <span class="txt" data-i18n="bkLive">Jonli sayt</span>
+        </a>
+        <button class="ibtn" id="cartBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span class="txt" data-i18n="bkCart">Savat</span>
+          <span class="cart-badge" id="cartN">0</span>
+        </button>
+        <button class="ibtn" id="bkClose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M11 5l-6 7 6 7"/></svg>
+          <span class="txt" data-i18n="bkBack">Portfolio</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-<!-- TOAST -->
+  <div class="shell bk-body">
+    <div class="bk-hero">
+      <h1 data-i18n="bkTitle">Kitoblar katalogi</h1>
+      <p data-i18n-html="bkSub">Django <code class="mono">Book</code>, <code class="mono">Review</code> va <code class="mono">Order</code> modellari asosidagi tezkor demo. Haqiqiy Django versiyasi: <a href="https://bookify-pstb.onrender.com/books/" target="_blank" rel="noopener">bookify-pstb.onrender.com ↗</a></p>
+    </div>
 
-<div
-    class="toast"
-    id="toast"
-></div>
+    <div class="bk-tools">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="inp" id="q" type="search" />
+      </div>
+      <select class="sel" id="sort"></select>
+    </div>
 
+    <div class="chips" id="chips"></div>
+    <div class="bk-meta">
+      <span id="cnt">—</span>
+      <button class="ibtn" id="addBtn" style="height:38px;font-size:13px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span data-i18n="bkAdd">Kitob qo'shish</span>
+      </button>
+    </div>
 
-<!-- BACK TO TOP -->
+    <div class="books" id="grid"></div>
+    <div class="pager" id="pager"></div>
+  </div>
+</div>
 
-<button
-    class="back-top"
-    id="backTop"
-    aria-label="Back to top"
->
-    ↑
-</button>
+<div class="modal" id="modal"><div class="modal-bg" data-close></div><div class="modal-box" id="modalBox"></div></div>
+<div class="modal" id="cartBg" style="z-index:310"><div class="modal-bg" data-close-cart></div></div>
 
+<aside class="cart" id="cart" aria-label="Cart">
+  <div class="cart-top">
+    <h3 data-i18n="bkCart">Savat</h3>
+    <button class="ci-x" data-close-cart style="width:36px;height:36px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-list" id="cartList"></div>
+  <div class="cart-bot">
+    <div class="total-row"><span data-i18n="bkTotal">Jami</span><b id="total">0</b></div>
+    <button class="ibtn ibtn-pri w100" id="orderBtn" style="height:48px" data-i18n="bkOrder">Buyurtma berish</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastTxt"></span></div>
 
 <script>
+/* ═══════════════════════════════════════════════════════════
+   I18N — UZ / EN
+   ═══════════════════════════════════════════════════════════ */
+var I18N={
+uz:{
+ skip:"Loyihalarga o'tish",
+ nav1:"Loyihalar",nav2:"Haqida",nav3:"Texnologiya",nav4:"Aloqa",hire:"Ishga taklif",
+ open:"Loyihalarga ochiq · 2026",
+ h1:"Toza kod,<br><span class='grad'>tez yechim</span>,<br><span class='thin'>uzoq umr.</span>",
+ lede:"Men <b>Abdulaziz</b> — Toshkentlik full-stack dasturchi. Veb-mahsulotlarni boshidan oxirigacha quraman: serverda Django, brauzerda toza va semantik interfeys, orasida esa ortiqcha yuk yo'q.",
+ heroBtn1:"Bookify — jonli sayt",heroBtn3:"Email yozish",
+ quick:"// Qisqacha",f1k:"Yo'nalish",f1v:"Full-stack dasturchi",f2k:"Asosiy",
+ f3k:"Manzil",f3v:"Toshkent, UZ (GMT+5)",f4k:"Holat",f4v:"Ish qidiryapman",
+ fnote:"Hozir backend arxitekturasi, REST API dizayni va interfeys sifatini real loyihalar orqali chuqurlashtiryapman.",
+ s1tag:"01 // Loyihalar",s1title:"Haqiqiy kod, <span class='thin'>ochiq va amaliy.</span>",
+ s1sub:"Har bir loyiha GitHub'da ochiq. Bookify'ni jonli saytda yoki tezkor demoda sinab ko'ring.",
+ p1tag:"Django · Kitob do'koni",p1title:"Bookify — Onlayn kitob do'koni",
+ p1desc:"Raqamli va bosma kutubxona: kitoblar katalogi, janr filtri, qidiruv, 1–5 yulduzli sharhlar va buyurtma tizimi. Django modellari <b>Book</b>, <b>Review</b>, <b>Order</b> — admin panel orqali boshqariladi, Render'da gunicorn bilan ishga tushirilgan.",
+ p1note:"<b>Jonli sayt</b> Render bepul serverida — uzoq ishlatilmasa uyquga ketadi, birinchi ochilish <b>30–50 soniya</b>. Kutmoqchi bo'lmasangiz, <b>Tezkor demo</b> darhol ochiladi.",
+ btnLive:"Jonli saytni ochish",btnDemo:"Tezkor demo",btnCode:"Django kodi",btnCode2:"Kod",
+ p2title:"Portfolio sayti",
+ p2desc:"Shu sayt. Qo'lda yozilgan HTML va CSS: tipografik grid, bitta asosiy rang, qorong'i va yorug' mavzu, ikki til. Freymvorksiz — sekin internetda ham bir zumda ochiladi.",
+ p3tag:"Jarayonda",p3title:"Bookify REST API",
+ p3desc:"Django REST Framework asosida JWT autentifikatsiya, rollar bo'yicha ruxsatlar va Swagger hujjatlari. Bookify uchun mobil mijozlarni qo'llab-quvvatlash — keyingi qadam.",
+ soon:"Tez orada",p4tag:"Doimiy",p4title:"Ochiq kod va o'rganish",
+ p4desc:"Har bir loyiha bitta narsani yaxshi o'rgatishi uchun tanlanadi: ma'lumot modellashtirish, API dizayni, accessibility yoki tezlik. Darsliklar to'plash emas — mahsulot chiqarish.",
+ allRepos:"Barcha repolar",
+ s2tag:"02 // Yondashuv",s2title:"Muammodan boshlayman, <span class='thin'>stackdan emas.</span>",
+ quote:"Foydalanuvchiga aslida nima kerakligini tushunish, unga xizmat qilmaydigan hamma narsani olib tashlash va <b>yaxshi ishlaydigan</b> eng kichik yechimni qurish.",
+ ab1:"Bu degani — chiroyli koddan ko'ra o'qiladigan kod, JavaScript'dan oldin semantik HTML, va telefonda ham, klaviaturada ham, sekin internetda ham bir xil ishonchli ishlaydigan interfeys.",
+ ab2:"Men karyeramning boshidaman va buni ataylab shunday olib boryapman: katta va mo'rt narsadan ko'ra, kichik va mustahkam narsani chiqarishni afzal ko'raman.",
+ r1t:"Semantika birinchi",r1d:"Ma'nosini anglatadigan HTML.",
+ r2t:"Kichik yuza",r2d:"Kam abstraksiya — kam xatolik.",
+ r3t:"Real foydalanuvchi",r3d:"Telefon va sekin tarmoqda sinov.",
+ t1y:"Hozir",t1t:"Full-stack rivojlanish",t1d:"Django, ma'lumotlar bazasi va API dizayni, qo'lda qurilgan frontend bilan birga.",
+ t2y:"2025 — 26",t2t:"Veb asoslari",t2d:"HTML, CSS, JavaScript va Python — faqat kurslar emas, chiqarilgan loyihalar orqali.",
+ t3y:"Boshlanish",t3t:"Birinchi qatorlar",t3d:"Dasturiy ta'minot qanday ishlashiga qiziqish, keyin esa qurish odati.",
+ s3tag:"03 // Texnologiya",s3title:"Nimadan <span class='thin'>foydalanaman.</span>",
+ s3sub:"Ishlatadigan vositalarim va ularni nima uchun ishlatishim.",
+ st1:"Yil kod yozaman",st2:"Chiqarilgan ish",st3:"Ochiq kod",st4:"Kun javob vaqti",
+ s4tag:"04 // Aloqa",s4title:"Keling, <span class='grad'>foydali narsa</span> quramiz.",
+ s4sub:"Junior full-stack ish o'rinlari, frilans loyihalar va hamkorlikka ochiqman. Odatda bir kun ichida javob beraman.",
+ ctWrite:"Xabar yozing",ctReply:"Bir kun ichida javob",ctGh:"Barcha ochiq ishlarim shu yerda.",
+ ctTgDesc:"Kanalimga qo'shiling — yangi loyihalarim shu yerda.",
+ ctLoc:"Joylashuv",ctCity:"Toshkent, O'zbekiston",ctOnline:"Hozir onlayn",
+ toTop:"Yuqoriga ↑",madeIn:"Toshkentda qo'lda yozilgan",oneFile:"Bitta HTML fayl · Freymvorksiz",
+ sk:["Ilova mantiqi, avtomatlashtirish, skriptlar.","Server render, modellar, auth, admin panel.",
+     "Interaktivlik, holat, progressive enhancement.","Semantik struktura, Grid, dizayn tokenlari.",
+     "Sxema dizayni, so'rovlar, yaxlitlik.","Aniq endpointlar, oldindan aytiladigan javob.",
+     "Branchlar, ko'rib chiqiladigan commitlar.","Klaviatura, kontrast, skrinrider tartibi."],
+ skT:["Python","Django","JavaScript","HTML & CSS","Ma'lumot bazasi","REST API","Git & GitHub","Accessibility"],
+ /* Bookify */
+ bkDemo:"Demo",bkLive:"Jonli sayt",bkCart:"Savat",bkBack:"Portfolio",bkTitle:"Kitoblar katalogi",
+ bkSub:"Django <code class='mono'>Book</code>, <code class='mono'>Review</code> va <code class='mono'>Order</code> modellari asosidagi tezkor demo. Haqiqiy Django versiyasi: <a href='https://bookify-pstb.onrender.com/books/' target='_blank' rel='noopener'>bookify-pstb.onrender.com ↗</a>",
+ bkAdd:"Kitob qo'shish",bkTotal:"Jami",bkOrder:"Buyurtma berish",
+ qPh:"Kitob nomi yoki muallif bo'yicha qidiring...",
+ sorts:["Yangi qo'shilgan","Narx: arzondan","Narx: qimmatdan","Reyting bo'yicha","Nom: A → Z"],
+ all:"Barchasi",found:"Topildi: <b>{n}</b> ta kitob",none:"Hech narsa topilmadi",
+ emptyT:"Kitob topilmadi",emptyD:"Qidiruv so'zini yoki janrni o'zgartirib ko'ring.",
+ genre:"Janr",pages:"Sahifa",rating:"Reyting",revs:"Sharhlar",year:"-yil",
+ toCart:"Savatga",reviews:"Sharhlar",noRev:"Hali sharh yo'q — birinchi bo'ling.",
+ leaveRev:"Sharh qoldirish",yourName:"Ismingiz",yourText:"Kitob haqida fikringiz...",send:"Yuborish",
+ newBook:"Yangi kitob",newBookD:"Django admin paneli kabi — <code class='mono'>Book</code> modeli maydonlari.",
+ fTitle:"Sarlavha *",fAuthor:"Muallif *",fPrice:"Narxi (so'm) *",fYear:"Nashr yili",fPages:"Sahifalar soni",
+ fDesc:"Tavsif",save:"Saqlash",noDesc:"Tavsif kiritilmagan.",
+ cartEmptyT:"Savat bo'sh",cartEmptyD:"Katalogdan kitob tanlang.",
+ checkout:"Buyurtma rasmiylashtirish",checkoutD:"Django <code class='mono'>Order</code> modeli maydonlari.",
+ fName:"F.I.SH *",fPhone:"Telefon * (+998...)",fAddr:"Yetkazib berish manzili *",confirm:"Tasdiqlash",
+ okT:"Buyurtma qabul qilindi",okD:"Rahmat, <b>{n}</b>! Tez orada <b>{p}</b> raqamiga qo'ng'iroq qilamiz.",
+ backCat:"Katalogga qaytish",
+ tAdded:"Savatga qo'shildi",tRev:"Sharhingiz qo'shildi",tBook:"«{t}» qo'shildi",tOrder:"Buyurtma #{c} yaratildi",
+ eFields:"Ism va izoh to'ldirilsin",eBook:"Sarlavha, muallif va narx shart",eCart:"Savat bo'sh",eAll:"Barcha maydon to'ldirilsin",
+ som:"so'm",bet:"bet",
+ genres:["Roman","Tarixiy","Detektiv","Fantastika","Psixologiya","Sarguzasht"]
+},
+en:{
+ skip:"Skip to projects",
+ nav1:"Work",nav2:"About",nav3:"Stack",nav4:"Contact",hire:"Hire me",
+ open:"Open to work · 2026",
+ h1:"Clean code,<br><span class='grad'>fast results</span>,<br><span class='thin'>built to last.</span>",
+ lede:"I'm <b>Abdulaziz</b> — a full-stack developer from Tashkent. I build web products end to end: Django on the server, clean semantic interfaces in the browser, and no unnecessary weight in between.",
+ heroBtn1:"Bookify — live site",heroBtn3:"Send email",
+ quick:"// Quick facts",f1k:"Role",f1v:"Full-stack developer",f2k:"Core",
+ f3k:"Location",f3v:"Tashkent, UZ (GMT+5)",f4k:"Status",f4v:"Open to work",
+ fnote:"Currently deepening backend architecture, REST API design and interface craft through shipped projects.",
+ s1tag:"01 // Work",s1title:"Real code, <span class='thin'>open and practical.</span>",
+ s1sub:"Every project is public on GitHub. Try Bookify on the live site or in the instant demo.",
+ p1tag:"Django · Bookstore",p1title:"Bookify — Online bookstore",
+ p1desc:"A digital and print library: book catalogue, genre filters, search, 1–5 star reviews and an order system. Django models <b>Book</b>, <b>Review</b>, <b>Order</b> — managed through the admin panel, deployed on Render with gunicorn.",
+ p1note:"The <b>live site</b> runs on Render's free tier — it sleeps when idle, so the first load takes <b>30–50 seconds</b>. If you'd rather not wait, the <b>instant demo</b> opens right away.",
+ btnLive:"Open live site",btnDemo:"Instant demo",btnCode:"Django code",btnCode2:"Code",
+ p2title:"Portfolio site",
+ p2desc:"This site. Hand-written HTML and CSS: a typographic grid, one accent colour, dark and light themes, two languages. No frameworks — it loads instantly even on a slow connection.",
+ p3tag:"In progress",p3title:"Bookify REST API",
+ p3desc:"Django REST Framework with JWT authentication, role-based permissions and Swagger docs. Supporting mobile clients for Bookify is the next step.",
+ soon:"Coming soon",p4tag:"Ongoing",p4title:"Open source & learning",
+ p4desc:"Each project is chosen to teach one thing properly: data modelling, API design, accessibility or performance. Not collecting tutorials — shipping products.",
+ allRepos:"All repositories",
+ s2tag:"02 // Approach",s2title:"I start with the problem, <span class='thin'>not the stack.</span>",
+ quote:"Understand what the user actually needs to do, remove everything that doesn't serve it, then build the smallest thing that <b>works well</b>.",
+ ab1:"That means readable code over clever code, semantic HTML before JavaScript, and interfaces that behave predictably on a phone, on a keyboard and on a bad network.",
+ ab2:"I'm early in my career and deliberate about it: I'd rather ship something small and solid than something large and fragile.",
+ r1t:"Semantics first",r1d:"HTML that means what it says.",
+ r2t:"Small surface",r2d:"Fewer abstractions, fewer bugs.",
+ r3t:"Real users",r3d:"Tested on phones and slow networks.",
+ t1y:"Now",t1t:"Full-stack development",t1d:"Django, relational databases and API design, paired with hand-built front ends.",
+ t2y:"2025 — 26",t2t:"Web fundamentals",t2d:"HTML, CSS, JavaScript and Python — learned through shipped projects, not just courses.",
+ t3y:"Start",t3t:"First lines of code",t3d:"Curiosity about how software works, turned into a habit of building.",
+ s3tag:"03 // Stack",s3title:"What I <span class='thin'>reach for.</span>",
+ s3sub:"The tools I use, and what I use them for.",
+ st1:"Years coding",st2:"Shipped projects",st3:"Open source",st4:"Day reply time",
+ s4tag:"04 // Contact",s4title:"Let's build <span class='grad'>something useful</span>.",
+ s4sub:"Open to junior full-stack roles, freelance builds and collaborations. I usually reply within a day.",
+ ctWrite:"Drop a line",ctReply:"Reply within a day",ctGh:"All my public work lives here.",
+ ctTgDesc:"Join my channel — I post new projects there.",
+ ctLoc:"Based in",ctCity:"Tashkent, Uzbekistan",ctOnline:"Online now",
+ toTop:"Back to top ↑",madeIn:"Hand-coded in Tashkent",oneFile:"Single HTML file · No frameworks",
+ sk:["Application logic, automation, scripting.","Server rendering, models, auth, admin panel.",
+     "Interactivity, state, progressive enhancement.","Semantic structure, Grid, design tokens.",
+     "Schema design, queries, data integrity.","Clear endpoints, predictable responses.",
+     "Branches, reviewable commits, collaboration.","Keyboard support, contrast, screen-reader order."],
+ skT:["Python","Django","JavaScript","HTML & CSS","Databases","REST API","Git & GitHub","Accessibility"],
+ /* Bookify */
+ bkDemo:"Demo",bkLive:"Live site",bkCart:"Cart",bkBack:"Portfolio",bkTitle:"Book catalogue",
+ bkSub:"An instant demo based on the Django <code class='mono'>Book</code>, <code class='mono'>Review</code> and <code class='mono'>Order</code> models. The real Django version: <a href='https://bookify-pstb.onrender.com/books/' target='_blank' rel='noopener'>bookify-pstb.onrender.com ↗</a>",
+ bkAdd:"Add book",bkTotal:"Total",bkOrder:"Place order",
+ qPh:"Search by title or author...",
+ sorts:["Newest first","Price: low to high","Price: high to low","By rating","Title: A → Z"],
+ all:"All",found:"Found: <b>{n}</b> books",none:"Nothing found",
+ emptyT:"No books found",emptyD:"Try changing your search or genre filter.",
+ genre:"Genre",pages:"Pages",rating:"Rating",revs:"Reviews",year:"",
+ toCart:"Add to cart",reviews:"Reviews",noRev:"No reviews yet — be the first.",
+ leaveRev:"Leave a review",yourName:"Your name",yourText:"Your thoughts on this book...",send:"Submit",
+ newBook:"New book",newBookD:"Like the Django admin — <code class='mono'>Book</code> model fields.",
+ fTitle:"Title *",fAuthor:"Author *",fPrice:"Price (UZS) *",fYear:"Published year",fPages:"Page count",
+ fDesc:"Description",save:"Save",noDesc:"No description provided.",
+ cartEmptyT:"Your cart is empty",cartEmptyD:"Pick a book from the catalogue.",
+ checkout:"Checkout",checkoutD:"Django <code class='mono'>Order</code> model fields.",
+ fName:"Full name *",fPhone:"Phone * (+998...)",fAddr:"Delivery address *",confirm:"Confirm",
+ okT:"Order received",okD:"Thank you, <b>{n}</b>! We'll call <b>{p}</b> shortly.",
+ backCat:"Back to catalogue",
+ tAdded:"Added to cart",tRev:"Review added",tBook:"\u201C{t}\u201D added",tOrder:"Order #{c} created",
+ eFields:"Name and comment are required",eBook:"Title, author and price are required",eCart:"Cart is empty",eAll:"Please fill all fields",
+ som:"UZS",bet:"pp",
+ genres:["Novel","Historical","Mystery","Sci-Fi","Psychology","Adventure"]
+}};
 
-/* =========================================================
-   CONFIG
-========================================================= */
+var LANG = localStorage.getItem("site.lang") || "uz";
+function t(k){ return (I18N[LANG] && I18N[LANG][k] !== undefined) ? I18N[LANG][k] : (I18N.uz[k]||k); }
 
-const GITHUB_USERNAME =
-    "abdulaziz2013uz-a11y";
+function applyLang(){
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var v=t(el.getAttribute("data-i18n")); if(typeof v==="string") el.textContent=v;
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+    var v=t(el.getAttribute("data-i18n-html")); if(typeof v==="string") el.innerHTML=v;
+  });
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.classList.toggle("on", b.dataset.lang===LANG);
+  });
+  document.title = LANG==="en" ? "Abdulaziz — Full-Stack Developer" : "Abdulaziz — Full-Stack Dasturchi";
+  buildSkills(); buildSorts(); buildChips();
+  var q=document.getElementById("q"); if(q) q.placeholder=t("qPh");
+  render(); syncCart();
+}
+document.querySelectorAll(".lang button").forEach(function(b){
+  b.addEventListener("click",function(){ LANG=b.dataset.lang; localStorage.setItem("site.lang",LANG); applyLang(); });
+});
 
-const EMAIL =
-    "abdulaziz2013.uz@gmail.com";
+/* ═══════════════════════════════════════════════════════════
+   THEME
+   ═══════════════════════════════════════════════════════════ */
+var THEME = localStorage.getItem("site.theme");
+if(!THEME) THEME = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+function applyTheme(){
+  document.documentElement.setAttribute("data-theme",THEME);
+  var m=document.getElementById("metaTheme");
+  if(m) m.setAttribute("content", THEME==="light" ? "#f7f9fc" : "#070b14");
+}
+applyTheme();
+function toggleTheme(){
+  THEME = THEME==="dark" ? "light" : "dark";
+  localStorage.setItem("site.theme",THEME); applyTheme();
+}
+["themeBtn","themeBtn2"].forEach(function(id){
+  var b=document.getElementById(id); if(b) b.addEventListener("click",toggleTheme);
+});
 
+/* ═══════════════════════════════════════════════════════════
+   PORTFOLIO UI
+   ═══════════════════════════════════════════════════════════ */
+(function(){
+  var w=["Python","•","Django","•","JavaScript","•","HTML / CSS","•","PostgreSQL","•","REST API","•","Git","•","Accessibility","•"],h="";
+  for(var r=0;r<2;r++) w.forEach(function(x){ h+= x==="•" ? "<i>•</i>" : "<span>"+x+"</span>"; });
+  document.getElementById("marq").innerHTML=h;
+})();
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
-
-const repos =
-    document.getElementById("repos");
-
-const followers =
-    document.getElementById("followers");
-
-const following =
-    document.getElementById("following");
-
-const repos2 =
-    document.getElementById("repos2");
-
-const followers2 =
-    document.getElementById("followers2");
-
-const following2 =
-    document.getElementById("following2");
-
-const githubGraph =
-    document.getElementById("githubGraph");
-
-
-/* =========================================================
-   SAFE TEXT FUNCTION
-========================================================= */
-
-function setText(element, value) {
-
-    if (element) {
-
-        element.textContent =
-            value;
-
-    }
-
+var SK_IC=[
+ {k:"PY",g:"linear-gradient(135deg,#fbbf24,#3b82f6)"},{k:"DJ",g:"linear-gradient(135deg,#34d399,#059669)"},
+ {k:"JS",g:"linear-gradient(135deg,#fde047,#eab308)"},{k:"CSS",g:"linear-gradient(135deg,#fb923c,#ec4899)"},
+ {k:"DB",g:"linear-gradient(135deg,#22d3ee,#3b82f6)"},{k:"API",g:"linear-gradient(135deg,#a78bfa,#d946ef)"},
+ {k:"GIT",g:"linear-gradient(135deg,#f97316,#ef4444)"},{k:"A11",g:"linear-gradient(135deg,#a3e635,#10b981)"}
+];
+function buildSkills(){
+  var T=t("skT"),D=t("sk");
+  document.getElementById("skills").innerHTML=SK_IC.map(function(s,i){
+    return '<article class="skill rv in"><div class="skill-ic" style="background:'+s.g+'">'+s.k+'</div><h4>'+T[i]+'</h4><p>'+D[i]+'</p></article>';
+  }).join("");
 }
 
-
-/* =========================================================
-   GITHUB API
-========================================================= */
-
-async function loadGitHubProfile() {
-
-    try {
-
-        setText(repos, "...");
-        setText(followers, "...");
-        setText(following, "...");
-
-        setText(repos2, "...");
-        setText(followers2, "...");
-        setText(following2, "...");
-
-
-        const response =
-            await fetch(
-                `https://api.github.com/users/${GITHUB_USERNAME}`,
-                {
-                    method: "GET",
-                    headers: {
-                        "Accept":
-                            "application/vnd.github+json"
-                    },
-                    cache: "no-store"
-                }
-            );
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                `GitHub API returned ${response.status}`
-            );
-
-        }
-
-
-        const data =
-            await response.json();
-
-
-        setText(
-            repos,
-            data.public_repos
-        );
-
-        setText(
-            followers,
-            data.followers
-        );
-
-        setText(
-            following,
-            data.following
-        );
-
-
-        setText(
-            repos2,
-            data.public_repos
-        );
-
-        setText(
-            followers2,
-            data.followers
-        );
-
-        setText(
-            following2,
-            data.following
-        );
-
-
-        console.log(
-            "GitHub profile loaded successfully:",
-            data
-        );
-
-
-    } catch (error) {
-
-        console.error(
-            "GitHub API error:",
-            error
-        );
-
-
-        /*
-            Agar API vaqtincha ishlamasa,
-            foydalanuvchiga xato ko'rsatamiz.
-            Noto'g'ri follower sonini uydirmaymiz.
-        */
-
-        setText(
-            repos,
-            "—"
-        );
-
-        setText(
-            followers,
-            "—"
-        );
-
-        setText(
-            following,
-            "—"
-        );
-
-        setText(
-            repos2,
-            "—"
-        );
-
-        setText(
-            followers2,
-            "—"
-        );
-
-        setText(
-            following2,
-            "—"
-        );
-
-    }
-
-}
-
-loadGitHubProfile();
-
-
-/* =========================================================
-   GITHUB GRAPH
-========================================================= */
-
-function createGitHubGraph() {
-
-    if (!githubGraph) {
-        return;
-    }
-
-
-    const total =
-        42;
-
-
-    for (
-        let i = 0;
-        i < total;
-        i++
-    ) {
-
-        const cell =
-            document.createElement("span");
-
-
-        cell.className =
-            "github-cell";
-
-
-        /*
-            Visual preview only.
-            Real GitHub contribution data
-            requires the contribution GraphQL API.
-        */
-
-        const random =
-            Math.random();
-
-
-        if (random > .82) {
-
-            cell.classList.add(
-                "hot"
-            );
-
-        } else if (random > .55) {
-
-            cell.classList.add(
-                "active"
-            );
-
-        }
-
-
-        githubGraph.appendChild(
-            cell
-        );
-
-    }
-
-}
-
-createGitHubGraph();
-
-
-/* =========================================================
-   TYPING ANIMATION
-========================================================= */
-
-const typing =
-    document.getElementById("typing");
-
-const roles = [
-
-    "Full Stack Developer",
-    "Python Developer",
-    "Django Developer",
-    "Web Developer",
-    "Creative Coder"
-
+(function(){
+  var head=document.getElementById("head");
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  function f(){
+    head.classList.toggle("on",window.scrollY>12);
+    var cur="";
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute("href").slice(1));
+      if(!el)return; var r=el.getBoundingClientRect();
+      if(r.top<=140&&r.bottom>=140) cur=el.id;
+    });
+    links.forEach(function(a){ a.classList.toggle("active",a.getAttribute("href")==="#"+cur); });
+  }
+  f(); window.addEventListener("scroll",f,{passive:true});
+})();
+
+(function(){
+  var b=document.getElementById("burger"),n=document.getElementById("nav");
+  b.addEventListener("click",function(){ b.setAttribute("aria-expanded",n.classList.toggle("open")?"true":"false"); });
+  n.addEventListener("click",function(e){ if(e.target.closest("a")){n.classList.remove("open");b.setAttribute("aria-expanded","false");} });
+})();
+
+(function(){
+  var it=document.querySelectorAll(".rv");
+  if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){
+    it.forEach(function(e){e.classList.add("in")}); return;
+  }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e,i){ if(!e.isIntersecting)return;
+      var el=e.target; setTimeout(function(){el.classList.add("in")},i*70); io.unobserve(el);
+    });
+  },{rootMargin:"0px 0px -10% 0px",threshold:.08});
+  it.forEach(function(e){io.observe(e)});
+})();
+
+document.getElementById("yil").textContent=new Date().getFullYear();
+
+/* ═══════════════════════════════════════════════════════════
+   BOOKIFY DATA  (gi = genre index)
+   ═══════════════════════════════════════════════════════════ */
+var SEED=[
+["O'tkan kunlar","Abdulla Qodiriy",0,68000,1925,384,
+ "O'zbek adabiyotining birinchi romani. Otabek va Kumushbibi muhabbati orqali XIX asr Turkiston hayoti tasvirlangan.",
+ "The first Uzbek novel. Through the love of Otabek and Kumush it portrays 19th-century Turkestan life and its tragedies."],
+["Mehrobdan chayon","Abdulla Qodiriy",1,62000,1929,352,
+ "Xon saroyidagi fitnalar, Anvar va Ra'no sevgisi. Qodiriyning ikkinchi yirik tarixiy romani.",
+ "Palace intrigues and the love of Anvar and Ra'no. Qodiriy's second major historical novel."],
+["Kecha va kunduz","Cho'lpon",0,57000,1936,296,
+ "Zebi taqdiri orqali mustamlaka davridagi o'zbek ayolining og'ir hayoti ko'rsatilgan.",
+ "Through Zebi's fate, the hard life of an Uzbek woman under colonial rule."],
+["Shum bola","G'afur G'ulom",5,42000,1936,208,
+ "Uy tashlab ketgan bolaning kulgili va achchiq sarguzashtlari.",
+ "The funny and bitter adventures of a boy who runs away from home."],
+["Ulug'bek xazinasi","Odil Yoqubov",1,71000,1973,416,
+ "Mirzo Ulug'bek va uning ilmiy merosi haqida. Bilim va hokimiyat o'rtasidagi kurash.",
+ "On Mirzo Ulugbek and his scientific legacy — the struggle between knowledge and power."],
+["Jimjitlik","O'tkir Hoshimov",0,59000,1988,320,
+ "Urushdan keyingi qishloq hayoti, insonlar taqdiri va ichki kurashlari.",
+ "Post-war village life, human destinies and inner struggles."],
+["Dunyoning ishlari","O'tkir Hoshimov",0,54000,1982,272,
+ "Ona mehri haqidagi eng ta'sirli o'zbek nasri. Har bir hikoya — alohida dunyo.",
+ "The most moving Uzbek prose about a mother's love. Each story is its own world."],
+["Ikki eshik orasi","O'tkir Hoshimov",0,66000,1986,392,
+ "Bir necha avlod taqdiri orqali XX asr o'zbek jamiyatining ko'zgusi.",
+ "A mirror of 20th-century Uzbek society through several generations."],
+["Yulduzli tunlar","Pirimqul Qodirov",1,78000,1979,480,
+ "Zahiriddin Muhammad Bobur hayoti — shoh, shoir va sarkarda sifatida.",
+ "The life of Zahiriddin Muhammad Babur — king, poet and commander."],
+["Bir kishilik qamoq","Tog'ay Murod",0,48000,1991,232,
+ "Insonning o'z ichidagi qamoqxonasi haqida chuqur falsafiy asar.",
+ "A deep philosophical work about the prison inside a person."],
+["Otamdan qolgan dalalar","Tog'ay Murod",0,56000,1994,288,
+ "Yer, meros va odamiylik haqida — o'zbek nasrining kuchli namunasi.",
+ "On land, inheritance and humanity — a powerful example of Uzbek prose."],
+["Sarob","Abdulla Qahhor",0,52000,1935,280,
+ "Yolg'on orzular ortidan quvish fojiasi. Psixologik chuqur asar.",
+ "The tragedy of chasing false dreams. A psychologically deep work."],
+["Navoiy","Oybek",1,82000,1944,512,
+ "Alisher Navoiy hayoti va ijodi haqidagi eng mashhur tarixiy roman.",
+ "The best-known historical novel about the life and work of Alisher Navoi."],
+["Jinoyat va jazo","Fyodor Dostoyevskiy",4,89000,1866,576,
+ "Raskolnikov nazariyasi va vijdon azobi. Jahon adabiyotining cho'qqisi.",
+ "Raskolnikov's theory and the torment of conscience. A peak of world literature."],
+["Aka-uka Karamazovlar","Fyodor Dostoyevskiy",4,112000,1880,824,
+ "Iymon, shubha va otaqotillik. Dostoyevskiyning so'nggi va eng yirik romani.",
+ "Faith, doubt and patricide. Dostoevsky's last and largest novel."],
+["Urush va tinchlik","Lev Tolstoy",1,135000,1869,1280,
+ "1812 yilgi urush fonida to'rt oila taqdiri.",
+ "The fate of four families against the backdrop of the war of 1812."],
+["Anna Karenina","Lev Tolstoy",0,98000,1877,864,
+ "Muhabbat, oila va jamiyat me'yorlari o'rtasidagi fojiali to'qnashuv.",
+ "A tragic collision between love, family and the norms of society."],
+["Usta va Margarita","Mixail Bulgakov",3,86000,1967,480,
+ "Shayton Moskvaga keladi. Satira, mistika va abadiy muhabbat qorishmasi.",
+ "The devil comes to Moscow. A blend of satire, mysticism and eternal love."],
+["1984","Jorj Oruell",3,76000,1949,328,
+ "Totalitar davlat, Katta Og'a va fikr politsiyasi. Distopiyaning etaloni.",
+ "A totalitarian state, Big Brother and the thought police. The benchmark dystopia."],
+["Hayvonot fermasi","Jorj Oruell",3,44000,1945,152,
+ "Inqilob qanday qilib o'z bolalarini yeydi — allegorik qissa.",
+ "How a revolution devours its own children — an allegorical novella."],
+["Chol va dengiz","Ernest Xeminguey",5,39000,1952,128,
+ "Santyago va ulkan baliq. Mag'lubiyatda ham yengilmaslik haqida.",
+ "Santiago and the great fish. On being undefeated even in defeat."],
+["Buyuk Getsbi","Frensis Fitsjerald",0,58000,1925,224,
+ "Amerika orzusining porloq va bo'sh tomoni. Jaz davri portreti.",
+ "The glittering emptiness of the American dream. A portrait of the Jazz Age."],
+["Yuz yillik yolg'izlik","Gabriel Garsia Markes",3,92000,1967,496,
+ "Buendia oilasining yetti avlodi. Sehrli realizmning bosh asari.",
+ "Seven generations of the Buendía family. The masterwork of magical realism."],
+["Begona","Alber Kamyu",4,41000,1942,160,
+ "Ma'nosizlik falsafasi. Merso — befarqlik timsoli.",
+ "The philosophy of the absurd. Meursault as the image of indifference."],
+["Kichkina shahzoda","Antuan de Sent-Ekzyuperi",5,36000,1943,112,
+ "Bolalar uchun ertak, kattalar uchun falsafa.",
+ "A fairy tale for children, philosophy for adults."],
+["Sherlok Holms sarguzashtlari","Artur Konan Doyl",2,67000,1892,336,
+ "Beyker-strit 221B. Deduksiya usulining klassik namunalari.",
+ "221B Baker Street. Classic demonstrations of the deductive method."],
+["Sharqiy ekspressda qotillik","Agata Kristi",2,54000,1934,256,
+ "Erkyul Puaro va qor qamalidagi poyezd. Detektivning oltin qoidasi.",
+ "Hercule Poirot and a train trapped in snow. The golden rule of detective fiction."],
+["Va hech kim qolmadi","Agata Kristi",2,57000,1939,272,
+ "Orolda o'nta mehmon. Birma-bir yo'q bo'ladi. Klassik yopiq detektiv.",
+ "Ten guests on an island, disappearing one by one. The classic closed mystery."],
+["Dyuna","Frenk Gerbert",3,104000,1965,688,
+ "Arrakis sayyorasi, ziravor va Pol Atreydes taqdiri.",
+ "The planet Arrakis, the spice, and the fate of Paul Atreides."],
+["Fondatsiya","Ayzek Azimov",3,71000,1951,296,
+ "Psixotarix fani va Galaktika imperiyasining qulashi.",
+ "The science of psychohistory and the fall of the Galactic Empire."],
+["451° Farengeyt","Rey Bredberi",3,49000,1953,192,
+ "Kitoblar yoqiladigan dunyo. Fikrlash erkinligi haqida ogohlantirish.",
+ "A world where books are burned. A warning about freedom of thought."],
+["Tez va sekin fikrlash","Daniel Kaneman",4,118000,2011,512,
+ "Ikki tizim nazariyasi. Nobel mukofoti sohibining asosiy kitobi.",
+ "The two-system theory. The key book by a Nobel laureate."],
+["Atomic Habits","Jeyms Klir",4,95000,2018,320,
+ "Kichik odatlarning katta natijasi. Amaliy o'zgarish tizimi.",
+ "Big results from small habits. A practical system for change."],
+["Sapiens","Yuval Noy Harari",1,125000,2011,512,
+ "Insoniyatning qisqacha tarixi: kognitiv inqilobdan sun'iy intellektgacha.",
+ "A brief history of humankind: from the cognitive revolution to AI."],
+["Toza kod","Robert Martin",4,145000,2008,464,
+ "Dasturchi uchun hunar kitobi. O'qiladigan kod yozish san'ati.",
+ "A craft handbook for developers. The art of writing readable code."],
+["Pragmatik dasturchi","Endryu Hant",4,138000,1999,352,
+ "Ustadan shogirdga: dasturlash amaliyotining oltin qoidalari.",
+ "From master to apprentice: the golden rules of programming practice."],
+["Sohil bo'yidagi Kafka","Haruki Murakami",3,84000,2002,505,
+ "Ikki syujet chizig'i, mushuklar tili va metafizik sayohat.",
+ "Two storylines, the language of cats, and a metaphysical journey."],
+["Norvegiya o'rmoni","Haruki Murakami",0,72000,1987,296,
+ "Yo'qotish, yolg'izlik va yoshlik muhabbati haqida nostaljik roman.",
+ "A nostalgic novel about loss, loneliness and young love."],
+["Alkimyogar","Paulo Koelo",5,47000,1988,208,
+ "Santyagoning xazina izlab yo'lga chiqishi va o'zini topishi.",
+ "Santiago sets out to find treasure and finds himself."],
+["Vabo","Alber Kamyu",0,63000,1947,320,
+ "Epidemiya qamalidagi shahar va inson qadr-qimmati haqida.",
+ "A city under quarantine and the question of human dignity."]
 ];
 
-let roleIndex = 0;
+var REV_SEED=[
+ ["Dilnoza",5,"Bir kechada o'qib chiqdim. Tavsiya qilaman!","Read it in one night. Highly recommend!"],
+ ["Jasur",4,"Yaxshi kitob, lekin oxiri biroz shoshilinch tugagan.","Good book, though the ending felt rushed."],
+ ["Malika",5,"Qayta-qayta o'qiyman. Har safar yangi ma'no topaman.","I reread it often and find new meaning each time."],
+ ["Bekzod",4,"Tarjimasi sifatli, qog'ozi ham yaxshi.","Solid translation and good paper quality."],
+ ["Nigora",5,"Bu kitob dunyoqarashimni o'zgartirdi.","This book changed how I see the world."],
+ ["Sardor",3,"Qiziq, ammo men kutgandan sekinroq rivojlanadi.","Interesting, but slower paced than I expected."],
+ ["Kamola",5,"Sovg'a qilish uchun ham zo'r variant.","Also a great option as a gift."],
+ ["Otabek",4,"Muallifning uslubi juda o'ziga xos.","The author's style is very distinctive."]
+];
 
-let characterIndex = 0;
+function hash(s){var h=0;for(var i=0;i<s.length;i++){h=(h<<5)-h+s.charCodeAt(i);h|=0}return Math.abs(h)}
+var PALETTE=[["#1e3a8a","#0891b2"],["#164e63","#0d9488"],["#312e81","#7c3aed"],["#7c2d12","#ea580c"],
+ ["#134e4a","#059669"],["#581c87","#c026d3"],["#831843","#e11d48"],["#1e40af","#3b82f6"],
+ ["#064e3b","#10b981"],["#78350f","#f59e0b"],["#0c4a6e","#0ea5e9"],["#4c1d95","#8b5cf6"]];
+function grad(x){var p=PALETTE[hash(x)%PALETTE.length];return"linear-gradient(145deg,"+p[0]+","+p[1]+")"}
+function money(n){return n.toLocaleString(LANG==="en"?"en-US":"ru-RU").replace(/\u00a0/g," ")+" "+t("som")}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function fmt(s,o){return s.replace(/\{(\w+)\}/g,function(m,k){return o[k]!==undefined?o[k]:m})}
 
-let deleting =
-    false;
-
-
-function typeWriter() {
-
-    if (!typing) {
-        return;
+var LS_B="bookify.v3.books", LS_C="bookify.v3.cart";
+function seedBooks(){
+  return SEED.map(function(r,i){
+    var revs=[],n=hash(r[0])%4;
+    for(var k=0;k<n;k++){
+      var s=REV_SEED[(hash(r[0])+k*7)%REV_SEED.length];
+      revs.push({name:s[0],rating:s[1],uz:s[2],en:s[3],created_at:Date.now()-(k+1)*86400000*(3+k)});
     }
+    return {id:i+1,title:r[0],author:r[1],gi:r[2],price:r[3],year:r[4],pages:r[5],
+            duz:r[6],den:r[7],reviews:revs,added:Date.now()-(SEED.length-i)*3600000};
+  });
+}
+function load(k,f){try{var v=JSON.parse(localStorage.getItem(k));return v||f}catch(e){return f}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 
+var BOOKS=load(LS_B,null)||seedBooks(); save(LS_B,BOOKS);
+var CART=load(LS_C,[]);
+var state={q:"",gi:-1,sort:0,page:1,per:12};
 
-    const currentRole =
-        roles[roleIndex];
+function gname(i){ return t("genres")[i]||"—" }
+function bdesc(b){ return (LANG==="en" ? (b.den||b.duz) : (b.duz||b.den)) || t("noDesc") }
+function rtext(r){ return (LANG==="en" ? (r.en||r.uz) : (r.uz||r.en)) || "" }
+function avg(b){ if(!b.reviews||!b.reviews.length)return 0;
+  return b.reviews.reduce(function(s,r){return s+r.rating},0)/b.reviews.length }
 
-
-    if (!deleting) {
-
-        characterIndex++;
-
-
-        typing.textContent =
-            currentRole.substring(
-                0,
-                characterIndex
-            );
-
-
-        if (
-            characterIndex >=
-            currentRole.length
-        ) {
-
-            deleting =
-                true;
-
-            setTimeout(
-                typeWriter,
-                1500
-            );
-
-            return;
-        }
-
-
-        setTimeout(
-            typeWriter,
-            80
-        );
-
-
-    } else {
-
-        characterIndex--;
-
-
-        typing.textContent =
-            currentRole.substring(
-                0,
-                characterIndex
-            );
-
-
-        if (
-            characterIndex <= 0
-        ) {
-
-            deleting =
-                false;
-
-            roleIndex =
-                (roleIndex + 1)
-                % roles.length;
-
-        }
-
-
-        setTimeout(
-            typeWriter,
-            45
-        );
-
-    }
-
+function buildSorts(){
+  var s=document.getElementById("sort");
+  s.innerHTML=t("sorts").map(function(x,i){return '<option value="'+i+'">'+x+'</option>'}).join("");
+  s.value=state.sort;
+}
+function buildChips(){
+  var c=document.getElementById("chips");
+  c.innerHTML='<button class="chip'+(state.gi===-1?" on":"")+'" data-g="-1">'+t("all")+'</button>'+
+    t("genres").map(function(g,i){return '<button class="chip'+(state.gi===i?" on":"")+'" data-g="'+i+'">'+g+'</button>'}).join("");
 }
 
-typeWriter();
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuButton =
-    document.getElementById(
-        "menuButton"
-    );
-
-const navLinks =
-    document.getElementById(
-        "navLinks"
-    );
-
-
-if (menuButton) {
-
-    menuButton.addEventListener(
-        "click",
-        () => {
-
-            navLinks.classList.toggle(
-                "open"
-            );
-
-        }
-    );
-
+function filtered(){
+  var q=state.q.trim().toLowerCase();
+  var out=BOOKS.filter(function(b){
+    if(state.gi>-1&&b.gi!==state.gi)return false;
+    if(!q)return true;
+    return (b.title+" "+b.author).toLowerCase().indexOf(q)>-1;
+  });
+  var s=+state.sort;
+  out.sort(function(a,b){
+    if(s===1)return a.price-b.price;
+    if(s===2)return b.price-a.price;
+    if(s===3)return avg(b)-avg(a);
+    if(s===4)return a.title.localeCompare(b.title,"uz");
+    return b.added-a.added;
+  });
+  return out;
 }
 
-
-document
-    .querySelectorAll(
-        ".nav-links a"
-    )
-    .forEach(
-        link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    navLinks.classList.remove(
-                        "open"
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   THEME
-========================================================= */
-
-const themeButton =
-    document.getElementById(
-        "themeButton"
-    );
-
-
-function updateThemeIcon() {
-
-    if (
-        document.body.classList.contains(
-            "light"
-        )
-    ) {
-
-        themeButton.textContent =
-            "☾";
-
-    } else {
-
-        themeButton.textContent =
-            "☼";
-
-    }
-
+function coverHTML(b,cls){
+  var r=avg(b);
+  return '<div class="'+(cls||"cover")+'">'+
+    '<div class="cover-g" style="background:'+grad(b.title)+'"></div>'+
+    '<div class="cover-ttl">'+esc(b.title)+'</div>'+
+    '<div class="cover-bot"><span class="genre-tag">'+gname(b.gi)+'</span>'+
+    (r?'<span class="stars">★ '+r.toFixed(1)+'</span>':'')+'</div></div>';
 }
 
+function render(){
+  var g=document.getElementById("grid"); if(!g)return;
+  var all=filtered(), total=all.length;
+  var pages=Math.max(1,Math.ceil(total/state.per));
+  if(state.page>pages)state.page=pages;
+  var slice=all.slice((state.page-1)*state.per,state.page*state.per);
 
-const savedTheme =
-    localStorage.getItem(
-        "portfolio-theme"
-    );
+  document.getElementById("cnt").innerHTML= total ? fmt(t("found"),{n:total}) : t("none");
 
+  g.innerHTML = slice.length ? slice.map(function(b){
+    return '<button class="book" data-id="'+b.id+'">'+coverHTML(b)+
+      '<div class="book-info"><div class="book-author">'+esc(b.author)+'</div>'+
+      '<div class="book-price"><b>'+money(b.price)+'</b><small>'+b.pages+' '+t("bet")+'</small></div>'+
+      '</div></button>';
+  }).join("") : '<div class="empty"><h3>'+t("emptyT")+'</h3><p>'+t("emptyD")+'</p></div>';
 
-if (
-    savedTheme === "light"
-) {
-
-    document.body.classList.add(
-        "light"
-    );
-
+  var p=document.getElementById("pager");
+  if(pages<2){p.innerHTML=""}
+  else{
+    var h='<button class="pbtn" '+(state.page===1?"disabled":"")+' data-p="'+(state.page-1)+'">‹</button>';
+    for(var i=1;i<=pages;i++){
+      if(i===1||i===pages||Math.abs(i-state.page)<=1)
+        h+='<button class="pbtn '+(i===state.page?"on":"")+'" data-p="'+i+'">'+i+'</button>';
+      else if(Math.abs(i-state.page)===2) h+='<span class="pbtn" style="border:0;background:none;cursor:default">…</span>';
+    }
+    h+='<button class="pbtn" '+(state.page===pages?"disabled":"")+' data-p="'+(state.page+1)+'">›</button>';
+    p.innerHTML=h;
+  }
 }
 
+document.getElementById("chips").addEventListener("click",function(e){
+  var b=e.target.closest(".chip"); if(!b)return;
+  [].forEach.call(this.children,function(x){x.classList.remove("on")});
+  b.classList.add("on"); state.gi=+b.dataset.g; state.page=1; render();
+});
+document.getElementById("q").addEventListener("input",function(e){state.q=e.target.value;state.page=1;render()});
+document.getElementById("sort").addEventListener("change",function(e){state.sort=+e.target.value;state.page=1;render()});
+document.getElementById("pager").addEventListener("click",function(e){
+  var b=e.target.closest("[data-p]"); if(!b||b.disabled)return;
+  state.page=+b.dataset.p; render(); document.getElementById("bk").scrollTo({top:0,behavior:"smooth"});
+});
+document.getElementById("grid").addEventListener("click",function(e){
+  var b=e.target.closest(".book"); if(b) openBook(+b.dataset.id);
+});
 
-updateThemeIcon();
+/* ── detail ── */
+var curQty=1, curRate=5;
+function openBook(id){
+  var b=BOOKS.find(function(x){return x.id===id}); if(!b)return;
+  curQty=1; curRate=5;
+  var r=avg(b);
+  var revs=(b.reviews||[]).slice().sort(function(a,c){return c.created_at-a.created_at});
 
+  document.getElementById("modalBox").innerHTML=
+   '<button class="modal-x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>'+
+   '<div class="det"><div>'+coverHTML(b,"det-cover")+'</div><div>'+
+     '<h2>'+esc(b.title)+'</h2>'+
+     '<div class="by">'+esc(b.author)+' · '+b.year+t("year")+'</div>'+
+     '<div class="det-facts">'+
+       '<div class="fact"><i>'+t("genre")+'</i><b>'+gname(b.gi)+'</b></div>'+
+       '<div class="fact"><i>'+t("pages")+'</i><b>'+b.pages+'</b></div>'+
+       '<div class="fact"><i>'+t("rating")+'</i><b>'+(r?r.toFixed(1)+" ★":"—")+'</b></div>'+
+       '<div class="fact"><i>'+t("revs")+'</i><b>'+revs.length+'</b></div>'+
+     '</div>'+
+     '<p class="det-desc">'+esc(bdesc(b))+'</p>'+
+     '<div class="buy-row"><span class="price">'+money(b.price)+'</span>'+
+       '<div class="qty"><button id="qm">−</button><span id="qv">1</span><button id="qp">+</button></div>'+
+       '<button class="ibtn ibtn-pri" id="addCart" style="height:46px">'+t("toCart")+'</button></div>'+
+     '<div class="rev-head"><h3>'+t("reviews")+' ('+revs.length+')</h3></div>'+
+     '<div>'+(revs.length?revs.map(revHTML).join(""):'<p style="color:var(--ink-3);font-size:14px;margin-bottom:14px">'+t("noRev")+'</p>')+'</div>'+
+     '<div style="margin-top:18px;padding-top:18px;border-top:1px solid var(--line)">'+
+       '<div class="rev-head" style="margin-bottom:10px"><h3 style="font-size:15px">'+t("leaveRev")+'</h3>'+
+         '<div class="rate-pick" id="rate">'+[1,2,3,4,5].map(function(i){return '<button data-r="'+i+'" class="on">★</button>'}).join("")+'</div></div>'+
+       '<div class="form-row"><input class="inp" id="rvName" placeholder="'+t("yourName")+'" maxlength="40"/></div>'+
+       '<textarea class="inp" id="rvText" placeholder="'+t("yourText")+'" maxlength="400"></textarea>'+
+       '<button class="ibtn ibtn-pri" id="rvSend" style="margin-top:10px;height:46px">'+t("send")+'</button>'+
+     '</div></div></div>';
 
-themeButton.addEventListener(
-    "click",
-    () => {
-
-        document.body.classList.toggle(
-            "light"
-        );
-
-
-        const theme =
-            document.body.classList.contains(
-                "light"
-            )
-                ? "light"
-                : "dark";
-
-
-        localStorage.setItem(
-            "portfolio-theme",
-            theme
-        );
-
-
-        updateThemeIcon();
-
-    }
-);
-
-
-/* =========================================================
-   MOUSE GLOW
-========================================================= */
-
-const mouseGlow =
-    document.getElementById(
-        "mouseGlow"
-    );
-
-
-window.addEventListener(
-    "mousemove",
-    event => {
-
-        if (!mouseGlow) {
-            return;
-        }
-
-
-        mouseGlow.style.left =
-            `${event.clientX}px`;
-
-
-        mouseGlow.style.top =
-            `${event.clientY}px`;
-
-    }
-);
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: 0.10
-        }
-    );
-
-
-document
-    .querySelectorAll(
-        ".reveal"
-    )
-    .forEach(
-        element => {
-
-            revealObserver.observe(
-                element
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   COPY EMAIL
-========================================================= */
-
-const copyEmail =
-    document.getElementById(
-        "copyEmail"
-    );
-
-const toast =
-    document.getElementById(
-        "toast"
-    );
-
-
-function showToast(message) {
-
-    toast.textContent =
-        message;
-
-    toast.classList.add(
-        "show"
-    );
-
-
-    setTimeout(
-        () => {
-
-            toast.classList.remove(
-                "show"
-            );
-
-        },
-        2200
-    );
-
+  openModal();
+  document.getElementById("qm").onclick=function(){if(curQty>1){curQty--;document.getElementById("qv").textContent=curQty}};
+  document.getElementById("qp").onclick=function(){if(curQty<20){curQty++;document.getElementById("qv").textContent=curQty}};
+  document.getElementById("addCart").onclick=function(){addToCart(b.id,curQty)};
+  document.getElementById("rate").onclick=function(e){
+    var x=e.target.closest("[data-r]"); if(!x)return; curRate=+x.dataset.r;
+    [].forEach.call(this.children,function(y){y.classList.toggle("on",+y.dataset.r<=curRate)});
+  };
+  document.getElementById("rvSend").onclick=function(){
+    var n=val("rvName"), c=val("rvText");
+    if(!n||!c){toast(t("eFields"),"err");return}
+    b.reviews=b.reviews||[];
+    b.reviews.push({name:n,rating:curRate,uz:c,en:c,created_at:Date.now()});
+    save(LS_B,BOOKS); toast(t("tRev")); openBook(b.id); render();
+  };
 }
-
-
-copyEmail.addEventListener(
-    "click",
-    async () => {
-
-        try {
-
-            await navigator.clipboard.writeText(
-                EMAIL
-            );
-
-            showToast(
-                "Email copied successfully!"
-            );
-
-        } catch {
-
-            showToast(
-                EMAIL
-            );
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CONTACT FORM
-========================================================= */
-
-const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
-
-
-contactForm.addEventListener(
-    "submit",
-    event => {
-
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById(
-                "name"
-            ).value.trim();
-
-
-        const email =
-            document.getElementById(
-                "email"
-            ).value.trim();
-
-
-        const subject =
-            document.getElementById(
-                "subject"
-            ).value.trim();
-
-
-        const message =
-            document.getElementById(
-                "message"
-            ).value.trim();
-
-
-        const body =
-
-`Hello Abdulaziz,
-
-Name: ${name}
-
-Email: ${email}
-
-Message:
-
-${message}`;
-
-
-        const mailto =
-
-            `mailto:${EMAIL}` +
-            `?subject=${encodeURIComponent(subject)}` +
-            `&body=${encodeURIComponent(body)}`;
-
-
-        window.location.href =
-            mailto;
-
-    }
-);
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const backTop =
-    document.getElementById(
-        "backTop"
-    );
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if (
-            window.scrollY >
-            500
-        ) {
-
-            backTop.classList.add(
-                "show"
-            );
-
-        } else {
-
-            backTop.classList.remove(
-                "show"
-            );
-
-        }
-
-    }
-);
-
-
-backTop.addEventListener(
-    "click",
-    () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-);
-
-
-/* =========================================================
-   PROJECT 3D TILT
-========================================================= */
-
-document
-    .querySelectorAll(
-        ".project"
-    )
-    .forEach(
-        card => {
-
-            card.addEventListener(
-                "mousemove",
-                event => {
-
-                    if (
-                        window.innerWidth <
-                        800
-                    ) {
-                        return;
-                    }
-
-
-                    const rect =
-                        card.getBoundingClientRect();
-
-
-                    const x =
-                        event.clientX -
-                        rect.left;
-
-
-                    const y =
-                        event.clientY -
-                        rect.top;
-
-
-                    const centerX =
-                        rect.width / 2;
-
-
-                    const centerY =
-                        rect.height / 2;
-
-
-                    const rotateX =
-                        (
-                            (y - centerY) /
-                            centerY
-                        ) * -2;
-
-
-                    const rotateY =
-                        (
-                            (x - centerX) /
-                            centerX
-                        ) * 2;
-
-
-                    card.style.transform =
-
-                        `perspective(1000px)
-                         rotateX(${rotateX}deg)
-                         rotateY(${rotateY}deg)
-                         translateY(-7px)`;
-
-                }
-            );
-
-
-            card.addEventListener(
-                "mouseleave",
-                () => {
-
-                    card.style.transform =
-                        "";
-
-                }
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   CURRENT YEAR
-========================================================= */
-
-document.getElementById(
-    "year"
-).textContent =
-    new Date().getFullYear();
-
-
-/* =========================================================
-   CLOSE MENU ON ESC
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            navLinks.classList.remove(
-                "open"
-            );
-
-        }
-
-    }
-);
-
+function revHTML(r){
+  return '<div class="rev"><div class="rev-top">'+
+    '<span class="rev-av">'+esc(r.name[0].toUpperCase())+'</span>'+
+    '<span class="rev-nm">'+esc(r.name)+'</span>'+
+    '<span class="stars">'+"★".repeat(r.rating)+'<span style="color:var(--line-2)">'+"★".repeat(5-r.rating)+'</span></span>'+
+    '<span class="rev-dt">'+new Date(r.created_at).toLocaleDateString(LANG==="en"?"en-GB":"uz-UZ")+'</span>'+
+  '</div><p>'+esc(rtext(r))+'</p></div>';
+}
+function val(id){var e=document.getElementById(id);return e?e.value.trim():""}
+
+/* ── add book ── */
+document.getElementById("addBtn").onclick=function(){
+  document.getElementById("modalBox").innerHTML=
+   '<button class="modal-x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>'+
+   '<div style="padding:30px"><h2 style="font-size:22px;margin-bottom:6px">'+t("newBook")+'</h2>'+
+   '<p style="color:var(--ink-2);font-size:14px;margin-bottom:22px">'+t("newBookD")+'</p>'+
+   '<div class="form-row"><input class="inp" id="nT" placeholder="'+t("fTitle")+'"/><input class="inp" id="nA" placeholder="'+t("fAuthor")+'"/></div>'+
+   '<div class="form-row"><select class="sel" id="nG" style="width:100%">'+
+     t("genres").map(function(g,i){return '<option value="'+i+'">'+g+'</option>'}).join("")+'</select>'+
+     '<input class="inp" id="nP" type="number" placeholder="'+t("fPrice")+'" min="1000" step="1000"/></div>'+
+   '<div class="form-row"><input class="inp" id="nY" type="number" placeholder="'+t("fYear")+'" min="1500" max="2026"/>'+
+     '<input class="inp" id="nPg" type="number" placeholder="'+t("fPages")+'" min="1"/></div>'+
+   '<textarea class="inp" id="nD" placeholder="'+t("fDesc")+'"></textarea>'+
+   '<button class="ibtn ibtn-pri w100" id="nSave" style="margin-top:14px;height:48px">'+t("save")+'</button></div>';
+  openModal();
+  document.getElementById("nSave").onclick=function(){
+    var ti=val("nT"),a=val("nA"),p=+val("nP");
+    if(!ti||!a||!p){toast(t("eBook"),"err");return}
+    var d=val("nD")||t("noDesc");
+    var id=Math.max.apply(null,BOOKS.map(function(b){return b.id}).concat([0]))+1;
+    BOOKS.push({id:id,title:ti,author:a,gi:+val("nG")||0,price:p,year:+val("nY")||2026,
+      pages:+val("nPg")||200,duz:d,den:d,reviews:[],added:Date.now()});
+    save(LS_B,BOOKS); closeModal(); state.page=1; state.q=""; document.getElementById("q").value="";
+    render(); toast(fmt(t("tBook"),{t:ti}));
+  };
+};
+
+/* ── cart ── */
+function addToCart(id,q){
+  var it=CART.find(function(c){return c.id===id});
+  if(it) it.qty=Math.min(20,it.qty+q); else CART.push({id:id,qty:q});
+  save(LS_C,CART); syncCart(); toast(t("tAdded")); closeModal();
+}
+function syncCart(){
+  var el=document.getElementById("cartN"); if(!el)return;
+  el.textContent=CART.reduce(function(s,c){return s+c.qty},0);
+  var list=document.getElementById("cartList"), tot=0;
+  if(!CART.length){
+    list.innerHTML='<div class="empty" style="padding:50px 16px;border:0"><h3 style="font-size:16px">'+t("cartEmptyT")+'</h3><p>'+t("cartEmptyD")+'</p></div>';
+  }else{
+    list.innerHTML=CART.map(function(c){
+      var b=BOOKS.find(function(x){return x.id===c.id}); if(!b)return"";
+      tot+=b.price*c.qty;
+      return '<div class="ci"><div class="ci-cv" style="background:'+grad(b.title)+'"></div>'+
+        '<div><div class="ci-t">'+esc(b.title)+'</div><div class="ci-p">'+c.qty+' × '+money(b.price)+'</div></div>'+
+        '<button class="ci-x" data-rm="'+c.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>';
+    }).join("");
+  }
+  document.getElementById("total").textContent=money(tot);
+}
+document.getElementById("cartList").addEventListener("click",function(e){
+  var b=e.target.closest("[data-rm]"); if(!b)return;
+  CART=CART.filter(function(c){return c.id!==+b.dataset.rm}); save(LS_C,CART); syncCart();
+});
+function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("cartBg").classList.add("open")}
+function closeCart(){document.getElementById("cart").classList.remove("open");document.getElementById("cartBg").classList.remove("open")}
+document.getElementById("cartBtn").onclick=openCart;
+[].forEach.call(document.querySelectorAll("[data-close-cart]"),function(e){e.onclick=closeCart});
+
+/* ── order ── */
+document.getElementById("orderBtn").onclick=function(){
+  if(!CART.length){toast(t("eCart"),"err");return}
+  closeCart();
+  var tot=CART.reduce(function(s,c){var b=BOOKS.find(function(x){return x.id===c.id});return s+(b?b.price*c.qty:0)},0);
+  document.getElementById("modalBox").innerHTML=
+   '<button class="modal-x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>'+
+   '<div style="padding:30px"><h2 style="font-size:22px;margin-bottom:6px">'+t("checkout")+'</h2>'+
+   '<p style="color:var(--ink-2);font-size:14px;margin-bottom:22px">'+t("checkoutD")+'</p>'+
+   '<div class="form-row"><input class="inp" id="oN" placeholder="'+t("fName")+'"/><input class="inp" id="oP" placeholder="'+t("fPhone")+'"/></div>'+
+   '<input class="inp" id="oA" placeholder="'+t("fAddr")+'" style="margin-bottom:10px"/>'+
+   '<div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);margin:14px 0">'+
+     '<span class="mono" style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)">'+t("bkTotal")+'</span>'+
+     '<b style="font-size:20px">'+money(tot)+'</b></div>'+
+   '<button class="ibtn ibtn-pri w100" id="oSend" style="height:50px">'+t("confirm")+'</button></div>';
+  openModal();
+  document.getElementById("oSend").onclick=function(){
+    var n=val("oN"),p=val("oP"),a=val("oA");
+    if(!n||!p||!a){toast(t("eAll"),"err");return}
+    var code="BK-"+String(Date.now()).slice(-6);
+    CART=[]; save(LS_C,CART); syncCart();
+    document.getElementById("modalBox").innerHTML=
+     '<button class="modal-x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>'+
+     '<div class="ok-box"><div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>'+
+     '<h2>'+t("okT")+'</h2><p>'+fmt(t("okD"),{n:esc(n),p:esc(p)})+'</p>'+
+     '<div class="ok-code">'+code+'</div>'+
+     '<div><button class="ibtn ibtn-pri" data-close style="height:46px">'+t("backCat")+'</button></div></div>';
+    bindClose(); toast(fmt(t("tOrder"),{c:code}));
+  };
+};
+
+/* ── helpers ── */
+function openModal(){document.getElementById("modal").classList.add("open");document.body.classList.add("locked");bindClose()}
+function closeModal(){document.getElementById("modal").classList.remove("open");
+  if(!document.getElementById("bk").classList.contains("open"))document.body.classList.remove("locked")}
+function bindClose(){[].forEach.call(document.querySelectorAll("#modal [data-close]"),function(e){e.onclick=closeModal})}
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Escape")return;
+  if(document.getElementById("modal").classList.contains("open"))return closeModal();
+  if(document.getElementById("cart").classList.contains("open"))return closeCart();
+  if(document.getElementById("bk").classList.contains("open"))closeBookify();
+});
+function toast(msg,type){
+  var el=document.getElementById("toast");
+  document.getElementById("toastTxt").textContent=msg;
+  el.style.borderColor = type==="err" ? "var(--rose)" : "var(--green)";
+  el.style.color = type==="err" ? "var(--rose)" : "var(--green)";
+  el.classList.add("show");
+  clearTimeout(el._t); el._t=setTimeout(function(){el.classList.remove("show")},2400);
+}
+function openBookify(){
+  document.getElementById("bk").classList.add("open");
+  document.body.classList.add("locked");
+  document.getElementById("bk").scrollTop=0;
+  if(location.hash!=="#bookify") history.pushState(null,"","#bookify");
+  render(); syncCart();
+}
+function closeBookify(){
+  document.getElementById("bk").classList.remove("open");
+  document.body.classList.remove("locked");
+  if(location.hash==="#bookify") history.pushState(null,"",location.pathname+location.search);
+}
+[].forEach.call(document.querySelectorAll("[data-open-bookify]"),function(e){
+  e.style.cursor="pointer";
+  e.addEventListener("click",function(ev){ev.preventDefault();openBookify()});
+});
+document.getElementById("bkClose").onclick=closeBookify;
+window.addEventListener("popstate",function(){ location.hash==="#bookify" ? openBookify() : closeBookify(); });
+
+/* init */
+applyLang();
+if(location.hash==="#bookify") openBookify();
 </script>
-
 </body>
 </html>
