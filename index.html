@@ -3,9 +3,37 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Abdulaziz — Full-Stack dasturchi. Toshkent. Django, Python, JavaScript." />
+<meta name="description" content="Abdulaziz — Toshkentlik full-stack dasturchi. Django, Python, JavaScript. Bookify kitob do'koni va boshqa loyihalar." />
 <meta name="author" content="Abdulaziz" />
 <meta name="theme-color" content="#070b14" id="metaTheme" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Abdulaziz, full-stack developer, Django, Python, JavaScript, Tashkent, dasturchi, portfolio" />
+
+<!-- Ulashganda ko'rinadigan karta (Telegram, LinkedIn, Facebook) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Abdulaziz — Full-Stack Dasturchi" />
+<meta property="og:description" content="Toshkentlik full-stack dasturchi. Django, Python, JavaScript. Loyihalar va aloqa." />
+<meta property="og:locale" content="uz_UZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Abdulaziz — Full-Stack Dasturchi" />
+<meta name="twitter:description" content="Toshkentlik full-stack dasturchi. Django, Python, JavaScript." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abdulaziz",
+  "jobTitle": "Full-Stack Developer",
+  "email": "mailto:abdulaziz2013.uz@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" },
+  "knowsAbout": ["Python", "Django", "JavaScript", "HTML", "CSS", "REST API", "PostgreSQL"],
+  "sameAs": [
+    "https://github.com/abdulaziz2013uz-a11y",
+    "https://t.me/abdulaziz_devl"
+  ]
+}
+</script>
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b14'/%3E%3Cpath d='M8 23 16 8l8 15' stroke='%2338bdf8' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M12 18h8' stroke='%2338bdf8' stroke-width='2.4'/%3E%3C/svg%3E" />
 
@@ -494,6 +522,89 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
 .ok-box p b{color:var(--ink)}
 .ok-code{display:inline-block;margin:14px 0 22px;padding:9px 18px;border-radius:10px;background:var(--card);
   border:1px solid var(--line-2);font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--sky);font-weight:600}
+
+/* ═══════════════════════════════════════════════════════════
+   CV / REZYUME
+   ═══════════════════════════════════════════════════════════ */
+.cv{position:fixed;inset:0;z-index:250;background:#f1f5f9;overflow-y:auto;display:none;
+  padding:26px 16px 70px;color:#0d1526;font-size:14px;line-height:1.55}
+.cv.open{display:block}
+.cv a{color:inherit}
+.cvbar{max-width:210mm;margin:0 auto 16px;display:flex;flex-wrap:wrap;gap:10px;
+  align-items:center;justify-content:space-between}
+.cvbar-l{display:flex;gap:8px;align-items:center}
+.cvb{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 15px;border-radius:10px;
+  border:1px solid #cbd5e1;background:#fff;color:#0d1526;cursor:pointer;
+  font:600 13.5px 'Inter',sans-serif;transition:all .2s var(--ease)}
+.cvb:hover{border-color:#0369a1;color:#0369a1;transform:translateY(-1px)}
+.cvb svg{width:16px;height:16px}
+.cvb-pri{background:linear-gradient(135deg,#0369a1,#0891b2);border-color:transparent;color:#fff}
+.cvb-pri:hover{color:#fff;box-shadow:0 8px 20px -8px rgba(3,105,161,.55)}
+.cvlang{display:inline-flex;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;height:40px;background:#fff}
+.cvlang button{width:44px;background:none;border:0;color:#7b8aa0;cursor:pointer;
+  font:700 12.5px 'JetBrains Mono',monospace;transition:all .2s}
+.cvlang button.on{background:linear-gradient(135deg,#0369a1,#0891b2);color:#fff}
+
+.page{max-width:210mm;margin:0 auto;background:#fff;border-radius:12px;
+  box-shadow:0 18px 50px -24px rgba(13,21,38,.3);padding:18mm 16mm;border:1px solid #e2e8f0}
+.cv-hd{border-bottom:2.5px solid #0d1526;padding-bottom:13px;margin-bottom:15px}
+.cv-nm{font-size:28px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;line-height:1.1}
+.cv-rl{margin-top:5px;font-size:14px;font-weight:600;color:#0369a1}
+.cv-ct{margin-top:9px;font-size:12px;color:#475569;line-height:1.75}
+.cv-ct a{border-bottom:1px solid #cbd5e1}
+.cv-ct a:hover{color:#0369a1;border-color:#0369a1}
+.cv-sep{color:#cbd5e1;margin:0 6px}
+.cv h2{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:#0d1526;padding-bottom:4px;border-bottom:1.5px solid #e2e8f0;margin:17px 0 9px;line-height:1.3}
+.cv-sum{font-size:12.6px;color:#475569;text-align:justify}
+.cv-sk{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12.4px}
+.cv-sk dt{font-weight:700;white-space:nowrap}
+.cv-sk dd{color:#475569}
+.cv-it{margin-bottom:13px;break-inside:avoid}
+.cv-it-t{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;justify-content:space-between}
+.cv-it-t h3{font-size:13.6px;font-weight:700;line-height:1.3}
+.cv-it-t .dt{font-size:11.5px;color:#7b8aa0;font-family:'JetBrains Mono',monospace;white-space:nowrap}
+.cv-stk{margin-top:2px;font-size:11.4px;color:#0369a1;font-family:'JetBrains Mono',monospace}
+.cv-lk{margin-top:3px;font-size:11.4px;font-family:'JetBrains Mono',monospace;color:#7b8aa0}
+.cv-lk a{border-bottom:1px solid #cbd5e1}
+.cv-lk a:hover{color:#0369a1;border-color:#0369a1}
+.cv ul{margin:6px 0 0 16px;font-size:12.4px;color:#475569}
+.cv li{margin-bottom:3.5px}
+.cv li::marker{color:#0369a1}
+.cv b{color:#0d1526;font-weight:650}
+.cv code{font-family:'JetBrains Mono',monospace;font-size:.92em;background:#f1f5f9;
+  padding:1px 4px;border-radius:4px;color:#0369a1}
+.cv-ed{font-size:12.4px;color:#475569;margin-bottom:5px}
+.cv-ed b{display:block;color:#0d1526;font-size:13px;font-weight:700}
+.cv-todo{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:9px 12px;
+  font-size:11.8px;color:#92400e;margin-top:14px;line-height:1.6}
+.cv-todo b{color:#78350f}
+.cv-note{max-width:210mm;margin:16px auto 0;font-size:11.5px;color:#7b8aa0;text-align:center}
+@media(max-width:640px){
+  .cv{padding:16px 10px 50px}
+  .page{padding:22px 18px}
+  .cv-nm{font-size:22px}
+  .cv-sk{grid-template-columns:1fr;gap:1px 0}
+  .cv-sk dt{margin-top:7px}
+}
+
+/* ── PRINT → faqat CV, A4 ── */
+@page{size:A4;margin:12mm}
+@media print{
+  body{background:#fff !important}
+  body.cv-on .head,body.cv-on main,body.cv-on .foot,body.cv-on .bk,
+  body.cv-on .orb,body.cv-on .modal,body.cv-on .cart,body.cv-on .toast,body.cv-on .skip{display:none !important}
+  body.cv-on .cv{position:static;display:block;padding:0;background:#fff;overflow:visible;font-size:10.5pt}
+  .cvbar,.cv-note,.cv-todo{display:none !important}
+  .page{max-width:none;box-shadow:none;border:0;border-radius:0;padding:0;margin:0}
+  .cv-nm{font-size:21pt}.cv-rl{font-size:11pt}.cv-ct{font-size:8.9pt}
+  .cv h2{font-size:9pt;margin:11pt 0 5pt}
+  .cv-sum,.cv-sk,.cv ul,.cv-ed{font-size:9.4pt}
+  .cv-it-t h3{font-size:10.2pt}.cv-stk,.cv-lk,.cv-it-t .dt{font-size:8.6pt}
+  .cv-it{margin-bottom:8pt}
+  .cv a{color:#000;border:0 !important}
+  .cv code{background:none;color:#000;padding:0}
+}
 </style>
 </head>
 <body>
@@ -560,6 +671,10 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.79.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
           GitHub
         </a>
+        <button class="btn" data-open-cv>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          <span data-i18n="heroBtnCv">Rezyume (CV)</span>
+        </button>
         <a class="btn btn-ghost" href="mailto:abdulaziz2013.uz@gmail.com" data-i18n="heroBtn3">Email yozish</a>
       </div>
     </div>
@@ -689,8 +804,8 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
     </div>
     <div class="skills" id="skills"></div>
     <div class="stats rv">
-      <div class="stat"><b>2+</b><span data-i18n="st1">Yil kod yozaman</span></div>
-      <div class="stat"><b>10+</b><span data-i18n="st2">Chiqarilgan ish</span></div>
+      <div class="stat"><b>2</b><span data-i18n="st1">Jonli loyiha</span></div>
+      <div class="stat"><b>100%</b><span data-i18n="st2">Mustaqil o'rgandim</span></div>
       <div class="stat"><b>100%</b><span data-i18n="st3">Ochiq kod</span></div>
       <div class="stat"><b>&lt;1</b><span data-i18n="st4">Kun javob vaqti</span></div>
     </div>
@@ -778,6 +893,7 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
         <a href="https://github.com/abdulaziz2013uz-a11y" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="mailto:abdulaziz2013.uz@gmail.com">Email ↗</a>
         <a href="https://t.me/abdulaziz_devl" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+        <a data-open-cv>CV ↗</a>
         <a href="#top" data-i18n="toTop">Yuqoriga ↑</a>
       </div>
     </div>
@@ -869,6 +985,30 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
 
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastTxt"></span></div>
 
+<!-- ══════════ CV / REZYUME ══════════ -->
+<div class="cv" id="cv" role="dialog" aria-label="CV">
+  <div class="cvbar">
+    <div class="cvbar-l">
+      <button class="cvb" id="cvBack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 5l-6 7 6 7"/></svg>
+        <span data-i18n="bkBack">Portfolio</span>
+      </button>
+      <div class="cvlang">
+        <button data-lang="uz">UZ</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+    <button class="cvb cvb-pri" id="cvPrint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/>
+      </svg>
+      <span data-i18n="cvPdf">PDF yuklab olish</span>
+    </button>
+  </div>
+  <main class="page" id="cvPage"></main>
+  <p class="cv-note" data-i18n="cvNote">PDF uchun tugmani bosing → «Saqlash: PDF» ni tanlang.</p>
+</div>
+
 <script>
 /* ═══════════════════════════════════════════════════════════
    I18N — UZ / EN
@@ -880,9 +1020,9 @@ uz:{
  open:"Loyihalarga ochiq · 2026",
  h1:"Toza kod,<br><span class='grad'>tez yechim</span>,<br><span class='thin'>uzoq umr.</span>",
  lede:"Men <b>Abdulaziz</b> — Toshkentlik full-stack dasturchi. Veb-mahsulotlarni boshidan oxirigacha quraman: serverda Django, brauzerda toza va semantik interfeys, orasida esa ortiqcha yuk yo'q.",
- heroBtn1:"Bookify — jonli sayt",heroBtn3:"Email yozish",
- quick:"// Qisqacha",f1k:"Yo'nalish",f1v:"Full-stack dasturchi",f2k:"Asosiy",
- f3k:"Manzil",f3v:"Toshkent, UZ (GMT+5)",f4k:"Holat",f4v:"Ish qidiryapman",
+ heroBtn1:"Bookify — jonli sayt",heroBtn3:"Email yozish",heroBtnCv:"Rezyume (CV)",
+ quick:"// Qisqacha",f1k:"Yo'nalish",f1v:"Yosh full-stack dasturchi",f2k:"Asosiy",
+ f3k:"Manzil",f3v:"Toshkent, UZ (GMT+5)",f4k:"Holat",f4v:"Amaliyotga ochiq",
  fnote:"Hozir backend arxitekturasi, REST API dizayni va interfeys sifatini real loyihalar orqali chuqurlashtiryapman.",
  s1tag:"01 // Loyihalar",s1title:"Haqiqiy kod, <span class='thin'>ochiq va amaliy.</span>",
  s1sub:"Har bir loyiha GitHub'da ochiq. Bookify'ni jonli saytda yoki tezkor demoda sinab ko'ring.",
@@ -900,22 +1040,23 @@ uz:{
  s2tag:"02 // Yondashuv",s2title:"Muammodan boshlayman, <span class='thin'>stackdan emas.</span>",
  quote:"Foydalanuvchiga aslida nima kerakligini tushunish, unga xizmat qilmaydigan hamma narsani olib tashlash va <b>yaxshi ishlaydigan</b> eng kichik yechimni qurish.",
  ab1:"Bu degani — chiroyli koddan ko'ra o'qiladigan kod, JavaScript'dan oldin semantik HTML, va telefonda ham, klaviaturada ham, sekin internetda ham bir xil ishonchli ishlaydigan interfeys.",
- ab2:"Men karyeramning boshidaman va buni ataylab shunday olib boryapman: katta va mo'rt narsadan ko'ra, kichik va mustahkam narsani chiqarishni afzal ko'raman.",
+ ab2:"Men hali maktab o'quvchisiman va dasturlashni mustaqil o'rganyapman. Buni ataylab shunday olib boryapman: katta va mo'rt narsadan ko'ra, kichik va mustahkam narsani chiqarishni afzal ko'raman.",
  r1t:"Semantika birinchi",r1d:"Ma'nosini anglatadigan HTML.",
  r2t:"Kichik yuza",r2d:"Kam abstraksiya — kam xatolik.",
  r3t:"Real foydalanuvchi",r3d:"Telefon va sekin tarmoqda sinov.",
- t1y:"Hozir",t1t:"Full-stack rivojlanish",t1d:"Django, ma'lumotlar bazasi va API dizayni, qo'lda qurilgan frontend bilan birga.",
- t2y:"2025 — 26",t2t:"Veb asoslari",t2d:"HTML, CSS, JavaScript va Python — faqat kurslar emas, chiqarilgan loyihalar orqali.",
- t3y:"Boshlanish",t3t:"Birinchi qatorlar",t3d:"Dasturiy ta'minot qanday ishlashiga qiziqish, keyin esa qurish odati.",
+ t1y:"Hozir",t1t:"Django va backend",t1d:"Django modellari, ORM, admin panel va deploy. Keyingi qadam — REST API va PostgreSQL.",
+ t2y:"2025 — 26",t2t:"Veb asoslari",t2d:"HTML, CSS, JavaScript va Python — kurslar emas, chiqarilgan loyihalar orqali o'rgandim.",
+ t3y:"Boshlanish",t3t:"Birinchi qatorlar",t3d:"Maktabda o'qib yurib dasturlashga qiziqdim, keyin esa bu odatga aylandi.",
  s3tag:"03 // Texnologiya",s3title:"Nimadan <span class='thin'>foydalanaman.</span>",
  s3sub:"Ishlatadigan vositalarim va ularni nima uchun ishlatishim.",
- st1:"Yil kod yozaman",st2:"Chiqarilgan ish",st3:"Ochiq kod",st4:"Kun javob vaqti",
+ st1:"Jonli loyiha",st2:"Mustaqil o'rgandim",st3:"Ochiq kod",st4:"Kun javob vaqti",
  s4tag:"04 // Aloqa",s4title:"Keling, <span class='grad'>foydali narsa</span> quramiz.",
  s4sub:"Junior full-stack ish o'rinlari, frilans loyihalar va hamkorlikka ochiqman. Odatda bir kun ichida javob beraman.",
  ctWrite:"Xabar yozing",ctReply:"Bir kun ichida javob",ctGh:"Barcha ochiq ishlarim shu yerda.",
  ctTgDesc:"Kanalimga qo'shiling — yangi loyihalarim shu yerda.",
  ctLoc:"Joylashuv",ctCity:"Toshkent, O'zbekiston",ctOnline:"Hozir onlayn",
  toTop:"Yuqoriga ↑",madeIn:"Toshkentda qo'lda yozilgan",oneFile:"Bitta HTML fayl · Freymvorksiz",
+ cvPdf:"PDF yuklab olish",cvNote:"PDF uchun tugmani bosing → «Saqlash: PDF» ni tanlang. Sarlavha/kolontitulni o'chiring.",
  sk:["Ilova mantiqi, avtomatlashtirish, skriptlar.","Server render, modellar, auth, admin panel.",
      "Interaktivlik, holat, progressive enhancement.","Semantik struktura, Grid, dizayn tokenlari.",
      "Sxema dizayni, so'rovlar, yaxlitlik.","Aniq endpointlar, oldindan aytiladigan javob.",
@@ -951,9 +1092,9 @@ en:{
  open:"Open to work · 2026",
  h1:"Clean code,<br><span class='grad'>fast results</span>,<br><span class='thin'>built to last.</span>",
  lede:"I'm <b>Abdulaziz</b> — a full-stack developer from Tashkent. I build web products end to end: Django on the server, clean semantic interfaces in the browser, and no unnecessary weight in between.",
- heroBtn1:"Bookify — live site",heroBtn3:"Send email",
- quick:"// Quick facts",f1k:"Role",f1v:"Full-stack developer",f2k:"Core",
- f3k:"Location",f3v:"Tashkent, UZ (GMT+5)",f4k:"Status",f4v:"Open to work",
+ heroBtn1:"Bookify — live site",heroBtn3:"Send email",heroBtnCv:"Resume (CV)",
+ quick:"// Quick facts",f1k:"Role",f1v:"Aspiring full-stack dev",f2k:"Core",
+ f3k:"Location",f3v:"Tashkent, UZ (GMT+5)",f4k:"Status",f4v:"Open to internship",
  fnote:"Currently deepening backend architecture, REST API design and interface craft through shipped projects.",
  s1tag:"01 // Work",s1title:"Real code, <span class='thin'>open and practical.</span>",
  s1sub:"Every project is public on GitHub. Try Bookify on the live site or in the instant demo.",
@@ -971,22 +1112,23 @@ en:{
  s2tag:"02 // Approach",s2title:"I start with the problem, <span class='thin'>not the stack.</span>",
  quote:"Understand what the user actually needs to do, remove everything that doesn't serve it, then build the smallest thing that <b>works well</b>.",
  ab1:"That means readable code over clever code, semantic HTML before JavaScript, and interfaces that behave predictably on a phone, on a keyboard and on a bad network.",
- ab2:"I'm early in my career and deliberate about it: I'd rather ship something small and solid than something large and fragile.",
+ ab2:"I'm still in secondary school and learning to code on my own. I'm deliberate about it: I'd rather ship something small and solid than something large and fragile.",
  r1t:"Semantics first",r1d:"HTML that means what it says.",
  r2t:"Small surface",r2d:"Fewer abstractions, fewer bugs.",
  r3t:"Real users",r3d:"Tested on phones and slow networks.",
- t1y:"Now",t1t:"Full-stack development",t1d:"Django, relational databases and API design, paired with hand-built front ends.",
+ t1y:"Now",t1t:"Django and backend",t1d:"Django models, ORM, admin panel and deployment. Next up — REST API and PostgreSQL.",
  t2y:"2025 — 26",t2t:"Web fundamentals",t2d:"HTML, CSS, JavaScript and Python — learned through shipped projects, not just courses.",
- t3y:"Start",t3t:"First lines of code",t3d:"Curiosity about how software works, turned into a habit of building.",
+ t3y:"Start",t3t:"First lines of code",t3d:"Got curious about programming while at school, and it turned into a habit.",
  s3tag:"03 // Stack",s3title:"What I <span class='thin'>reach for.</span>",
  s3sub:"The tools I use, and what I use them for.",
- st1:"Years coding",st2:"Shipped projects",st3:"Open source",st4:"Day reply time",
+ st1:"Live projects",st2:"Self-taught",st3:"Open source",st4:"Day reply time",
  s4tag:"04 // Contact",s4title:"Let's build <span class='grad'>something useful</span>.",
  s4sub:"Open to junior full-stack roles, freelance builds and collaborations. I usually reply within a day.",
  ctWrite:"Drop a line",ctReply:"Reply within a day",ctGh:"All my public work lives here.",
  ctTgDesc:"Join my channel — I post new projects there.",
  ctLoc:"Based in",ctCity:"Tashkent, Uzbekistan",ctOnline:"Online now",
  toTop:"Back to top ↑",madeIn:"Hand-coded in Tashkent",oneFile:"Single HTML file · No frameworks",
+ cvPdf:"Download PDF",cvNote:"Click the button → choose «Save as PDF». Turn off headers and footers.",
  sk:["Application logic, automation, scripting.","Server rendering, models, auth, admin panel.",
      "Interactivity, state, progressive enhancement.","Semantic structure, Grid, design tokens.",
      "Schema design, queries, data integrity.","Clear endpoints, predictable responses.",
@@ -1530,6 +1672,7 @@ document.addEventListener("keydown",function(e){
   if(e.key!=="Escape")return;
   if(document.getElementById("modal").classList.contains("open"))return closeModal();
   if(document.getElementById("cart").classList.contains("open"))return closeCart();
+  if(document.getElementById("cv").classList.contains("open"))return closeCV();
   if(document.getElementById("bk").classList.contains("open"))closeBookify();
 });
 function toast(msg,type){
@@ -1557,11 +1700,157 @@ function closeBookify(){
   e.addEventListener("click",function(ev){ev.preventDefault();openBookify()});
 });
 document.getElementById("bkClose").onclick=closeBookify;
-window.addEventListener("popstate",function(){ location.hash==="#bookify" ? openBookify() : closeBookify(); });
+window.addEventListener("popstate",function(){
+  var hsh=location.hash;
+  if(hsh==="#bookify"){ closeCV(); openBookify(); }
+  else if(hsh==="#cv"){ closeBookify(); openCV(); }
+  else { closeBookify(); closeCV(); }
+});
+
+/* ═══════════════════════════════════════════════════════════
+   CV / REZYUME
+   ═══════════════════════════════════════════════════════════ */
+var CVD={
+  name:"ABDULAZIZ",
+  phone:"+998 94 790 61 71",
+  email:"abdulaziz2013.uz@gmail.com",
+  site:"abdulaziz-developer-portfolio.netlify.app",
+  gh:"github.com/abdulaziz2013uz-a11y",
+  tg:"t.me/abdulaziz_devl",
+  li:"",
+  eduName:{uz:"Umumta'lim maktabi o'quvchisi",en:"Secondary school student"},
+  eduMajor:{uz:"Toshkent, O'zbekiston",en:"Tashkent, Uzbekistan"},
+  courses:{uz:"Mustaqil ta'lim — Python, Django, HTML/CSS, JavaScript (hujjatlar, amaliy loyihalar)",
+           en:"Self-taught — Python, Django, HTML/CSS, JavaScript (docs, hands-on projects)"},
+  langs:{uz:"O'zbek — ona tili  ·  Ingliz — texnik hujjatlarni o'qiy olaman  ·  Rus — boshlang'ich",
+         en:"Uzbek — Native  ·  English — can read technical documentation  ·  Russian — Elementary"}
+};
+
+var CVT={
+uz:{
+ role:"Yosh Full-Stack Dasturchi  |  Python / Django yo'nalishi",
+ loc:"Toshkent, O'zbekiston", remote:"Amaliyot / Junior lavozimga ochiq",
+ hSum:"QISQACHA", hSkill:"TEXNIK KO'NIKMALAR", hProj:"LOYIHALAR", hEdu:"TA'LIM VA TILLAR",
+ sum:"Maktab o'quvchisi va o'zini-o'zi o'qitgan dasturchi. Python va Django'ni mustaqil o'rganib, to'liq ishlaydigan onlayn kitob do'konini noldan qurdim va internetga chiqardim: kitoblar katalogi, 1–5 yulduzli sharhlar va buyurtmalar tizimi. Django modellari, ORM, admin panel, shablonlar, semantik HTML, CSS Grid va sof JavaScript bilan ishlayman. Darsliklar to'plamaymiz — ishlaydigan mahsulot chiqaraman: har bir loyiha GitHub'da ochiq va jonli havolaga ega. Amaliyot yoki junior lavozimda tajriba orttirishni maqsad qilganman.",
+ sk1:"Backend", sk1v:"Python, Django, Django ORM, Django Admin, Django Templates, SQLite, Gunicorn",
+ sk2:"Frontend", sk2v:"HTML5, CSS Grid/Flexbox, Vanilla JavaScript, Responsive dizayn, Accessibility (a11y), i18n (UZ/EN)",
+ sk3:"Vositalar", sk3v:"Git, GitHub, Render, Netlify, VS Code, Chrome DevTools, localStorage",
+ sk4:"O'rganyapman", sk4v:"Django REST Framework, JWT, PostgreSQL, Docker, Swagger/OpenAPI, Pytest",
+ p1:"Bookify — Onlayn kitob do'koni", p1d:"Jonli mahsulot", p1s:"Python · Django · SQLite · Gunicorn · Render",
+ p1a:"<b>Book</b> modeli: sarlavha, muallif, janr, narx, nashr sanasi, sahifalar soni, mundarija va muqova rasmi (ImageField) maydonlari bilan to'liq katalog.",
+ p1b:"<b>Review</b> modeli — 1–5 yulduzli baholash, <code>MinValue/MaxValue</code> validatorlari va vaqt bo'yicha saralash.",
+ p1c:"<b>Order</b> modeli — mijoz ma'lumotlari, miqdor, tasdiqlash holati va hisoblanadigan <code>total_price</code> xossasi.",
+ p1e:"Django admin panel orqali kontent boshqaruvi; Render'da Gunicorn bilan ishga tushirilgan, static fayllar <code>collectstatic</code> orqali.",
+ p2:"Portfolio sayti — Shaxsiy dasturchi portfoliosi", p2d:"Jonli mahsulot", p2s:"HTML5 · CSS Grid · Vanilla JS · Netlify",
+ p2a:"Freymvorksiz bitta HTML fayl: qorong'i/yorug' mavzu almashtirish va to'liq UZ/EN tarjima (140+ kalit), tanlov <code>localStorage</code>'da saqlanadi.",
+ p2b:"Sof JavaScript'da qurilgan interaktiv kitob do'koni demosi: 40 ta kitob, qidiruv, janr filtri, saralash, sahifalash, savat va buyurtma jarayoni.",
+ p2c:"Semantik HTML, klaviatura navigatsiyasi, <code>prefers-reduced-motion</code> qo'llab-quvvatlashi; ~29 KB gzipped, CDN orqali bir zumda ochiladi.",
+ p3:"Bookify REST API", p3d:"Jarayonda", p3s:"Django REST Framework · JWT · PostgreSQL · Swagger",
+ p3a:"Bookify uchun REST API: JWT autentifikatsiya, rollar bo'yicha ruxsatlar va OpenAPI hujjatlari — mobil mijozlarni qo'llab-quvvatlash uchun."
+},
+en:{
+ role:"Aspiring Full-Stack Developer  |  Python / Django Focus",
+ loc:"Tashkent, Uzbekistan", remote:"Open to Internship / Junior Roles",
+ hSum:"SUMMARY", hSkill:"TECHNICAL SKILLS", hProj:"PROJECTS", hEdu:"EDUCATION & LANGUAGES",
+ sum:"Secondary school student and self-taught developer. Learned Python and Django independently and built a complete online bookstore from scratch, deployed live: book catalogue, 1–5 star review system and order management. Comfortable with Django models, ORM, admin, templates, semantic HTML, CSS Grid and vanilla JavaScript. I don't collect tutorials — I ship working products: every project is public on GitHub with a live link. Looking for an internship or junior role to gain real-world experience.",
+ sk1:"Backend", sk1v:"Python, Django, Django ORM, Django Admin, Django Templates, SQLite, Gunicorn",
+ sk2:"Frontend", sk2v:"HTML5, CSS Grid/Flexbox, Vanilla JavaScript, Responsive design, Accessibility (a11y), i18n (UZ/EN)",
+ sk3:"Tools", sk3v:"Git, GitHub, Render, Netlify, VS Code, Chrome DevTools, localStorage",
+ sk4:"Learning", sk4v:"Django REST Framework, JWT, PostgreSQL, Docker, Swagger/OpenAPI, Pytest",
+ p1:"Bookify — Online Bookstore", p1d:"Live product", p1s:"Python · Django · SQLite · Gunicorn · Render",
+ p1a:"<b>Book</b> model with a full catalogue: title, author, genre, price, publication date, page count, contents and cover image (ImageField).",
+ p1b:"<b>Review</b> model — 1–5 star rating with <code>MinValue/MaxValue</code> validators and time-based ordering.",
+ p1c:"<b>Order</b> model — customer details, quantity, confirmation status and a computed <code>total_price</code> property.",
+ p1e:"Content managed through the Django admin; deployed on Render with Gunicorn and static files served via <code>collectstatic</code>.",
+ p2:"Portfolio Website — Personal Developer Portfolio", p2d:"Live product", p2s:"HTML5 · CSS Grid · Vanilla JS · Netlify",
+ p2a:"A single HTML file with no frameworks: dark/light theme switching and full UZ/EN localisation (140+ keys), preferences stored in <code>localStorage</code>.",
+ p2b:"Interactive bookstore demo built in vanilla JavaScript: 40 books, search, genre filters, sorting, pagination, cart and checkout flow.",
+ p2c:"Semantic HTML, keyboard navigation and <code>prefers-reduced-motion</code> support; ~29 KB gzipped, served instantly from CDN.",
+ p3:"Bookify REST API", p3d:"In progress", p3s:"Django REST Framework · JWT · PostgreSQL · Swagger",
+ p3a:"A REST API for Bookify: JWT authentication, role-based permissions and OpenAPI documentation to support mobile clients."
+}};
+
+function ct(k){ return (CVT[LANG]&&CVT[LANG][k]!==undefined)?CVT[LANG][k]:(CVT.uz[k]||k) }
+
+function buildCV(){
+  var d=CVD, S='<span class="cv-sep">|</span>';
+  var li = d.li ? S+'<a href="https://'+d.li+'" target="_blank" rel="noopener">'+d.li+'</a>' : '';
+  var ed = d.eduName[LANG], mj = d.eduMajor[LANG];
+
+  document.getElementById("cvPage").innerHTML=
+  '<header class="cv-hd"><div class="cv-nm">'+d.name+'</div>'+
+    '<div class="cv-rl">'+ct("role")+'</div>'+
+    '<div class="cv-ct">'+ct("loc")+S+ct("remote")+S+d.phone+'<br>'+
+      '<a href="https://'+d.site+'" target="_blank" rel="noopener">'+d.site+'</a>'+
+      S+'<a href="mailto:'+d.email+'">'+d.email+'</a>'+
+      S+'<a href="https://'+d.gh+'" target="_blank" rel="noopener">'+d.gh+'</a>'+
+      S+'<a href="https://'+d.tg+'" target="_blank" rel="noopener">'+d.tg+'</a>'+li+
+    '</div></header>'+
+
+  '<h2>'+ct("hSum")+'</h2><p class="cv-sum">'+ct("sum")+'</p>'+
+
+  '<h2>'+ct("hSkill")+'</h2><dl class="cv-sk">'+
+    '<dt>'+ct("sk1")+':</dt><dd>'+ct("sk1v")+'</dd>'+
+    '<dt>'+ct("sk2")+':</dt><dd>'+ct("sk2v")+'</dd>'+
+    '<dt>'+ct("sk3")+':</dt><dd>'+ct("sk3v")+'</dd>'+
+    '<dt>'+ct("sk4")+':</dt><dd>'+ct("sk4v")+'</dd></dl>'+
+
+  '<h2>'+ct("hProj")+'</h2>'+
+
+  '<div class="cv-it"><div class="cv-it-t"><h3>'+ct("p1")+'</h3><span class="dt">'+ct("p1d")+'</span></div>'+
+    '<div class="cv-stk">'+ct("p1s")+'</div>'+
+    '<div class="cv-lk"><a href="https://bookify-pstb.onrender.com/books/" target="_blank" rel="noopener">bookify-pstb.onrender.com</a>'+
+    S+'<a href="https://github.com/abdulaziz2013uz-a11y/Bookify" target="_blank" rel="noopener">github.com/abdulaziz2013uz-a11y/Bookify</a></div>'+
+    '<ul><li>'+ct("p1a")+'</li><li>'+ct("p1b")+'</li><li>'+ct("p1c")+'</li><li>'+ct("p1e")+'</li></ul></div>'+
+
+  '<div class="cv-it"><div class="cv-it-t"><h3>'+ct("p2")+'</h3><span class="dt">'+ct("p2d")+'</span></div>'+
+    '<div class="cv-stk">'+ct("p2s")+'</div>'+
+    '<div class="cv-lk"><a href="https://'+d.site+'" target="_blank" rel="noopener">'+d.site+'</a>'+
+    S+'<a href="https://github.com/abdulaziz2013uz-a11y/portfolio_website" target="_blank" rel="noopener">github.com/abdulaziz2013uz-a11y/portfolio_website</a></div>'+
+    '<ul><li>'+ct("p2a")+'</li><li>'+ct("p2b")+'</li><li>'+ct("p2c")+'</li></ul></div>'+
+
+  '<div class="cv-it"><div class="cv-it-t"><h3>'+ct("p3")+'</h3><span class="dt">'+ct("p3d")+'</span></div>'+
+    '<div class="cv-stk">'+ct("p3s")+'</div>'+
+    '<ul><li>'+ct("p3a")+'</li></ul></div>'+
+
+  '<h2>'+ct("hEdu")+'</h2>'+
+  '<div class="cv-ed"><b>'+ed+'</b>'+mj+'</div>'+
+  '<div class="cv-ed">'+d.courses[LANG]+'</div>'+
+  '<div class="cv-ed">'+d.langs[LANG]+'</div>';
+
+  document.querySelectorAll(".cvlang button").forEach(function(b){
+    b.classList.toggle("on", b.dataset.lang===LANG);
+  });
+}
+
+function openCV(){
+  document.getElementById("cv").classList.add("open");
+  document.body.classList.add("locked","cv-on");
+  document.getElementById("cv").scrollTop=0;
+  if(location.hash!=="#cv") history.pushState(null,"","#cv");
+  buildCV();
+}
+function closeCV(){
+  document.getElementById("cv").classList.remove("open");
+  document.body.classList.remove("locked","cv-on");
+  if(location.hash==="#cv") history.pushState(null,"",location.pathname+location.search);
+}
+[].forEach.call(document.querySelectorAll("[data-open-cv]"),function(e){
+  e.style.cursor="pointer";
+  e.addEventListener("click",function(ev){ev.preventDefault();openCV()});
+});
+document.getElementById("cvBack").onclick=closeCV;
+document.getElementById("cvPrint").onclick=function(){window.print()};
+document.querySelectorAll(".cvlang button").forEach(function(b){
+  b.addEventListener("click",function(){
+    LANG=b.dataset.lang; localStorage.setItem("site.lang",LANG); applyLang(); buildCV();
+  });
+});
 
 /* init */
 applyLang();
 if(location.hash==="#bookify") openBookify();
+else if(location.hash==="#cv") openCV();
 </script>
 </body>
 </html>
