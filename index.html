@@ -708,6 +708,50 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
     transition:none;
   }
 }
+
+/* ── AI PORTFOLIO ASSISTANT ── */
+.ai-widget{position:fixed;right:24px;bottom:24px;z-index:180}
+.ai-launch{display:flex;align-items:center;gap:10px;height:54px;padding:0 18px;border:0;border-radius:999px;
+  background:var(--grad);color:var(--on-accent);font-weight:700;box-shadow:0 12px 34px rgba(34,211,238,.24);
+  cursor:pointer;transition:transform .2s,box-shadow .2s}
+.ai-launch:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(34,211,238,.32)}
+.ai-launch svg{width:21px;height:21px}
+.ai-panel{position:absolute;right:0;bottom:68px;display:flex;flex-direction:column;width:min(390px,calc(100vw - 32px));
+  height:min(560px,calc(100dvh - 110px));min-height:320px;overflow:hidden;border:1px solid var(--line-2);
+  border-radius:20px;background:var(--card);box-shadow:0 24px 70px rgba(0,0,0,.32)}
+.ai-panel[hidden]{display:none}
+.ai-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;
+  border-bottom:1px solid var(--line);background:var(--bg-2)}
+.ai-head-info{display:flex;align-items:center;gap:11px;min-width:0}
+.ai-mark{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:12px;
+  background:color-mix(in oklab,var(--sky) 15%,transparent);color:var(--sky)}
+.ai-mark svg{width:20px;height:20px}
+.ai-head h2{font-size:14px;letter-spacing:0}
+.ai-head p{margin-top:3px;color:var(--ink-3);font-size:11px}
+.ai-close{display:grid;place-items:center;width:34px;height:34px;flex:none;border:1px solid var(--line-2);
+  border-radius:10px;background:none;color:var(--ink-2);cursor:pointer}
+.ai-close svg{width:17px;height:17px}
+.ai-messages{display:flex;flex:1;flex-direction:column;gap:12px;overflow-y:auto;padding:16px}
+.ai-message{max-width:88%;padding:11px 13px;border:1px solid var(--line);border-radius:14px;
+  background:var(--bg-2);color:var(--ink);font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.ai-message.user{align-self:flex-end;border-color:color-mix(in oklab,var(--sky) 28%,var(--line));
+  background:color-mix(in oklab,var(--sky) 12%,var(--card));}
+.ai-message.assistant{align-self:flex-start}
+.ai-message.error{border-color:color-mix(in oklab,var(--rose) 50%,var(--line))}
+.ai-form{display:flex;align-items:flex-end;gap:9px;padding:12px;border-top:1px solid var(--line);background:var(--bg-2)}
+.ai-input{width:100%;min-height:42px;max-height:110px;resize:vertical;padding:10px 12px;border:1px solid var(--line-2);
+  border-radius:12px;background:var(--card);color:var(--ink);font:inherit;font-size:13px;line-height:1.4}
+.ai-input::placeholder{color:var(--ink-3)}
+.ai-send{display:grid;place-items:center;width:42px;height:42px;flex:none;border:0;border-radius:12px;
+  background:var(--grad);color:var(--on-accent);cursor:pointer}
+.ai-send:disabled{opacity:.55;cursor:wait}
+.ai-send svg{width:18px;height:18px}
+.ai-disclaimer{padding:0 14px 10px;background:var(--bg-2);color:var(--ink-3);font-size:10px;text-align:center}
+@media(max-width:600px){
+  .ai-widget{right:14px;bottom:14px}
+  .ai-panel{position:fixed;left:10px;right:10px;bottom:78px;width:auto;height:min(600px,calc(100dvh - 100px))}
+}
+@media(prefers-reduced-motion:reduce){.ai-launch{transition:none}}
 </style>
 </head>
 <body>
@@ -833,10 +877,10 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
       </article>
 
       <article class="proj rv">
-        <span class="proj-tag">HTML · CSS · JS</span>
+        <span class="proj-tag">HTML · CSS · JS · AI</span>
         <h3 data-i18n="p2title">Portfolio sayti</h3>
-        <p data-i18n="p2desc">Shu sayt. Qo'lda yozilgan HTML va CSS: tipografik grid, bitta asosiy rang, qorong'i va yorug' mavzu, ikki til. Freymvorksiz — sekin internetda ham bir zumda ochiladi.</p>
-        <div class="stack-row"><span>HTML5</span><span>CSS Grid</span><span>Vanilla JS</span><span>i18n</span><span>A11y</span></div>
+        <p data-i18n="p2desc">Shu sayt: qo'lda yozilgan HTML/CSS/JS va Netlify Functions orqali xavfsiz ulangan, Abdulaziz haqida javob beruvchi AI yordamchi.</p>
+        <div class="stack-row"><span>HTML5</span><span>CSS Grid</span><span>Vanilla JS</span><span>Netlify Functions</span><span>OpenAI API</span></div>
         <div class="proj-btns">
           <a class="btn-sm" href="https://github.com/abdulaziz2013uz-a11y/portfolio_website" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.79.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
@@ -1088,6 +1132,35 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
 
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastTxt"></span></div>
 
+<div class="ai-widget" id="aiWidget">
+  <section class="ai-panel" id="aiPanel" data-ai-i18n-aria="panel" aria-label="Portfolio AI" hidden>
+    <div class="ai-head">
+      <div class="ai-head-info">
+        <span class="ai-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a7 7 0 0 0-4 12.75V19h8v-3.25A7 7 0 0 0 12 3Z"/><path d="M9 22h6M9 12l2 2 4-4"/></svg>
+        </span>
+        <div><h2 data-ai-i18n="title">Portfolio AI</h2><p data-ai-i18n="subtitle">Abdulaziz haqida so'rang</p></div>
+      </div>
+      <button class="ai-close" id="aiClose" type="button" data-ai-i18n-aria="close" aria-label="Chatni yopish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m18 6-12 12M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="ai-messages" id="aiMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <form class="ai-form" id="aiForm">
+      <textarea class="ai-input" id="aiInput" rows="1" maxlength="1200" data-ai-i18n-placeholder="placeholder"
+        data-ai-i18n-aria="input" placeholder="Savolingizni yozing..." aria-label="Xabar" required></textarea>
+      <button class="ai-send" id="aiSend" type="submit" data-ai-i18n-aria="send" aria-label="Yuborish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+      </button>
+    </form>
+    <p class="ai-disclaimer" data-ai-i18n="disclaimer">AI javoblari xato bo'lishi mumkin.</p>
+  </section>
+  <button class="ai-launch" id="aiLaunch" type="button" aria-expanded="false" aria-controls="aiPanel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg>
+    <span data-ai-i18n="launch">AI bilan suhbat</span>
+  </button>
+</div>
+
 <!-- ══════════ CV / REZYUME ══════════ -->
 <div class="cv" id="cv" role="dialog" aria-label="CV">
   <div class="cvbar">
@@ -1147,7 +1220,7 @@ uz:{
  p1note:"<b>Jonli sayt</b> Render bepul serverida — uzoq ishlatilmasa uyquga ketadi, birinchi ochilish <b>30–50 soniya</b>. Kutmoqchi bo'lmasangiz, <b>Tezkor demo</b> darhol ochiladi.",
  btnLive:"Jonli saytni ochish",btnDemo:"Tezkor demo",btnCode:"Django kodi",btnCode2:"Kod",
  p2title:"Portfolio sayti",
- p2desc:"Shu sayt. Qo'lda yozilgan HTML va CSS: tipografik grid, bitta asosiy rang, qorong'i va yorug' mavzu, ikki til. Freymvorksiz — sekin internetda ham bir zumda ochiladi.",
+ p2desc:"Shu sayt: qo'lda yozilgan HTML/CSS/JS va Netlify Functions orqali xavfsiz ulangan, Abdulaziz haqida javob beruvchi AI yordamchi.",
  p3tag:"Jarayonda",p3title:"Bookify REST API",
  p3desc:"Django REST Framework asosida JWT autentifikatsiya, rollar bo'yicha ruxsatlar va Swagger hujjatlari. Bookify uchun mobil mijozlarni qo'llab-quvvatlash — keyingi qadam.",
  soon:"Tez orada",p4tag:"Doimiy",p4title:"Ochiq kod va o'rganish",
@@ -1171,7 +1244,13 @@ uz:{
  ctWrite:"Xabar yozing",ctReply:"Bir kun ichida javob",ctGh:"Barcha ochiq ishlarim shu yerda.",
  ctTgDesc:"Kanalimga qo'shiling — yangi loyihalarim shu yerda.",
  ctLoc:"Joylashuv",ctCity:"Toshkent, O'zbekiston",ctOnline:"Hozir onlayn",
- toTop:"Yuqoriga ↑",madeIn:"Toshkentda qo'lda yozilgan",oneFile:"Bitta HTML fayl · Freymvorksiz",
+ toTop:"Yuqoriga ↑",madeIn:"Toshkentda qo'lda yozilgan",oneFile:"HTML frontend · Netlify Function",
+ ai:{launch:"AI bilan suhbat",title:"Portfolio AI",subtitle:"Abdulaziz haqida so'rang",panel:"Portfolio AI yordamchisi",
+   close:"Chatni yopish",send:"Yuborish",input:"Xabar yozing",placeholder:"Savolingizni yozing...",disclaimer:"AI javoblari xato bo'lishi mumkin.",
+   welcome:"Salom! Men Abdulazizning portfolio yordamchisiman. Loyihalari, tajribasi yoki ko'nikmalari haqida so'rang.",
+   thinking:"Javob tayyorlayapman...",error:"Javob olinmadi. Birozdan keyin qayta urinib ko'ring.",
+   unavailable:"AI hozircha sozlanmagan. Sayt egasi Netlify'da OPENAI_API_KEY ni sozlashi kerak.",
+   connection:"Server bilan bog'lanib bo'lmadi. Internetni tekshirib, qayta urinib ko'ring."},
  cvPdf:"PDF yuklab olish",cvNote:"Tugmani bossangiz, rezyume PDF fayli bo'lib yuklanadi.",
  sk:["Ilova mantiqi, avtomatlashtirish, skriptlar.","Server render, modellar, auth, admin panel.",
      "Interaktivlik, holat, progressive enhancement.","Semantik struktura, Grid, dizayn tokenlari.",
@@ -1219,7 +1298,7 @@ en:{
  p1note:"The <b>live site</b> runs on Render's free tier — it sleeps when idle, so the first load takes <b>30–50 seconds</b>. If you'd rather not wait, the <b>instant demo</b> opens right away.",
  btnLive:"Open live site",btnDemo:"Instant demo",btnCode:"Django code",btnCode2:"Code",
  p2title:"Portfolio site",
- p2desc:"This site. Hand-written HTML and CSS: a typographic grid, one accent colour, dark and light themes, two languages. No frameworks — it loads instantly even on a slow connection.",
+ p2desc:"This site uses hand-written HTML/CSS/JS and a bilingual AI assistant connected securely through a Netlify Function.",
  p3tag:"In progress",p3title:"Bookify REST API",
  p3desc:"Django REST Framework with JWT authentication, role-based permissions and Swagger docs. Supporting mobile clients for Bookify is the next step.",
  soon:"Coming soon",p4tag:"Ongoing",p4title:"Open source & learning",
@@ -1243,7 +1322,13 @@ en:{
  ctWrite:"Drop a line",ctReply:"Reply within a day",ctGh:"All my public work lives here.",
  ctTgDesc:"Join my channel — I post new projects there.",
  ctLoc:"Based in",ctCity:"Tashkent, Uzbekistan",ctOnline:"Online now",
- toTop:"Back to top ↑",madeIn:"Hand-coded in Tashkent",oneFile:"Single HTML file · No frameworks",
+ toTop:"Back to top ↑",madeIn:"Hand-coded in Tashkent",oneFile:"HTML frontend · Netlify Function",
+ ai:{launch:"Chat with AI",title:"Portfolio AI",subtitle:"Ask about Abdulaziz",panel:"Portfolio AI assistant",
+   close:"Close chat",send:"Send",input:"Type a message",placeholder:"Type your question...",disclaimer:"AI responses may be inaccurate.",
+   welcome:"Hi! I'm Abdulaziz's portfolio assistant. Ask me about his projects, experience, or skills.",
+   thinking:"Preparing an answer...",error:"I couldn't get an answer. Please try again shortly.",
+   unavailable:"AI is not configured yet. The site owner needs to set OPENAI_API_KEY in Netlify.",
+   connection:"Couldn't reach the server. Check your internet connection and try again."},
  cvPdf:"Download PDF",cvNote:"Click the button to download your resume as a PDF file.",
  sk:["Application logic, automation, scripting.","Server rendering, models, auth, admin panel.",
      "Interactivity, state, progressive enhancement.","Semantic structure, Grid, design tokens.",
@@ -1293,6 +1378,7 @@ function applyLang(){
   buildSkills(); buildSorts(); buildChips();
   var q=document.getElementById("q"); if(q) q.placeholder=t("qPh");
   render(); syncCart();
+  syncAIBotLanguage();
 }
 document.querySelectorAll(".lang button").forEach(function(b){
   b.addEventListener("click",function(){ LANG=b.dataset.lang; localStorage.setItem("site.lang",LANG); applyLang(); });
@@ -1857,9 +1943,9 @@ uz:{
  p1b:"<b>Review</b> modeli — 1–5 yulduzli baholash, <code>MinValue/MaxValue</code> validatorlari va vaqt bo'yicha saralash.",
  p1c:"<b>Order</b> modeli — mijoz ma'lumotlari, miqdor, tasdiqlash holati va hisoblanadigan <code>total_price</code> xossasi.",
  p1e:"Django admin panel orqali kontent boshqaruvi; Render'da Gunicorn bilan ishga tushirilgan, static fayllar <code>collectstatic</code> orqali.",
- p2:"Portfolio sayti — Shaxsiy dasturchi portfoliosi", p2d:"Jonli mahsulot", p2s:"HTML5 · CSS Grid · Vanilla JS · Netlify",
- p2a:"Freymvorksiz bitta HTML fayl: qorong'i/yorug' mavzu almashtirish va to'liq UZ/EN tarjima (140+ kalit), tanlov <code>localStorage</code>'da saqlanadi.",
- p2b:"Sof JavaScript'da qurilgan interaktiv kitob do'koni demosi: 40 ta kitob, qidiruv, janr filtri, saralash, sahifalash, savat va buyurtma jarayoni.",
+ p2:"Portfolio sayti — Shaxsiy dasturchi portfoliosi", p2d:"Jonli mahsulot", p2s:"HTML5 · CSS Grid · Vanilla JS · Netlify Functions · OpenAI",
+ p2a:"Bitta HTML frontend: qorong'i/yorug' mavzu va to'liq UZ/EN tarjima; tanlov <code>localStorage</code>'da saqlanadi.",
+ p2b:"Maxfiy kalitni brauzerga chiqarmaydigan Netlify Function orqali OpenAI bilan ishlaydigan portfolio yordamchisi.",
  p2c:"Semantik HTML, klaviatura navigatsiyasi, <code>prefers-reduced-motion</code> qo'llab-quvvatlashi; ~29 KB gzipped, CDN orqali bir zumda ochiladi.",
  p3:"Bookify REST API", p3d:"Jarayonda", p3s:"Django REST Framework · JWT · PostgreSQL · Swagger",
  p3a:"Bookify uchun REST API: JWT autentifikatsiya, rollar bo'yicha ruxsatlar va OpenAPI hujjatlari — mobil mijozlarni qo'llab-quvvatlash uchun."
@@ -1878,9 +1964,9 @@ en:{
  p1b:"<b>Review</b> model — 1–5 star rating with <code>MinValue/MaxValue</code> validators and time-based ordering.",
  p1c:"<b>Order</b> model — customer details, quantity, confirmation status and a computed <code>total_price</code> property.",
  p1e:"Content managed through the Django admin; deployed on Render with Gunicorn and static files served via <code>collectstatic</code>.",
- p2:"Portfolio Website — Personal Developer Portfolio", p2d:"Live product", p2s:"HTML5 · CSS Grid · Vanilla JS · Netlify",
- p2a:"A single HTML file with no frameworks: dark/light theme switching and full UZ/EN localisation (140+ keys), preferences stored in <code>localStorage</code>.",
- p2b:"Interactive bookstore demo built in vanilla JavaScript: 40 books, search, genre filters, sorting, pagination, cart and checkout flow.",
+ p2:"Portfolio Website — Personal Developer Portfolio", p2d:"Live product", p2s:"HTML5 · CSS Grid · Vanilla JS · Netlify Functions · OpenAI",
+ p2a:"Single-file HTML frontend with dark/light themes and full UZ/EN localisation; preferences are stored in <code>localStorage</code>.",
+ p2b:"A portfolio assistant powered by OpenAI through a Netlify Function, keeping the secret API key off the browser.",
  p2c:"Semantic HTML, keyboard navigation and <code>prefers-reduced-motion</code> support; ~29 KB gzipped, served instantly from CDN.",
  p3:"Bookify REST API", p3d:"In progress", p3s:"Django REST Framework · JWT · PostgreSQL · Swagger",
  p3a:"A REST API for Bookify: JWT authentication, role-based permissions and OpenAPI documentation to support mobile clients."
@@ -2021,6 +2107,116 @@ document.querySelectorAll(".cvlang button").forEach(function(b){
   b.addEventListener("click",function(){
     LANG=b.dataset.lang; localStorage.setItem("site.lang",LANG); applyLang(); buildCV(); syncResumePDF();
   });
+});
+
+/* ═══════════════════════════════════════════════════════════
+   AI PORTFOLIO ASSISTANT
+   ═══════════════════════════════════════════════════════════ */
+var aiHistory=[];
+var aiGreeted=false;
+var aiPending=false;
+
+function syncAIBotLanguage(){
+  var copy=I18N[LANG].ai;
+  document.querySelectorAll("[data-ai-i18n]").forEach(function(el){
+    var key=el.getAttribute("data-ai-i18n");
+    if(copy[key])el.textContent=copy[key];
+  });
+  document.querySelectorAll("[data-ai-i18n-placeholder]").forEach(function(el){
+    var key=el.getAttribute("data-ai-i18n-placeholder");
+    if(copy[key])el.placeholder=copy[key];
+  });
+  document.querySelectorAll("[data-ai-i18n-aria]").forEach(function(el){
+    var key=el.getAttribute("data-ai-i18n-aria");
+    if(copy[key])el.setAttribute("aria-label",copy[key]);
+  });
+}
+
+function addAIMessage(role,text,extraClass){
+  var message=document.createElement("div");
+  message.className="ai-message "+role+(extraClass?" "+extraClass:"");
+  message.textContent=text;
+  document.getElementById("aiMessages").appendChild(message);
+  var log=document.getElementById("aiMessages");
+  while(log.children.length>24)log.removeChild(log.firstElementChild);
+  log.scrollTop=log.scrollHeight;
+  return message;
+}
+
+var aiPanel=document.getElementById("aiPanel");
+var aiLaunch=document.getElementById("aiLaunch");
+function setAIOpen(open){
+  aiPanel.hidden=!open;
+  aiLaunch.setAttribute("aria-expanded",String(open));
+  if(open){
+    if(!aiGreeted){
+      addAIMessage("assistant",I18N[LANG].ai.welcome);
+      aiGreeted=true;
+    }
+    document.getElementById("aiInput").focus();
+  }else{
+    aiLaunch.focus();
+  }
+}
+
+aiLaunch.addEventListener("click",function(){setAIOpen(aiPanel.hidden)});
+document.getElementById("aiClose").addEventListener("click",function(){setAIOpen(false)});
+document.addEventListener("keydown",function(event){
+  if(event.key==="Escape"&&!aiPanel.hidden)setAIOpen(false);
+});
+document.getElementById("aiInput").addEventListener("keydown",function(event){
+  if(event.key==="Enter"&&!event.shiftKey){
+    event.preventDefault();
+    document.getElementById("aiForm").requestSubmit();
+  }
+});
+document.getElementById("aiForm").addEventListener("submit",async function(event){
+  event.preventDefault();
+  if(aiPending)return;
+
+  var input=document.getElementById("aiInput");
+  var question=input.value.trim();
+  if(!question)return;
+
+  aiPending=true;
+  document.getElementById("aiSend").disabled=true;
+  input.disabled=true;
+  input.value="";
+  addAIMessage("user",question);
+  aiHistory.push({role:"user",content:question});
+  var pending=addAIMessage("assistant",I18N[LANG].ai.thinking);
+
+  try{
+    var response=await fetch("/api/assistant",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({message:question,history:aiHistory.slice(-9,-1)})
+    });
+    var result=await response.json();
+    if(!response.ok){
+      var requestError=new Error(result.error||"Assistant request failed");
+      requestError.status=response.status;
+      throw requestError;
+    }
+    if(typeof result.reply!=="string"||!result.reply.trim())throw new Error("Empty assistant response");
+    pending.textContent=result.reply;
+    aiHistory.push({role:"assistant",content:result.reply});
+    if(aiHistory.length>10)aiHistory=aiHistory.slice(-10);
+  }catch(error){
+    console.error("Portfolio AI request failed:",error);
+    pending.classList.add("error");
+    pending.textContent=error.status===503
+      ? I18N[LANG].ai.unavailable
+      : error.status
+        ? I18N[LANG].ai.error
+        : I18N[LANG].ai.connection;
+    if(aiHistory.length&&aiHistory[aiHistory.length-1].role==="user")aiHistory.pop();
+  }finally{
+    aiPending=false;
+    document.getElementById("aiSend").disabled=false;
+    input.disabled=false;
+    input.focus();
+  }
 });
 
 /* init */
