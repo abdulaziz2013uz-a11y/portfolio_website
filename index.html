@@ -605,6 +605,109 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
   .cv a{color:#000;border:0 !important}
   .cv code{background:none;color:#000;padding:0}
 }
+
+/* ═══════════════════════════════════════════════════════════
+   PROFESSIONAL RESUME PDF DOWNLOAD
+   ═══════════════════════════════════════════════════════════ */
+
+.cv-download{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  overflow:hidden;
+  isolation:isolate;
+  text-decoration:none;
+  cursor:pointer;
+
+  transition:
+    transform .28s cubic-bezier(.16,1,.3,1),
+    box-shadow .28s ease,
+    filter .28s ease,
+    background .28s ease;
+}
+
+.cv-download svg{
+  width:17px;
+  height:17px;
+  flex:0 0 auto;
+
+  transition:
+    transform .28s cubic-bezier(.16,1,.3,1);
+}
+
+.cv-download::before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:-70%;
+  width:45%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.24),
+      transparent
+    );
+
+  transform:skewX(-20deg);
+  transition:left .7s cubic-bezier(.16,1,.3,1);
+
+  pointer-events:none;
+}
+
+.cv-download::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.11),
+      transparent 55%
+    );
+
+  opacity:.8;
+  pointer-events:none;
+}
+
+.cv-download:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 14px 35px rgba(34,211,238,.18),
+    0 4px 12px rgba(0,0,0,.12);
+
+  filter:saturate(1.08);
+}
+
+.cv-download:hover::before{
+  left:130%;
+}
+
+.cv-download:hover svg{
+  transform:translateY(2px);
+}
+
+.cv-download:active{
+  transform:translateY(-1px) scale(.985);
+}
+
+.cv-download:focus-visible{
+  outline:3px solid rgba(34,211,238,.35);
+  outline-offset:4px;
+}
+@media (prefers-reduced-motion:reduce){
+  .cv-download,
+  .cv-download svg,
+  .cv-download::before{
+    transition:none;
+  }
+}
 </style>
 </head>
 <body>
@@ -998,12 +1101,24 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
         <button data-lang="en">EN</button>
       </div>
     </div>
-    <button class="cvb cvb-pri" id="cvPrint">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/>
+    <a
+      class="cvb cvb-pri cv-download"
+      id="cvPrint"
+      href="Abdulaziz_Resume_UZ.pdf"
+      download="Abdulaziz_Resume_UZ.pdf"
+      aria-label="PDF yuklab olish"
+      title="PDF yuklab olish">
+      <svg viewBox="0 0 24 24" fill="none"
+           stroke="currentColor"
+           stroke-width="2.2"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           aria-hidden="true">
+        <path d="M12 3v12"/>
+        <path d="m7 10 5 5 5-5"/>
+        <path d="M5 21h14"/>
       </svg>
-      <span data-i18n="cvPdf">PDF yuklab olish</span>
-    </button>
+      <span data-i18n="cvPdf">PDF yuklab olish</span></a>
   </div>
   <main class="page" id="cvPage"></main>
   <p class="cv-note" data-i18n="cvNote">PDF uchun tugmani bosing → «Saqlash: PDF» ni tanlang.</p>
@@ -1510,7 +1625,7 @@ document.getElementById("pager").addEventListener("click",function(e){
   var b=e.target.closest("[data-p]"); if(!b||b.disabled)return;
   state.page=+b.dataset.p; render(); document.getElementById("bk").scrollTo({top:0,behavior:"smooth"});
 });
-document.getElementById("grid").addEventListener("click",function(e){
+document.getElementById("grid").addEventListener("click",function(e){ 
   var b=e.target.closest(".book"); if(b) openBook(+b.dataset.id);
 });
 
@@ -1840,15 +1955,46 @@ function closeCV(){
   e.addEventListener("click",function(ev){ev.preventDefault();openCV()});
 });
 document.getElementById("cvBack").onclick=closeCV;
-document.getElementById("cvPrint").onclick=function(){window.print()};
+
+function syncResumePDF(){
+  var btn=document.getElementById("cvPrint");
+  if(!btn)return;
+
+  var isEnglish=LANG==="en";
+
+  var pdfFile=isEnglish
+    ? "Abdulaziz_Resume_EN.pdf"
+    : "Abdulaziz_Resume_UZ.pdf";
+
+  var pdfName=isEnglish
+    ? "Abdulaziz_Resume_EN.pdf"
+    : "Abdulaziz_Resume_UZ.pdf";
+
+  var label=isEnglish
+    ? "Download PDF"
+    : "PDF yuklab olish";
+
+  btn.href=pdfFile;
+  btn.download=pdfName;
+  btn.setAttribute("aria-label",label);
+  btn.setAttribute("title",label);
+
+  var text=btn.querySelector("[data-i18n='cvPdf']");
+
+  if(text){
+    text.textContent=label;
+  }
+}
+
 document.querySelectorAll(".cvlang button").forEach(function(b){
   b.addEventListener("click",function(){
-    LANG=b.dataset.lang; localStorage.setItem("site.lang",LANG); applyLang(); buildCV();
+    LANG=b.dataset.lang; localStorage.setItem("site.lang",LANG); applyLang(); buildCV(); syncResumePDF();
   });
 });
 
 /* init */
 applyLang();
+syncResumePDF();
 if(location.hash==="#bookify") openBookify();
 else if(location.hash==="#cv") openCV();
 </script>
