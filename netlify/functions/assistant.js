@@ -102,8 +102,46 @@ exports.handler = async function (event) {
     });
 
     if (!response.ok) {
-      console.error("OpenAI API returned status", response.status);
-      return jsonResponse(502, { error: "The AI service could not answer right now." });
+      let providerError;
+      try {
+        const errorBody = await response.json();
+        providerError = errorBody && errorBody.error;
+      } catch {
+        providerError = null;
+      }
+
+      const providerCode = providerError
+        && (providerError.code || providerError.type);
+      console.error("OpenAI API returned status", response.status, "code", providerCode || "unknown");
+
+      if (response.status === 401 || response.status === 403) {
+        return jsonResponse(502, {
+          code: "invalid_api_key",
+          error: "OpenAI rejected the API key. Check that OPENAI_API_KEY is valid."
+        });
+      }
+      if (response.status === 429 && providerCode === "insufficient_quota") {
+        return jsonResponse(502, {
+          code: "quota_exceeded",
+          error: "The OpenAI API project has no available usage quota."
+        });
+      }
+      if (response.status === 429) {
+        return jsonResponse(502, {
+          code: "rate_limited",
+          error: "The OpenAI API rate limit was reached. Try again shortly."
+        });
+      }
+      if (response.status === 404) {
+        return jsonResponse(502, {
+          code: "model_unavailable",
+          error: "The configured OpenAI model is unavailable to this API project."
+        });
+      }
+      return jsonResponse(502, {
+        code: "provider_error",
+        error: "The OpenAI service could not answer right now."
+      });
     }
 
     const result = await response.json();
