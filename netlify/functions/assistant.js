@@ -30,8 +30,15 @@ exports.handler = async function (event) {
     }
   }
 
-  if (!process.env.OPENAI_API_KEY) {
-    console.error("OPENAI_API_KEY is not configured.");
+  const useGroq = Boolean(process.env.GROQ_API_KEY);
+  const apiKey = useGroq ? process.env.GROQ_API_KEY : process.env.OPENAI_API_KEY;
+  const provider = useGroq ? "Groq" : "OpenAI";
+  const apiUrl = useGroq
+    ? "https://api.groq.com/openai/v1/chat/completions"
+    : "https://api.openai.com/v1/chat/completions";
+
+  if (!apiKey) {
+    console.error("Neither GROQ_API_KEY nor OPENAI_API_KEY is configured.");
     return jsonResponse(503, { error: "AI assistant is not configured." });
   }
 
@@ -82,14 +89,16 @@ exports.handler = async function (event) {
   }, 25000);
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
-        "Authorization": "Bearer " + process.env.OPENAI_API_KEY,
+        "Authorization": "Bearer " + apiKey,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+        model: useGroq
+          ? process.env.GROQ_MODEL || "openai/gpt-oss-20b"
+          : process.env.OPENAI_MODEL || "gpt-4o-mini",
         messages: [
           { role: "system", content: systemPrompt },
           ...history,
@@ -112,35 +121,36 @@ exports.handler = async function (event) {
 
       const providerCode = providerError
         && (providerError.code || providerError.type);
-      console.error("OpenAI API returned status", response.status, "code", providerCode || "unknown");
+      console.error(provider + " API returned status", response.status, "code", providerCode || "unknown");
 
       if (response.status === 401 || response.status === 403) {
         return jsonResponse(502, {
           code: "invalid_api_key",
-          error: "OpenAI rejected the API key. Check that OPENAI_API_KEY is valid."
+          error: provider + " rejected the API key. Check the key configured in Netlify."
         });
       }
-      if (response.status === 429 && providerCode === "insufficient_quota") {
+      if (response.status === 429
+        && (providerCode === "insufficient_quota" || providerCode === "billing_not_active")) {
         return jsonResponse(502, {
           code: "quota_exceeded",
-          error: "The OpenAI API project has no available usage quota."
+          error: "The " + provider + " API account has no available usage quota."
         });
       }
       if (response.status === 429) {
         return jsonResponse(502, {
           code: "rate_limited",
-          error: "The OpenAI API rate limit was reached. Try again shortly."
+          error: "The " + provider + " API rate limit was reached. Try again shortly."
         });
       }
       if (response.status === 404) {
         return jsonResponse(502, {
           code: "model_unavailable",
-          error: "The configured OpenAI model is unavailable to this API project."
+          error: "The configured " + provider + " model is unavailable to this API account."
         });
       }
       return jsonResponse(502, {
         code: "provider_error",
-        error: "The OpenAI service could not answer right now."
+        error: "The " + provider + " service could not answer right now."
       });
     }
 
@@ -151,7 +161,7 @@ exports.handler = async function (event) {
       && result.choices[0].message.content;
 
     if (typeof reply !== "string" || !reply.trim()) {
-      console.error("OpenAI API returned an empty assistant response.");
+      console.error(provider + " API returned an empty assistant response.");
       return jsonResponse(502, { error: "The AI service returned an empty answer." });
     }
 
