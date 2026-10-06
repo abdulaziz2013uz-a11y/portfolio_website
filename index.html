@@ -1101,11 +1101,10 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
         <button data-lang="en">EN</button>
       </div>
     </div>
-    <a
+    <button
       class="cvb cvb-pri cv-download"
       id="cvPrint"
-      href="Abdulaziz_Resume_UZ.pdf"
-      download="Abdulaziz_Resume_UZ.pdf"
+      type="button"
       aria-label="PDF yuklab olish"
       title="PDF yuklab olish">
       <svg viewBox="0 0 24 24" fill="none"
@@ -1118,7 +1117,8 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
         <path d="m7 10 5 5 5-5"/>
         <path d="M5 21h14"/>
       </svg>
-      <span data-i18n="cvPdf">PDF yuklab olish</span></a>
+      <span data-i18n="cvPdf">PDF yuklab olish</span>
+    </button>
   </div>
   <main class="page" id="cvPage"></main>
   <p class="cv-note" data-i18n="cvNote">PDF uchun tugmani bosing → «Saqlash: PDF» ni tanlang.</p>
@@ -1962,20 +1962,10 @@ function syncResumePDF(){
 
   var isEnglish=LANG==="en";
 
-  var pdfFile=isEnglish
-    ? "Abdulaziz_Resume_EN.pdf"
-    : "Abdulaziz_Resume_UZ.pdf";
-
-  var pdfName=isEnglish
-    ? "Abdulaziz_Resume_EN.pdf"
-    : "Abdulaziz_Resume_UZ.pdf";
-
   var label=isEnglish
     ? "Download PDF"
     : "PDF yuklab olish";
 
-  btn.href=pdfFile;
-  btn.download=pdfName;
   btn.setAttribute("aria-label",label);
   btn.setAttribute("title",label);
 
@@ -1985,6 +1975,10 @@ function syncResumePDF(){
     text.textContent=label;
   }
 }
+
+document.getElementById("cvPrint").addEventListener("click",function(){
+  window.print();
+});
 
 document.querySelectorAll(".cvlang button").forEach(function(b){
   b.addEventListener("click",function(){
