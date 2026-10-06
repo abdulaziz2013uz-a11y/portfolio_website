@@ -592,7 +592,7 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
 @page{size:A4;margin:12mm}
 @media print{
   body{background:#fff !important}
-  body.cv-on .head,body.cv-on main,body.cv-on .foot,body.cv-on .bk,
+  body.cv-on .head,body.cv-on > main,body.cv-on .foot,body.cv-on .bk,
   body.cv-on .orb,body.cv-on .modal,body.cv-on .cart,body.cv-on .toast,body.cv-on .skip{display:none !important}
   body.cv-on .cv{position:static;display:block;padding:0;background:#fff;overflow:visible;font-size:10.5pt}
   .cvbar,.cv-note,.cv-todo{display:none !important}
@@ -1121,9 +1121,10 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
     </button>
   </div>
   <main class="page" id="cvPage"></main>
-  <p class="cv-note" data-i18n="cvNote">PDF uchun tugmani bosing → «Saqlash: PDF» ni tanlang.</p>
+  <p class="cv-note" data-i18n="cvNote">Tugmani bossangiz, rezyume PDF fayli bo'lib yuklanadi.</p>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.3/html2pdf.bundle.min.js" defer></script>
 <script>
 /* ═══════════════════════════════════════════════════════════
    I18N — UZ / EN
@@ -1171,7 +1172,7 @@ uz:{
  ctTgDesc:"Kanalimga qo'shiling — yangi loyihalarim shu yerda.",
  ctLoc:"Joylashuv",ctCity:"Toshkent, O'zbekiston",ctOnline:"Hozir onlayn",
  toTop:"Yuqoriga ↑",madeIn:"Toshkentda qo'lda yozilgan",oneFile:"Bitta HTML fayl · Freymvorksiz",
- cvPdf:"PDF yuklab olish",cvNote:"PDF uchun tugmani bosing → «Saqlash: PDF» ni tanlang. Sarlavha/kolontitulni o'chiring.",
+ cvPdf:"PDF yuklab olish",cvNote:"Tugmani bossangiz, rezyume PDF fayli bo'lib yuklanadi.",
  sk:["Ilova mantiqi, avtomatlashtirish, skriptlar.","Server render, modellar, auth, admin panel.",
      "Interaktivlik, holat, progressive enhancement.","Semantik struktura, Grid, dizayn tokenlari.",
      "Sxema dizayni, so'rovlar, yaxlitlik.","Aniq endpointlar, oldindan aytiladigan javob.",
@@ -1243,7 +1244,7 @@ en:{
  ctTgDesc:"Join my channel — I post new projects there.",
  ctLoc:"Based in",ctCity:"Tashkent, Uzbekistan",ctOnline:"Online now",
  toTop:"Back to top ↑",madeIn:"Hand-coded in Tashkent",oneFile:"Single HTML file · No frameworks",
- cvPdf:"Download PDF",cvNote:"Click the button → choose «Save as PDF». Turn off headers and footers.",
+ cvPdf:"Download PDF",cvNote:"Click the button to download your resume as a PDF file.",
  sk:["Application logic, automation, scripting.","Server rendering, models, auth, admin panel.",
      "Interactivity, state, progressive enhancement.","Semantic structure, Grid, design tokens.",
      "Schema design, queries, data integrity.","Clear endpoints, predictable responses.",
@@ -1976,8 +1977,44 @@ function syncResumePDF(){
   }
 }
 
-document.getElementById("cvPrint").addEventListener("click",function(){
-  window.print();
+document.getElementById("cvPrint").addEventListener("click",async function(){
+  var btn=this;
+  var note=document.querySelector(".cv-note");
+  var isEnglish=LANG==="en";
+
+  if(typeof html2pdf!=="function"){
+    note.textContent=isEnglish
+      ? "PDF download is unavailable. Check your internet connection and try again."
+      : "PDF yuklab olish ishlamadi. Internetga ulanib, qayta urinib ko'ring.";
+    return;
+  }
+
+  btn.disabled=true;
+  note.textContent=isEnglish?"Preparing your PDF...":"PDF tayyorlanmoqda...";
+
+  try{
+    if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+
+    await html2pdf().set({
+      margin:10,
+      filename:isEnglish?"Abdulaziz_Resume_EN.pdf":"Abdulaziz_Resume_UZ.pdf",
+      image:{type:"jpeg",quality:.98},
+      html2canvas:{scale:2,useCORS:true,backgroundColor:"#ffffff",scrollY:0},
+      jsPDF:{unit:"mm",format:"a4",orientation:"portrait"},
+      pagebreak:{mode:["css","legacy"]}
+    }).from(document.getElementById("cvPage")).save();
+
+    note.textContent=isEnglish
+      ? "PDF downloaded. Check your Downloads folder."
+      : "PDF yuklandi. Yuklamalar (Downloads) jildini tekshiring.";
+  }catch(error){
+    console.error("Resume PDF download failed:",error);
+    note.textContent=isEnglish
+      ? "Could not create the PDF. Please try again."
+      : "PDF yaratilmadi. Iltimos, qayta urinib ko'ring.";
+  }finally{
+    btn.disabled=false;
+  }
 });
 
 document.querySelectorAll(".cvlang button").forEach(function(b){
