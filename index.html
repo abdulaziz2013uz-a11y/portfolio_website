@@ -710,13 +710,13 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
 }
 
 /* ── AI PORTFOLIO ASSISTANT ── */
-.ai-widget{position:fixed;right:24px;bottom:24px;z-index:180}
+.ai-widget{position:fixed;left:24px;bottom:24px;z-index:180}
 .ai-launch{display:flex;align-items:center;gap:10px;height:54px;padding:0 18px;border:0;border-radius:999px;
   background:var(--grad);color:var(--on-accent);font-weight:700;box-shadow:0 12px 34px rgba(34,211,238,.24);
   cursor:pointer;transition:transform .2s,box-shadow .2s}
 .ai-launch:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(34,211,238,.32)}
 .ai-launch svg{width:21px;height:21px}
-.ai-panel{position:absolute;right:0;bottom:68px;display:flex;flex-direction:column;width:min(390px,calc(100vw - 32px));
+.ai-panel{position:absolute;left:0;bottom:68px;display:flex;flex-direction:column;width:min(390px,calc(100vw - 32px));
   height:min(560px,calc(100dvh - 110px));min-height:320px;overflow:hidden;border:1px solid var(--line-2);
   border-radius:20px;background:var(--card);box-shadow:0 24px 70px rgba(0,0,0,.32)}
 .ai-panel[hidden]{display:none}
@@ -748,7 +748,7 @@ textarea.inp{height:auto;min-height:86px;padding:13px 16px;resize:vertical;line-
 .ai-send svg{width:18px;height:18px}
 .ai-disclaimer{padding:0 14px 10px;background:var(--bg-2);color:var(--ink-3);font-size:10px;text-align:center}
 @media(max-width:600px){
-  .ai-widget{right:14px;bottom:14px}
+  .ai-widget{left:14px;bottom:14px}
   .ai-panel{position:fixed;left:10px;right:10px;bottom:78px;width:auto;height:min(600px,calc(100dvh - 100px))}
 }
 @media(prefers-reduced-motion:reduce){.ai-launch{transition:none}}
